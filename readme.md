@@ -32,3 +32,5 @@ Notes
 
 If you want, I can run `npm install` and start the dev server for you now, or change the upload target to a local API endpoint.
 yo
+
+git push -f
