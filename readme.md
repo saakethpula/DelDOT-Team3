@@ -1,1 +1,3 @@
 yo
+
+git push -f
