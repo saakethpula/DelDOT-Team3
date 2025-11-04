@@ -1,0 +1,62 @@
+[
+  {
+    "caseNumber": "CASE-2025-0001",
+    "customerName": "Jane Doe",
+    "customerPhone": "555-123-4567",
+    "customerEmail": "jane.doe@example.com",
+    "customerAddress": "123 Main St",
+    "customerCity": "Dover",
+    "customerState": "DE",
+    "customerZip": "19901",
+
+    "respondentName": "Acme Auto Sales",
+    "respondentPhone": "302-555-0100",
+    "respondentAddress": "500 Car Ave",
+    "respondentCity": "Dover",
+    "respondentState": "DE",
+    "respondentZip": "19901",
+    "dealershipRep": "John Smith",
+
+    "complaintType": "Vehicle sale",
+    "explainComplaint": "Dealer promised a vehicle in good working order but failed to disclose a salvage title. Customer requests investigation.",
+
+    "signatureName": "Jane Doe",
+    "signatureDate": "2025-07-10T10:30:00.000Z",
+
+    "dmvRepresentative": "Alice Reviewer, Rep/123",
+    "dmvRepresentativeDate": "2025-07-11T09:00:00.000Z",
+    "dmvSupervisor": "Bob Supervisor",
+    "dmvSupervisorDate": "2025-07-12T14:15:00.000Z",
+
+    "dateReceived": "2025-07-10T10:00:00.000Z",
+    "investigator": "Inv-01",
+    "status": "UNDER_REVIEW"
+  },
+  {
+    "caseNumber": "CASE-2025-0002",
+    "customerName": "Robert King",
+    "customerPhone": "302-555-0199",
+    "customerEmail": "robert.king@example.com",
+    "customerAddress": "45 Market St",
+    "customerCity": "Wilmington",
+    "customerState": "DE",
+    "customerZip": "19801",
+
+    "respondentName": "QuickFix Garage",
+    "respondentPhone": "302-555-0200",
+    "respondentAddress": "88 Repair Rd",
+    "respondentCity": "Wilmington",
+    "respondentState": "DE",
+    "respondentZip": "19801",
+
+    "complaintType": "Repair dispute",
+    "explainComplaint": "Repair shop charged for parts not installed. Customer requests review and refund.",
+
+    "signatureName": "Robert King",
+    "signatureDate": "2025-08-05T15:00:00.000Z",
+
+    "dateReceived": "2025-08-05T15:10:00.000Z",
+    "investigator": "Inv-02",
+    "status": "NEW"
+  }
+]
