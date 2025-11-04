@@ -1006,16 +1006,16 @@ ${c}`);
     M.default.join(__dirname, "../libquery_engine-rhel-openssl-3.0.x.so.node");
     M.default.join(__dirname, "../query_engine-windows.dll.node");
     var Si = O(require("fs"));
-    var fs = gr("chmodPlusX");
+    var fs2 = gr("chmodPlusX");
     function Ri(e) {
       if (process.platform === "win32") return;
       let r = Si.default.statSync(e), t = r.mode | 64 | 8 | 1;
       if (r.mode === t) {
-        fs(`Execution permissions of ${e} are fine`);
+        fs2(`Execution permissions of ${e} are fine`);
         return;
       }
       let n = t.toString(8).slice(-3);
-      fs(`Have to call chmodPlusX on ${e}`), Si.default.chmodSync(e, n);
+      fs2(`Have to call chmodPlusX on ${e}`), Si.default.chmodSync(e, n);
     }
     function Ai(e) {
       let r = e.e, t = (a) => `Prisma cannot find the required \`${a}\` system library in your system`, n = r.message.includes("cannot open shared object file"), i = `Please refer to the documentation about Prisma's system requirements: ${wi("https://pris.ly/d/system-requirements")}`, o = `Unable to require(\`${Ce(e.id)}\`).`, s = hr({ message: r.message, code: r.code }).with({ code: "ENOENT" }, () => "File does not exist.").when(({ message: a }) => n && a.includes("libz"), () => `${t("libz")}. Please install it and try again.`).when(({ message: a }) => n && a.includes("libgcc_s"), () => `${t("libgcc_s")}. Please install it and try again.`).when(({ message: a }) => n && a.includes("libssl"), () => {
@@ -5751,7 +5751,7 @@ var require_client = __commonJS({
       JsonNull: objectEnumValues2.classes.JsonNull,
       AnyNull: objectEnumValues2.classes.AnyNull
     };
-    var path = require("path");
+    var path2 = require("path");
     exports2.Prisma.TransactionIsolationLevel = makeStrictEnum2({
       ReadUncommitted: "ReadUncommitted",
       ReadCommitted: "ReadCommitted",
@@ -5763,6 +5763,58 @@ var require_client = __commonJS({
       name: "name",
       email: "email",
       emailVerified: "emailVerified"
+    };
+    exports2.Prisma.ComplaintScalarFieldEnum = {
+      id: "id",
+      customerName: "customerName",
+      customerPhone: "customerPhone",
+      customerEmail: "customerEmail",
+      customerAddress: "customerAddress",
+      customerCity: "customerCity",
+      customerState: "customerState",
+      customerZip: "customerZip",
+      respondentName: "respondentName",
+      respondentPhone: "respondentPhone",
+      respondentAddress: "respondentAddress",
+      respondentCity: "respondentCity",
+      respondentState: "respondentState",
+      respondentZip: "respondentZip",
+      dealershipRep: "dealershipRep",
+      complaintType: "complaintType",
+      explainComplaint: "explainComplaint",
+      signatureName: "signatureName",
+      signatureDate: "signatureDate",
+      dmvRepresentative: "dmvRepresentative",
+      dmvRepresentativeDate: "dmvRepresentativeDate",
+      dmvSupervisor: "dmvSupervisor",
+      dmvSupervisorDate: "dmvSupervisorDate",
+      caseNumber: "caseNumber",
+      dateReceived: "dateReceived",
+      investigator: "investigator",
+      status: "status",
+      createdAt: "createdAt",
+      updatedAt: "updatedAt"
+    };
+    exports2.Prisma.VehicleScalarFieldEnum = {
+      id: "id",
+      vin: "vin",
+      year: "year",
+      make: "make",
+      model: "model",
+      color: "color",
+      plateNumber: "plateNumber",
+      plateOrUtitle: "plateOrUtitle",
+      complaintId: "complaintId"
+    };
+    exports2.Prisma.DocumentScalarFieldEnum = {
+      id: "id",
+      fileName: "fileName",
+      fileType: "fileType",
+      fileSize: "fileSize",
+      url: "url",
+      notes: "notes",
+      complaintId: "complaintId",
+      uploadedAt: "uploadedAt"
     };
     exports2.Prisma.SortOrder = {
       asc: "asc",
@@ -5776,8 +5828,18 @@ var require_client = __commonJS({
       first: "first",
       last: "last"
     };
+    exports2.ComplaintStatus = exports2.$Enums.ComplaintStatus = {
+      NEW: "NEW",
+      UNDER_REVIEW: "UNDER_REVIEW",
+      INVESTIGATING: "INVESTIGATING",
+      CLOSED: "CLOSED",
+      REFERRED: "REFERRED"
+    };
     exports2.Prisma.ModelName = {
-      User: "User"
+      User: "User",
+      Complaint: "Complaint",
+      Vehicle: "Vehicle",
+      Document: "Document"
     };
     var config = {
       "generator": {
@@ -5823,39 +5885,39 @@ var require_client = __commonJS({
           }
         }
       },
-      "inlineSchema": '// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\ndatasource db {\n  provider  = "postgresql"\n  url       = env("DATABASE_URL")\n  directUrl = env("DIRECT_URL")\n}\n\ngenerator client {\n  provider = "prisma-client-js"\n  output   = "../generated/client"\n}\n\nmodel User {\n  id            String    @id @default(cuid())\n  name          String?\n  email         String?   @unique\n  emailVerified DateTime?\n}\n',
-      "inlineSchemaHash": "b61bf1ea8d62d869916913d935d578f0917f4f62281d95658977e4080383905f",
+      "inlineSchema": '// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\ndatasource db {\n  provider  = "postgresql"\n  url       = env("DATABASE_URL")\n  directUrl = env("DIRECT_URL")\n}\n\ngenerator client {\n  provider = "prisma-client-js"\n  output   = "../generated/client"\n}\n\nmodel User {\n  id            String    @id @default(cuid())\n  name          String?\n  email         String?   @unique\n  emailVerified DateTime?\n}\n\n// Complaint form models for DMV Compliance & Investigations Unit\nenum ComplaintStatus {\n  NEW\n  UNDER_REVIEW\n  INVESTIGATING\n  CLOSED\n  REFERRED\n}\n\nmodel Complaint {\n  id              String  @id @default(cuid())\n  // Complainant / customer fields\n  customerName    String\n  customerPhone   String?\n  customerEmail   String?\n  customerAddress String?\n  customerCity    String?\n  customerState   String?\n  customerZip     String?\n\n  // Respondent (Business or Individual being complained against)\n  respondentName    String?\n  respondentPhone   String?\n  respondentAddress String?\n  respondentCity    String?\n  respondentState   String?\n  respondentZip     String?\n  dealershipRep     String? // Dealership representative name (if applicable)\n\n  // Complaint details\n  complaintType    String? // e.g., "Vehicle sale/repair" or other\n  explainComplaint String? @db.Text\n\n  // Signature & administrative fields\n  signatureName         String?\n  signatureDate         DateTime?\n  dmvRepresentative     String? // Name/Title/Lane/Station #\n  dmvRepresentativeDate DateTime?\n  dmvSupervisor         String?\n  dmvSupervisorDate     DateTime?\n\n  // Internal tracking\n  caseNumber   String?         @unique\n  dateReceived DateTime?\n  investigator String?\n  status       ComplaintStatus @default(NEW)\n\n  // Relations\n  vehicle   Vehicle?\n  documents Document[]\n\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n}\n\nmodel Vehicle {\n  id            String  @id @default(cuid())\n  vin           String? @db.VarChar(17)\n  year          Int?\n  make          String?\n  model         String?\n  color         String?\n  plateNumber   String?\n  // If title/un-title field needed\n  plateOrUtitle String?\n\n  complaint   Complaint @relation(fields: [complaintId], references: [id])\n  complaintId String    @unique\n}\n\nmodel Document {\n  id       String  @id @default(cuid())\n  fileName String\n  fileType String?\n  fileSize Int?\n  url      String? // where the uploaded copy is stored (S3, local path, etc.)\n  notes    String?\n\n  complaint   Complaint @relation(fields: [complaintId], references: [id])\n  complaintId String\n  uploadedAt  DateTime  @default(now())\n}\n',
+      "inlineSchemaHash": "4ee3775ec22c6a2352da580c0af5b24ac7e0a8b811e0d0386adac584ce393e5a",
       "copyEngine": true
     };
-    var fs = require("fs");
+    var fs2 = require("fs");
     config.dirname = __dirname;
-    if (!fs.existsSync(path.join(__dirname, "schema.prisma"))) {
+    if (!fs2.existsSync(path2.join(__dirname, "schema.prisma"))) {
       const alternativePaths = [
         "generated/client",
         "client"
       ];
       const alternativePath = alternativePaths.find((altPath) => {
-        return fs.existsSync(path.join(process.cwd(), altPath, "schema.prisma"));
+        return fs2.existsSync(path2.join(process.cwd(), altPath, "schema.prisma"));
       }) ?? alternativePaths[0];
-      config.dirname = path.join(process.cwd(), alternativePath);
+      config.dirname = path2.join(process.cwd(), alternativePath);
       config.isBundled = true;
     }
-    config.runtimeDataModel = JSON.parse('{"models":{"User":{"dbName":null,"schema":null,"fields":[{"name":"id","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":true,"isReadOnly":false,"hasDefaultValue":true,"type":"String","nativeType":null,"default":{"name":"cuid","args":[1]},"isGenerated":false,"isUpdatedAt":false},{"name":"name","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"email","kind":"scalar","isList":false,"isRequired":false,"isUnique":true,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"emailVerified","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"DateTime","nativeType":null,"isGenerated":false,"isUpdatedAt":false}],"primaryKey":null,"uniqueFields":[],"uniqueIndexes":[],"isGenerated":false}},"enums":{},"types":{}}');
+    config.runtimeDataModel = JSON.parse('{"models":{"User":{"dbName":null,"schema":null,"fields":[{"name":"id","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":true,"isReadOnly":false,"hasDefaultValue":true,"type":"String","nativeType":null,"default":{"name":"cuid","args":[1]},"isGenerated":false,"isUpdatedAt":false},{"name":"name","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"email","kind":"scalar","isList":false,"isRequired":false,"isUnique":true,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"emailVerified","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"DateTime","nativeType":null,"isGenerated":false,"isUpdatedAt":false}],"primaryKey":null,"uniqueFields":[],"uniqueIndexes":[],"isGenerated":false},"Complaint":{"dbName":null,"schema":null,"fields":[{"name":"id","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":true,"isReadOnly":false,"hasDefaultValue":true,"type":"String","nativeType":null,"default":{"name":"cuid","args":[1]},"isGenerated":false,"isUpdatedAt":false},{"name":"customerName","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"customerPhone","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"customerEmail","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"customerAddress","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"customerCity","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"customerState","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"customerZip","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"respondentName","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"respondentPhone","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"respondentAddress","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"respondentCity","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"respondentState","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"respondentZip","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"dealershipRep","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"complaintType","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"explainComplaint","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":["Text",[]],"isGenerated":false,"isUpdatedAt":false},{"name":"signatureName","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"signatureDate","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"DateTime","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"dmvRepresentative","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"dmvRepresentativeDate","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"DateTime","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"dmvSupervisor","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"dmvSupervisorDate","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"DateTime","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"caseNumber","kind":"scalar","isList":false,"isRequired":false,"isUnique":true,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"dateReceived","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"DateTime","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"investigator","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"status","kind":"enum","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":true,"type":"ComplaintStatus","nativeType":null,"default":"NEW","isGenerated":false,"isUpdatedAt":false},{"name":"vehicle","kind":"object","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"Vehicle","nativeType":null,"relationName":"ComplaintToVehicle","relationFromFields":[],"relationToFields":[],"isGenerated":false,"isUpdatedAt":false},{"name":"documents","kind":"object","isList":true,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"Document","nativeType":null,"relationName":"ComplaintToDocument","relationFromFields":[],"relationToFields":[],"isGenerated":false,"isUpdatedAt":false},{"name":"createdAt","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":true,"type":"DateTime","nativeType":null,"default":{"name":"now","args":[]},"isGenerated":false,"isUpdatedAt":false},{"name":"updatedAt","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"DateTime","nativeType":null,"isGenerated":false,"isUpdatedAt":true}],"primaryKey":null,"uniqueFields":[],"uniqueIndexes":[],"isGenerated":false},"Vehicle":{"dbName":null,"schema":null,"fields":[{"name":"id","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":true,"isReadOnly":false,"hasDefaultValue":true,"type":"String","nativeType":null,"default":{"name":"cuid","args":[1]},"isGenerated":false,"isUpdatedAt":false},{"name":"vin","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":["VarChar",["17"]],"isGenerated":false,"isUpdatedAt":false},{"name":"year","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"Int","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"make","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"model","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"color","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"plateNumber","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"plateOrUtitle","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"complaint","kind":"object","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"Complaint","nativeType":null,"relationName":"ComplaintToVehicle","relationFromFields":["complaintId"],"relationToFields":["id"],"isGenerated":false,"isUpdatedAt":false},{"name":"complaintId","kind":"scalar","isList":false,"isRequired":true,"isUnique":true,"isId":false,"isReadOnly":true,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false}],"primaryKey":null,"uniqueFields":[],"uniqueIndexes":[],"isGenerated":false},"Document":{"dbName":null,"schema":null,"fields":[{"name":"id","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":true,"isReadOnly":false,"hasDefaultValue":true,"type":"String","nativeType":null,"default":{"name":"cuid","args":[1]},"isGenerated":false,"isUpdatedAt":false},{"name":"fileName","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"fileType","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"fileSize","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"Int","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"url","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"notes","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"complaint","kind":"object","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"Complaint","nativeType":null,"relationName":"ComplaintToDocument","relationFromFields":["complaintId"],"relationToFields":["id"],"isGenerated":false,"isUpdatedAt":false},{"name":"complaintId","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":true,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"uploadedAt","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":true,"type":"DateTime","nativeType":null,"default":{"name":"now","args":[]},"isGenerated":false,"isUpdatedAt":false}],"primaryKey":null,"uniqueFields":[],"uniqueIndexes":[],"isGenerated":false}},"enums":{"ComplaintStatus":{"values":[{"name":"NEW","dbName":null},{"name":"UNDER_REVIEW","dbName":null},{"name":"INVESTIGATING","dbName":null},{"name":"CLOSED","dbName":null},{"name":"REFERRED","dbName":null}],"dbName":null}},"types":{}}');
     defineDmmfProperty2(exports2.Prisma, config.runtimeDataModel);
     config.engineWasm = void 0;
     config.compilerWasm = void 0;
     var { warnEnvConflicts: warnEnvConflicts2 } = require_library();
     warnEnvConflicts2({
-      rootEnvPath: config.relativeEnvPaths.rootEnvPath && path.resolve(config.dirname, config.relativeEnvPaths.rootEnvPath),
-      schemaEnvPath: config.relativeEnvPaths.schemaEnvPath && path.resolve(config.dirname, config.relativeEnvPaths.schemaEnvPath)
+      rootEnvPath: config.relativeEnvPaths.rootEnvPath && path2.resolve(config.dirname, config.relativeEnvPaths.rootEnvPath),
+      schemaEnvPath: config.relativeEnvPaths.schemaEnvPath && path2.resolve(config.dirname, config.relativeEnvPaths.schemaEnvPath)
     });
     var PrismaClient2 = getPrismaClient2(config);
     exports2.PrismaClient = PrismaClient2;
     Object.assign(exports2, Prisma);
-    path.join(__dirname, "libquery_engine-darwin-arm64.dylib.node");
-    path.join(process.cwd(), "generated/client/libquery_engine-darwin-arm64.dylib.node");
-    path.join(__dirname, "schema.prisma");
-    path.join(process.cwd(), "generated/client/schema.prisma");
+    path2.join(__dirname, "libquery_engine-darwin-arm64.dylib.node");
+    path2.join(process.cwd(), "generated/client/libquery_engine-darwin-arm64.dylib.node");
+    path2.join(__dirname, "schema.prisma");
+    path2.join(process.cwd(), "generated/client/schema.prisma");
   }
 });
 
@@ -5871,6 +5933,8 @@ var prisma = globalForPrisma.prisma || new import_client.PrismaClient();
 if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
 
 // src/seed.ts
+var import_fs = __toESM(require("fs"));
+var import_path = __toESM(require("path"));
 var DEFAULT_USERS = [
   // Add your own user to pre-populate the database with
   {
@@ -5878,23 +5942,126 @@ var DEFAULT_USERS = [
     email: "tim@apple.com"
   }
 ];
-(async () => {
-  try {
-    await Promise.all(
-      DEFAULT_USERS.map(
-        (user) => prisma.user.upsert({
-          where: {
-            email: user.email
-          },
+var SEED_DIR = import_path.default.join(__dirname, "..", "prisma", "seed-data");
+function loadJSON(filename) {
+  const p = import_path.default.join(SEED_DIR, filename);
+  if (!import_fs.default.existsSync(p)) return null;
+  const raw2 = import_fs.default.readFileSync(p, "utf-8");
+  return JSON.parse(raw2);
+}
+async function seedUsers() {
+  const users = loadJSON("users.json") || DEFAULT_USERS;
+  await Promise.all(
+    users.map(
+      (user) => prisma.user.upsert({
+        where: {
+          email: user.email
+        },
+        update: {
+          ...user
+        },
+        create: {
+          ...user
+        }
+      })
+    )
+  );
+}
+async function seedComplaints() {
+  const complaints = loadJSON("complaints.json");
+  if (!complaints || !Array.isArray(complaints)) return;
+  for (const c of complaints) {
+    try {
+      const complaintFields = { ...c };
+      delete complaintFields.vehicle;
+      delete complaintFields.documents;
+      if (c.caseNumber) {
+        await prisma.complaint.upsert({
+          where: { caseNumber: c.caseNumber },
           update: {
-            ...user
+            ...complaintFields
           },
           create: {
-            ...user
+            ...complaintFields
           }
-        })
-      )
-    );
+        });
+      } else {
+        await prisma.complaint.create({
+          data: {
+            ...complaintFields
+          }
+        });
+      }
+    } catch (err) {
+      console.error("Failed to seed complaint", c.caseNumber ?? JSON.stringify(c).slice(0, 80), err);
+    }
+  }
+}
+async function seedVehicles() {
+  const vehicles = loadJSON("vehicles.json");
+  if (!vehicles || !Array.isArray(vehicles)) return;
+  for (const v of vehicles) {
+    try {
+      if (!v.complaintCaseNumber) {
+        console.warn("Vehicle missing complaintCaseNumber, skipping", v);
+        continue;
+      }
+      const complaint = await prisma.complaint.findUnique({ where: { caseNumber: v.complaintCaseNumber } });
+      if (!complaint) {
+        console.warn("No complaint found for vehicle, skipping", v.complaintCaseNumber);
+        continue;
+      }
+      const vehicleData = { ...v };
+      delete vehicleData.complaintCaseNumber;
+      await prisma.vehicle.upsert({
+        where: { complaintId: complaint.id },
+        update: {
+          ...vehicleData
+        },
+        create: {
+          ...vehicleData,
+          complaint: { connect: { id: complaint.id } }
+        }
+      });
+    } catch (err) {
+      console.error("Failed to seed vehicle", v, err);
+    }
+  }
+}
+async function seedDocuments() {
+  const documents = loadJSON("documents.json");
+  if (!documents || !Array.isArray(documents)) return;
+  for (const d of documents) {
+    try {
+      if (!d.complaintCaseNumber) {
+        console.warn("Document missing complaintCaseNumber, skipping", d);
+        continue;
+      }
+      const complaint = await prisma.complaint.findUnique({ where: { caseNumber: d.complaintCaseNumber } });
+      if (!complaint) {
+        console.warn("No complaint found for document, skipping", d.complaintCaseNumber);
+        continue;
+      }
+      const docData = { ...d };
+      delete docData.complaintCaseNumber;
+      await prisma.document.create({
+        data: {
+          ...docData,
+          complaint: { connect: { id: complaint.id } }
+        }
+      });
+    } catch (err) {
+      console.error("Failed to seed document", d, err);
+    }
+  }
+}
+(async () => {
+  try {
+    await seedUsers();
+    await seedComplaints();
+    await seedVehicles();
+    await seedDocuments();
+    console.log("Seeding complete.");
   } catch (error) {
     console.error(error);
     process.exit(1);

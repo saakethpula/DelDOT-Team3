@@ -1,3 +1,6 @@
+// Load environment variables from the repository root .env before anything else.
+// This ensures Prisma (and other libraries) can read DATABASE_URL at runtime.
+import 'dotenv/config';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
