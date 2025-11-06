@@ -1,7 +1,7 @@
 import {
   client_exports,
   prisma
-} from "./chunk-5KZR7WNY.mjs";
+} from "./chunk-RIGS2O7B.mjs";
 
 // src/seed.ts
 var DEFAULT_USERS = [

@@ -1,29 +1,22 @@
-
-
+[?9001h[?1004h[?25l[2J[m[H]0;npm[?25h]0;npm prefix]0;npm]0;npm run build[?25l
 > @repo/api@0.0.0 build
-> tsup src/* --format cjs,esm && npm run types
-
-[1G[0K[34mCLI[39m Building entry: src/index.ts, src/links/dto/create-link.dto.ts, src/links/dto/update-link.dto.ts, src/links/entities/link.entity.ts
-[34mCLI[39m Using tsconfig: tsconfig.json
-[34mCLI[39m tsup v8.5.0
-[34mCLI[39m Target: es2022
-[34mCJS[39m Build start
-[34mESM[39m Build start
-[32mESM[39m [1mdist/links/dto/create-link.dto.mjs  [22m[32m88.00 B[39m
-[32mESM[39m [1mdist/links/dto/update-link.dto.mjs  [22m[32m123.00 B[39m
-[32mESM[39m [1mdist/index.mjs                      [22m[32m291.00 B[39m
-[32mESM[39m [1mdist/chunk-3SFKBB2Y.mjs             [22m[32m240.00 B[39m
-[32mESM[39m [1mdist/chunk-XHCQAKNT.mjs             [22m[32m306.00 B[39m
-[32mESM[39m [1mdist/chunk-SKDSOMIZ.mjs             [22m[32m96.00 B[39m
-[32mESM[39m [1mdist/links/entities/link.entity.mjs [22m[32m70.00 B[39m
-[32mESM[39m ⚡️ Build success in 50ms
-[32mCJS[39m [1mdist/links/dto/update-link.dto.js  [22m[32m1.33 KB[39m
-[32mCJS[39m [1mdist/index.js                      [22m[32m1.65 KB[39m
-[32mCJS[39m [1mdist/links/entities/link.entity.js [22m[32m1.29 KB[39m
-[32mCJS[39m [1mdist/links/dto/create-link.dto.js  [22m[32m1.11 KB[39m
-[32mCJS[39m ⚡️ Build success in 50ms
-
+> tsup src/* --format cjs,esm && npm run types[5;1H[?25h]0;C:\WINDOWS\system32\cmd.exe [34mCLI [mBuilding entry: src/index.ts
+[34mCLI [mUsing tsconfig: tsconfig.json[34m
+CLI [mtsup v8.5.0[34m
+CLI [mTarget: es2022[34m
+CJS [mBuild start[34m
+ESM [mBuild start
+[32mCJS [m[1mdist\index.js [32m[22m1.65 KB
+[m[32mCJS [m⚡️ Build success in 56ms[32m
+ESM [m[1mdist\index.mjs [32m[22m641.00 B
+ESM [m⚡️ Build success in 56ms
+]0;npm]0;npm prefix]0;npm]0;npm run types
 > @repo/api@0.0.0 types
 > tsc -p tsconfig.types.json
 
-[1G[0K[1G[0K⠙[1G[0K[1G[0K⠙[1G[0K
+]0;C:\WINDOWS\system32\cmd.exe [37m[40mnpm[m [36m[40mnotice[m 
+[37m[40mnpm[m [36m[40mnotice[m New [31mmajor [mversion of npm available! [31m10.2.4 [m-> [32m11.6.2[K[m
+[37m[40mnpm[m [36m[40mnotice[m Changelog: [36mhttps://github.com/npm/cli/releases/tag/v11.6.2[K[m
+[37m[40mnpm[m [36m[40mnotice[m Run [32mnpm install -g npm@11.6.2 [mto update![K
+[37m[40mnpm[m [36m[40mnotice[m[K
+[?9001l[?1004l

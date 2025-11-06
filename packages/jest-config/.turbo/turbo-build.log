@@ -1,6 +1,8 @@
-
-
+[?9001h[?1004h[?25l[2J[m[H]0;npm[?25h]0;npm prefix]0;npm]0;npm run build[?25l
 > @repo/jest-config@0.0.0 build
-> tsc
-
-[1G[0K[1G[0K⠙[1G[0K
+> tsc[5;1H[?25h]0;C:\WINDOWS\system32\cmd.exe [37m[40mnpm[m [36m[40mnotice[m [37m[40m
+npm[m [36m[40mnotice[m New [31mmajor [mversion of npm available! [31m10.2.4 [m-> [32m11.6.2[37m[40m
+npm[m [36m[40mnotice[m Changelog: [36mhttps://github.com/npm/cli/releases/tag/v11.6.2[37m[40m
+npm[m [36m[40mnotice[m Run [32mnpm install -g npm@11.6.2 [mto update![37m[40m
+npm[m [36m[40mnotice[m 
+[?9001l[?1004l

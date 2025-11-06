@@ -1,28 +1,19 @@
-
+[?9001h[?1004h[?25l[2J[m[H]0;npm[?25h]0;npm prefix]0;npm]0;npm run dev[?25l
 > web-start@0.1.0 dev
-> vite dev --port 3001
-
-[1G[0K
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[1;1H[0J
-  [32m[1mVITE[22m v7.1.12[39m  [2mready in [0m[1m3940[22m[2m[0m ms[22m
-
-  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m3001[22m/[39m
-[2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
-  [32m➜[39m  [1mDebug[22m:   [2m[33mhttp://localhost:[1m3001[22m[2m/__debug[39m[22m
-[2m[32m  ➜[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
+> vite dev --port 3001[5;1H[?25h]0;C:\WINDOWS\system32\cmd.exe [33mYou are using Node.js 20.11.0. Vite requires Node.js version 20.19+ or 22.12+. Please upgrade your Node.js version.
+[m[31merror when starting dev server:
+TypeError: crypto.hash is not a function
+    at getHash (file:///C:/DelDOT-Team3/node_modules/vite/dist/node/chunks/config.js:2608:21)
+    at getLockfileHash (file:///C:/DelDOT-Team3/node_modules/vite/dist/node/chunks/config.js:11362:9)
+    at getDepHash (file:///C:/DelDOT-Team3/node_modules/vite/dist/node/chunks/config.js:11365:23)
+    at initDepsOptimizerMetadata (file:///C:/DelDOT-Team3/node_modules/vite/dist/node/chunks/config.js:10830:53)
+    at createDepsOptimizer (file:///C:/DelDOT-Team3/node_modules/vite/dist/node/chunks/config.js:34258:17)
+    at new DevEnvironment (file:///C:/DelDOT-Team3/node_modules/vite/dist/node/chunks/config.js:35020:109)
+    at Object.defaultCreateClientDevEnvironment [as createEnvironment] (file:///C:/DelDOT-Team3/node_modules/vite/dist/node/chunks/config.js:35431:9)
+    at _createServer (file:///C:/DelDOT-Team3/node_modules/vite/dist/node/chunks/config.js:27965:132)[m
+[31m    at async CAC.<anonymous> (file:///C:/DelDOT-Team3/node_modules/vite/dist/node/cli.js:572:18)[m
+[37m[40mnpm[m [31m[40mERR![m [35mLifecycle script `dev` failed with error: [m
+[37m[40mnpm[m [31m[40mERR![m [35mError: command failed[K[m
+[37m[40mnpm[m [31m[40mERR![m   [35min workspace: web-start@0.1.0[K[m
+[37m[40mnpm[m [31m[40mERR![m   [35mat location: C:\DelDOT-Team3\apps\web-start[K[m
+[?9001l[?1004l
