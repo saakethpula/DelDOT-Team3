@@ -1,15 +1,12 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/client"
+}
 
 datasource db {
   provider  = "postgresql"
   url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
-}
-
-generator client {
-  provider = "prisma-client-js"
-  output   = "../generated/client"
 }
 
 model User {
@@ -19,8 +16,65 @@ model User {
   emailVerified DateTime?
 }
 
+model Complaint {
+  id                    String          @id @default(cuid())
+  customerName          String
+  customerPhone         String?
+  customerEmail         String?
+  customerAddress       String?
+  customerCity          String?
+  customerState         String?
+  customerZip           String?
+  respondentName        String?
+  respondentPhone       String?
+  respondentAddress     String?
+  respondentCity        String?
+  respondentState       String?
+  respondentZip         String?
+  dealershipRep         String?
+  complaintType         String?
+  explainComplaint      String?
+  signatureName         String?
+  signatureDate         DateTime?
+  dmvRepresentative     String?
+  dmvRepresentativeDate DateTime?
+  dmvSupervisor         String?
+  dmvSupervisorDate     DateTime?
+  caseNumber            String?         @unique
+  dateReceived          DateTime?
+  investigator          String?
+  status                ComplaintStatus @default(NEW)
+  createdAt             DateTime        @default(now())
+  updatedAt             DateTime        @updatedAt
+  documents             Document[]
+  vehicle               Vehicle?
+}
 
-// Complaint form models for DMV Compliance & Investigations Unit
+model Vehicle {
+  id            String    @id @default(cuid())
+  vin           String?   @db.VarChar(17)
+  year          Int?
+  make          String?
+  model         String?
+  color         String?
+  plateNumber   String?
+  plateOrUtitle String?
+  complaintId   String    @unique
+  complaint     Complaint @relation(fields: [complaintId], references: [id])
+}
+
+model Document {
+  id          String    @id @default(cuid())
+  fileName    String
+  fileType    String?
+  fileSize    Int?
+  url         String?
+  notes       String?
+  complaintId String
+  uploadedAt  DateTime  @default(now())
+  complaint   Complaint @relation(fields: [complaintId], references: [id])
+}
+
 enum ComplaintStatus {
   NEW
   UNDER_REVIEW
@@ -28,78 +82,3 @@ enum ComplaintStatus {
   CLOSED
   REFERRED
 }
-
-model Complaint {
-  id                         String         @id @default(cuid())
-  // Complainant / customer fields
-  customerName               String
-  customerPhone              String?
-  customerEmail              String?
-  customerAddress            String?
-  customerCity               String?
-  customerState              String?
-  customerZip                String?
-
-  // Respondent (Business or Individual being complained against)
-  respondentName             String?
-  respondentPhone            String?
-  respondentAddress          String?
-  respondentCity             String?
-  respondentState            String?
-  respondentZip              String?
-  dealershipRep              String?        // Dealership representative name (if applicable)
-
-  // Complaint details
-  complaintType              String?        // e.g., "Vehicle sale/repair" or other
-  explainComplaint           String?        @db.Text
-
-  // Signature & administrative fields
-  signatureName              String?
-  signatureDate              DateTime?
-  dmvRepresentative         String?        // Name/Title/Lane/Station #
-  dmvRepresentativeDate     DateTime?
-  dmvSupervisor             String?
-  dmvSupervisorDate         DateTime?
-
-  // Internal tracking
-  caseNumber                 String?        @unique
-  dateReceived               DateTime?
-  investigator               String?
-  status                     ComplaintStatus @default(NEW)
-
-  // Relations
-  vehicle                    Vehicle?
-  documents                  Document[]
-
-  createdAt                  DateTime       @default(now())
-  updatedAt                  DateTime       @updatedAt
-}
-
-model Vehicle {
-  id           String   @id @default(cuid())
-  vin          String?  @db.VarChar(17)
-  year         Int?
-  make         String?
-  model        String?
-  color        String?
-  plateNumber  String?
-  // If title/un-title field needed
-  plateOrUtitle String?
-
-  complaint    Complaint @relation(fields: [complaintId], references: [id])
-  complaintId  String   @unique
-}
-
-model Document {
-  id           String   @id @default(cuid())
-  fileName     String
-  fileType     String?
-  fileSize     Int?
-  url          String?  // where the uploaded copy is stored (S3, local path, etc.)
-  notes        String?
-
-  complaint    Complaint @relation(fields: [complaintId], references: [id])
-  complaintId  String
-  uploadedAt   DateTime   @default(now())
-}
-
