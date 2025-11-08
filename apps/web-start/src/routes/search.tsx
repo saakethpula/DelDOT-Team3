@@ -1,52 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 
-
-function Text({ label, name, value, onChange, required = false, type = 'text' }: any) {
-  return (
-    <label style={{ display: 'block', marginBottom: '10px' }}>
-      {label}
-      <input
-        type={type}
-        name={name}
-        value={value}
-        onChange={onChange}
-        required={required}
-        style={{
-          display: 'block',
-          width: '100%',
-          padding: '8px',
-          margin: '5px 0 15px',
-          borderRadius: '4px',
-          border: '1px solid #ccc',
-        }}
-      />
-    </label>
-  );
-}
-
-function Textarea({ label, name, value, onChange, rows = 4 }: any) {
-  return (
-    <label style={{ display: 'block', marginBottom: '10px' }}>
-      {label}
-      <textarea
-        name={name}
-        value={value}
-        onChange={onChange}
-        rows={rows}
-        style={{
-          display: 'block',
-          width: '100%',
-          padding: '8px',
-          margin: '5px 0 15px',
-          borderRadius: '4px',
-          border: '1px solid #ccc',
-        }}
-      ></textarea>
-    </label>
-  );
-}
-
 export const Route = createFileRoute('/search')({
   component: ComplaintForm,
 });
@@ -80,28 +34,20 @@ function ComplaintForm() {
     plateOrUtitle: '',
     complaintType: '',
     explainComplaint: '',
-    signatureName: '',
-    signatureDate: '',
+    signatureConfirmed: false,
   });
+
+  const [isConfirmed, setIsConfirmed] = useState(false);
+  const [referenceId, setReferenceId] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-      console.log('Sending complaint:', formData);
-      
-      await new Promise((res) => setTimeout(res, 1200));
-      alert('Complaint submitted successfully!');
-    } catch (err) {
-      console.error(err);
-      alert('Failed to submit complaint.');
-    }
+    const { name, value, type, checked } = e.target as any;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value,
+    }));
   };
 
   const handleUpload = () => {
@@ -115,6 +61,30 @@ function ComplaintForm() {
     input.click();
   };
 
+  const handleConfirm = () => {
+    const uuid = crypto.randomUUID();
+    setReferenceId(`REF-DMV-${uuid}`);
+    setIsConfirmed(true);
+  };
+
+  const handleEdit = () => {
+    setIsConfirmed(false);
+    setReferenceId(null);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!formData.signatureConfirmed) {
+      alert('Please check the E-sign confirmation before submitting.');
+      return;
+    }
+
+    console.log('Submitting complaint:', formData);
+    await new Promise((res) => setTimeout(res, 1000)); // mock backend
+    alert('Complaint submitted successfully!');
+  };
+
   const sectionTitle = {
     backgroundColor: gold,
     color: pioneerBlue,
@@ -122,6 +92,17 @@ function ComplaintForm() {
     borderRadius: '4px',
     marginTop: '20px',
   };
+
+  const labelStyle = { display: 'block', marginBottom: '10px' };
+  const inputStyle = (disabled: boolean) => ({
+    display: 'block',
+    width: '100%',
+    padding: '8px',
+    margin: '5px 0 15px',
+    borderRadius: '4px',
+    border: '1px solid #ccc',
+    backgroundColor: disabled ? '#f3f3f3' : 'white',
+  });
 
   return (
     <div
@@ -161,7 +142,7 @@ function ComplaintForm() {
         </button>
       </header>
 
-      {/* FORM BODY */}
+      {/* FORM + CONFIRMATION SECTION */}
       <form
         onSubmit={handleSubmit}
         style={{
@@ -172,63 +153,194 @@ function ComplaintForm() {
           boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
         }}
       >
-        {/* CUSTOMER INFO */}
-        <h3 style={sectionTitle}>Customer Information</h3>
-        <Text label="Full Name" name="customerName" value={formData.customerName} onChange={handleChange} required />
-        <Text label="Phone" name="customerPhone" value={formData.customerPhone} onChange={handleChange} />
-        <Text label="Email" name="customerEmail" value={formData.customerEmail} onChange={handleChange} />
-        <Text label="Address" name="customerAddress" value={formData.customerAddress} onChange={handleChange} />
-        <Text label="City" name="customerCity" value={formData.customerCity} onChange={handleChange} />
-        <Text label="State" name="customerState" value={formData.customerState} onChange={handleChange} />
-        <Text label="Zip" name="customerZip" value={formData.customerZip} onChange={handleChange} />
+        {!isConfirmed ? (
+          <>
+            {/* CUSTOMER INFO */}
+            <h3 style={sectionTitle}>Customer Information</h3>
+            {renderText('Full Name', 'customerName')}
+            {renderText('Phone', 'customerPhone')}
+            {renderText('Email', 'customerEmail')}
+            {renderText('Address', 'customerAddress')}
+            {renderText('City', 'customerCity')}
+            {renderText('State', 'customerState')}
+            {renderText('Zip', 'customerZip')}
 
-        {/* RESPONDENT INFO */}
-        <h3 style={sectionTitle}>Business or Individual Being Complained Against</h3>
-        <Text label="Name" name="respondentName" value={formData.respondentName} onChange={handleChange} />
-        <Text label="Phone" name="respondentPhone" value={formData.respondentPhone} onChange={handleChange} />
-        <Text label="Address" name="respondentAddress" value={formData.respondentAddress} onChange={handleChange} />
-        <Text label="City" name="respondentCity" value={formData.respondentCity} onChange={handleChange} />
-        <Text label="State" name="respondentState" value={formData.respondentState} onChange={handleChange} />
-        <Text label="Zip" name="respondentZip" value={formData.respondentZip} onChange={handleChange} />
-        <Text label="Dealership Representative (if applicable)" name="dealershipRep" value={formData.dealershipRep} onChange={handleChange} />
+            {/* RESPONDENT INFO */}
+            <h3 style={sectionTitle}>
+              Business or Individual Being Complained Against
+            </h3>
+            {renderText('Name', 'respondentName')}
+            {renderText('Phone', 'respondentPhone')}
+            {renderText('Address', 'respondentAddress')}
+            {renderText('City', 'respondentCity')}
+            {renderText('State', 'respondentState')}
+            {renderText('Zip', 'respondentZip')}
+            {renderText(
+              'Dealership Representative (if applicable)',
+              'dealershipRep'
+            )}
 
-        {/* VEHICLE INFO */}
-        <h3 style={sectionTitle}>Vehicle Information (if applicable)</h3>
-        <Text label="VIN" name="vin" value={formData.vin} onChange={handleChange} />
-        <Text label="Year" name="year" value={formData.year} onChange={handleChange} />
-        <Text label="Make" name="make" value={formData.make} onChange={handleChange} />
-        <Text label="Model" name="model" value={formData.model} onChange={handleChange} />
-        <Text label="Color" name="color" value={formData.color} onChange={handleChange} />
-        <Text label="Plate Number" name="plateNumber" value={formData.plateNumber} onChange={handleChange} />
-        <Text label="Plate or U-Title" name="plateOrUtitle" value={formData.plateOrUtitle} onChange={handleChange} />
+            {/* VEHICLE INFO */}
+            <h3 style={sectionTitle}>Vehicle Information (if applicable)</h3>
+            {renderText('VIN', 'vin')}
+            {renderText('Year', 'year')}
+            {renderText('Make', 'make')}
+            {renderText('Model', 'model')}
+            {renderText('Color', 'color')}
+            {renderText('Plate Number', 'plateNumber')}
+            {renderText('Plate or U-Title', 'plateOrUtitle')}
 
-        {/* COMPLAINT DETAILS */}
-        <h3 style={sectionTitle}>Complaint Details</h3>
-        <Text label="Complaint Type" name="complaintType" value={formData.complaintType} onChange={handleChange} />
-        <Textarea label="Explain Complaint" name="explainComplaint" value={formData.explainComplaint} onChange={handleChange} rows={5} />
+            {/* COMPLAINT DETAILS */}
+            <h3 style={sectionTitle}>Complaint Details</h3>
+            {renderText('Complaint Type', 'complaintType')}
+            {renderTextarea('Explain Complaint', 'explainComplaint')}
+          </>
+        ) : (
+          <>
+            <div
+              style={{
+                padding: '10px',
+                border: `2px solid ${gold}`,
+                borderRadius: '8px',
+                backgroundColor: lightGray,
+                marginBottom: '20px',
+              }}
+            >
+              <h3 style={{ color: pioneerBlue }}>Confirmation Receipt</h3>
+              <p>
+                <strong>Reference ID:</strong> {referenceId}
+              </p>
+              <p>Thank you for submitting your complaint.</p>
+              <h4 style={{ color: pioneerBlue }}>Submitted Information</h4>
+              <pre
+                style={{
+                  backgroundColor: 'white',
+                  border: '1px solid #ddd',
+                  borderRadius: '6px',
+                  padding: '10px',
+                  whiteSpace: 'pre-wrap',
+                  lineHeight: 1.5,
+                }}
+              >
+                {Object.entries(formData)
+                  .filter(([key]) => key !== 'signatureConfirmed')
+                  .map(
+                    ([key, value]) =>
+                      `${key}: ${String(value ?? '')}`
+                  )
+                  .join('\n')}
+              </pre>
+            </div>
+          </>
+        )}
 
-        {/* SIGNATURE */}
-        <h3 style={sectionTitle}>Signature</h3>
-        <Text label="Your Full Name (Signature)" name="signatureName" value={formData.signatureName} onChange={handleChange} />
-        <Text label="Date" name="signatureDate" value={formData.signatureDate} onChange={handleChange} type="date" />
-
-        <button
-          type="submit"
+        {/* E-SIGN */}
+        <h3 style={sectionTitle}>E-Sign Confirmation</h3>
+        <label
           style={{
-            backgroundColor: pioneerBlue,
-            color: 'white',
-            border: 'none',
-            padding: '12px 20px',
-            borderRadius: '6px',
-            fontSize: '16px',
-            cursor: 'pointer',
-            fontWeight: 'bold',
-            marginTop: '20px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            marginBottom: '20px',
           }}
         >
-          Submit Complaint
-        </button>
+          <input
+            type="checkbox"
+            name="signatureConfirmed"
+            checked={formData.signatureConfirmed}
+            onChange={handleChange}
+            disabled={isConfirmed}
+          />
+          I certify that the information provided above is true and accurate.
+        </label>
+
+        {/* BUTTONS */}
+        <div style={{ marginTop: '10px' }}>
+          {!isConfirmed ? (
+            <button
+              type="button"
+              onClick={handleConfirm}
+              style={{
+                backgroundColor: gold,
+                color: pioneerBlue,
+                border: 'none',
+                padding: '10px 20px',
+                borderRadius: '6px',
+                cursor: 'pointer',
+                fontWeight: 'bold',
+                marginRight: '10px',
+              }}
+            >
+              Confirm
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={handleEdit}
+              style={{
+                backgroundColor: 'gray',
+                color: 'white',
+                border: 'none',
+                padding: '10px 20px',
+                borderRadius: '6px',
+                cursor: 'pointer',
+                fontWeight: 'bold',
+                marginRight: '10px',
+              }}
+            >
+              Go Back / Edit
+            </button>
+          )}
+
+          <button
+            type="submit"
+            style={{
+              backgroundColor: pioneerBlue,
+              color: 'white',
+              border: 'none',
+              padding: '10px 20px',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+            }}
+          >
+            Submit Complaint
+          </button>
+        </div>
       </form>
     </div>
   );
+
+  // helpers for rendering fields
+  function renderText(label: string, name: keyof typeof formData) {
+    return (
+      <label style={labelStyle}>
+        {label}
+        <input
+          type="text"
+          name={name}
+          value={String(formData[name] ?? '')}
+          onChange={handleChange}
+          style={inputStyle(false)}
+          required={name === 'customerName'}
+        />
+      </label>
+    );
+  }
+
+  function renderTextarea(label: string, name: keyof typeof formData) {
+    return (
+      <label style={labelStyle}>
+        {label}
+        <textarea
+          name={name}
+          value={String(formData[name] ?? '')}
+          onChange={handleChange}
+          rows={5}
+          style={inputStyle(false)}
+        />
+      </label>
+    );
+  }
 }
+
