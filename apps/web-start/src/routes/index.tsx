@@ -55,7 +55,7 @@ function LandingPage() {
         </h2>
         <p style={{ color: '#333', maxWidth: '600px', lineHeight: '1.6' }}>
           Use this portal to file an official complaint regarding a vehicle sale,
-          repair, dealership, or other DMV-related issue. Please provide accurate
+          repair, dealership, or other DMV related issue. Please provide accurate
           details to ensure your report is processed efficiently.
         </p>
 
@@ -109,4 +109,3 @@ function LandingPage() {
     </div>
   );
 }
-
