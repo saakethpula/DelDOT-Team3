@@ -10,7 +10,7 @@
 [1G[0K[2mPrisma schema loaded from prisma/schema.prisma[22m
 
 
-✔ Generated [1mPrisma Client[22m (v6.18.0)[2m to ./generated/client[22m in 52ms
+✔ Generated [1mPrisma Client[22m (v6.18.0)[2m to ./generated/client[22m in 290ms
 
 Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
 
@@ -26,13 +26,13 @@ Tip: Need your database queries to be 1000x faster? Accelerate offers you that a
 [34mCLI[39m Target: es2022
 [34mCJS[39m Build start
 [34mESM[39m Build start
-[32mCJS[39m [1mdist/client.js [22m[32m292.53 KB[39m
 [32mCJS[39m [1mdist/seed.js   [22m[32m296.05 KB[39m
-[32mCJS[39m ⚡️ Build success in 75ms
+[32mCJS[39m [1mdist/client.js [22m[32m292.53 KB[39m
+[32mCJS[39m ⚡️ Build success in 86ms
 [32mESM[39m [1mdist/client.mjs         [22m[32m70.00 B[39m
 [32mESM[39m [1mdist/seed.mjs           [22m[32m3.72 KB[39m
-[32mESM[39m [1mdist/chunk-LDT6DNTX.mjs [22m[32m292.70 KB[39m
-[32mESM[39m ⚡️ Build success in 75ms
+[32mESM[39m [1mdist/chunk-TP47CWMH.mjs [22m[32m292.69 KB[39m
+[32mESM[39m ⚡️ Build success in 87ms
 
 > @repo/database@1.0.0 types
 > tsc -p tsconfig.types.json
