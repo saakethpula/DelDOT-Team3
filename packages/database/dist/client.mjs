@@ -1,6 +1,6 @@
 import {
   prisma
-} from "./chunk-TP47CWMH.mjs";
+} from "./chunk-YH3H7RLC.mjs";
 export {
   prisma
 };

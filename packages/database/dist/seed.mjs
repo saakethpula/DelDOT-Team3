@@ -1,7 +1,7 @@
 import {
   client_exports,
   prisma
-} from "./chunk-TP47CWMH.mjs";
+} from "./chunk-YH3H7RLC.mjs";
 
 // src/seed.ts
 import fs from "fs";

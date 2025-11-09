@@ -5850,7 +5850,7 @@ var require_client = __commonJS({
           "value": "prisma-client-js"
         },
         "output": {
-          "value": "/Users/stanleypierrelouis/Downloads/DelDOT-Team3-main/packages/database/generated/client",
+          "value": "/Users/maxim/Desktop/Scripts Fall 2023/Fall 2025/498/DelDOT-Team3/packages/database/generated/client",
           "fromEnvVar": null
         },
         "config": {
@@ -5864,11 +5864,12 @@ var require_client = __commonJS({
           }
         ],
         "previewFeatures": [],
-        "sourceFilePath": "/Users/stanleypierrelouis/Downloads/DelDOT-Team3-main/packages/database/prisma/schema.prisma",
+        "sourceFilePath": "/Users/maxim/Desktop/Scripts Fall 2023/Fall 2025/498/DelDOT-Team3/packages/database/prisma/schema.prisma",
         "isCustomOutput": true
       },
       "relativeEnvPaths": {
-        "rootEnvPath": null
+        "rootEnvPath": ".env",
+        "schemaEnvPath": "../../prisma/.env"
       },
       "relativePath": "../../prisma",
       "clientVersion": "6.18.0",
