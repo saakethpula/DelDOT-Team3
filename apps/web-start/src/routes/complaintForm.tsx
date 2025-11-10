@@ -31,7 +31,7 @@ interface ComplaintFormData {
 
 
 
-export const Route = createFileRoute('/search')({
+export const Route = createFileRoute('/complaintForm')({
   component: ComplaintForm,
 });
 

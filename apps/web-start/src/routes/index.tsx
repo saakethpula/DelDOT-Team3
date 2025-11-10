@@ -74,7 +74,7 @@ function LandingPage() {
           <p style={{ color: '#444' }}>
             Click below to access the official complaint submission form.
           </p>
-          <Link to="/search">
+          <Link to="/complaintForm">
             <button
               style={{
                 backgroundColor: pioneerBlue,
