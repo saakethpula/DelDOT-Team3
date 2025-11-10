@@ -1,4 +1,4 @@
-[?9001h[?1004h[?25l[2J[m[H]0;npm[?25h]0;npm prefix]0;npm]0;npm run dev[?25l
+[?9001h[?1004h[?25l[2J[m[H]0;npm[?25h]0;npm run dev[?25l
 > api@0.0.0 dev
 > nest start --watch[5;1H[?25h]0;C:\WINDOWS\system32\cmd.exe c[?9001h[?1004h[?25l[H[K
 [K
@@ -15,4 +15,17 @@
 [K
 [K
 [K
-[K[H[?25h[?25l[[90m11:44:01 AM[m] Starting compilation in watch mode...[3;1H[?25h[?25l[[90m11:44:04 AM[m] Found 0 errors. Watching for file changes.[5;1H[?25h^C^[?9001l[?1004lC
+[K[H[?25h[?25l[[90m12:23:14 PM[m] Starting compilation in watch mode...[3;1H[?25h[?25l[[90m12:23:16 PM[m] Found 0 errors. Watching for file changes.[5;1H[?25h(node:21756) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[32m[Nest] 10448  - [m11/06/2025, 12:23:26 PM     [32mLOG [38;5;3m[NestFactory] [32mStarting Nest application...
+[m[32m[Nest] 10448  - [m11/06/2025, 12:23:26 PM     [32mLOG [38;5;3m[InstanceLoader] [32mAppModule dependencies initialized [38;5;3m+7ms[32m
+[Nest] 10448  - [m11/06/2025, 12:23:26 PM     [32mLOG [38;5;3m[InstanceLoader] [32mLinksModule dependencies initialized [38;5;3m+0ms[32m
+[Nest] 10448  - [m11/06/2025, 12:23:26 PM     [32mLOG [38;5;3m[RoutesResolver] [32mAppController {/}: [38;5;3m+2ms[32m
+[Nest] 10448  - [m11/06/2025, 12:23:26 PM     [32mLOG [38;5;3m[RouterExplorer] [32mMapped {/, GET} route [38;5;3m+2ms[32m
+[Nest] 10448  - [m11/06/2025, 12:23:26 PM     [32mLOG [38;5;3m[RoutesResolver] [32mLinksController {/links}: [38;5;3m+0ms[32m
+[Nest] 10448  - [m11/06/2025, 12:23:26 PM     [32mLOG [38;5;3m[RouterExplorer] [32mMapped {/links, POST} route [38;5;3m+0ms[32m
+[Nest] 10448  - [m11/06/2025, 12:23:26 PM     [32mLOG [38;5;3m[RouterExplorer] [32mMapped {/links, GET} route [38;5;3m+0ms[32m
+[Nest] 10448  - [m11/06/2025, 12:23:26 PM     [32mLOG [38;5;3m[RouterExplorer] [32mMapped {/links/:id, GET} route [38;5;3m+1ms[m
+[32m[Nest] 10448  - [m11/06/2025, 12:23:26 PM     [32mLOG [38;5;3m[RouterExplorer] [32mMapped {/links/:id, PATCH} route [38;5;3m+0ms[K[m
+[32m[Nest] 10448  - [m11/06/2025, 12:23:26 PM     [32mLOG [38;5;3m[RouterExplorer] [32mMapped {/links/:id, DELETE} route [38;5;3m+1ms[K[m
+[32m[Nest] 10448  - [m11/06/2025, 12:23:26 PM     [32mLOG [38;5;3m[NestApplication] [32mNest application successfully started [38;5;3m+1ms[K[m

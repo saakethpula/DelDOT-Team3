@@ -1,12 +1,22 @@
-[?9001h[?1004h[?25l[2J[m[H]0;npm[?25h]0;npm prefix]0;npm]0;npm run build[?25l
+[?9001h[?1004h[?25l[2J[m[H]0;npm[?25h]0;npm run build[?25l
 > @repo/database@1.0.0 prebuild
-> npm run generate[5;1H[?25h]0;npm]0;npm prefix]0;npm]0;npm run generate[?25l
+> npm run generate[5;1H[?25h]0;npm]0;npm run generate[?25l
 > @repo/database@1.0.0 generate
 > prisma generate[9;1H[?25h]0;C:\WINDOWS\system32\cmd.exe [2mPrisma schema loaded from prisma\schema.prisma
-[22m> Downloading Prisma engines for Node-API for [1mwindows[22m [                    ] 0%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [                    ] 1%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [                    ] 2%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [=                   ] 3%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [=                   ] 5%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [=                   ] 7%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [==                  ] 9%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [==                  ] 11%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [==                  ] 12%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [===                 ] 14%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [===                 ] 16%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [====                ] 18%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [====                ] 19%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [====                ] 21%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [=====               ] 23%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [=====               ] 24%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [=====               ] 26%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [======              ] 28%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [======              ] 30%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [======              ] 32%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [=======             ] 33%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [=======             ] 35%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [=======             ] 36%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [========            ] 38%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [========            ] 40%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [========            ] 42%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [=========           ] 43%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [=========           ] 45%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [=========           ] 47%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [==========          ] 49%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [==========          ] 51%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [============        ] 57%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [============        ] 60%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [=============       ] 63%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [=============       ] 66%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [==============      ] 68%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [==============      ] 71%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [===============     ] 74%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [===============     ] 76%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [================    ] 79%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [================    ] 82%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [=================   ] 85%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [==================  ] 88%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [==================  ] 91%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [=================== ] 94%[K[K[K[K[?25l
-✔ Generated [1mPrisma Client[22m (v6.18.0)[2m to .\generated\client[22m in 74ms[13;1HStart by importing your Prisma Client (See: https://pris.ly/d/importing-client)[15;1HTip: Need your database queries to be 1000x faster? Accelerate offers you that and more: https://pris.ly/tip-2-accelerate
-[?25h
+[22m[90m┌─────────────────────────────────────────────────────────┐
+│  [34mUpdate available [90m6.18.0 -> 6.19.0                      │
+│  [mRun the following to update[28X[90m[28C│
+│    [m[1mnpm i --save-dev prisma@latest[22m[23X[90m[23C│
+│    [m[1mnpm i @prisma/client@latest[22m[26X[90m[26C│
+└─────────────────────────────────────────────────────────┘
+[m
+✔ Generated [1mPrisma Client[22m (v6.18.0)[2m to .\generated\client[22m in 162ms[K
 
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Want to turn off tips and other hints? https://pris.ly/tip-4-nohints
+
+[K⠙[K
 > @repo/database@1.0.0 build
 > tsup src/* --format cjs,esm && npm run types
 
@@ -16,20 +26,15 @@
 [34mCLI [mTarget: es2022[K
 [34mCJS [mBuild start[K
 [34mESM [mBuild start[K
-[32mCJS [m[1mdist\client.js [32m[22m276.44 KB[m
-[32mCJS [m[1mdist\seed.js   [32m[22m276.76 KB[K[m
-[32mCJS [m⚡️ Build success in 90ms
-[32mESM [m[1mdist\client.mjs         [32m[22m70.00 B[K[m
-[32mESM [m[1mdist\seed.mjs           [32m[22m649.00 B[K[m
+[32mESM [m[1mdist\client.mjs         [32m[22m70.00 B[m
+[32mESM [m[1mdist\seed.mjs           [32m[22m649.00 B[m
 [32mESM [m[1mdist\chunk-RIGS2O7B.mjs [32m[22m276.62 KB[K[m
-[32mESM [m⚡️ Build success in 92ms[K
-]0;npm]0;npm prefix]0;npm]0;npm run types
+[32mESM [m⚡️ Build success in 95ms[K
+[32mCJS [m[1mdist\seed.js   [32m[22m276.76 KB[K[m
+[32mCJS [m[1mdist\client.js [32m[22m276.44 KB[K[m
+[32mCJS [m⚡️ Build success in 100ms[K
+]0;npm]0;npm run types
 > @repo/database@1.0.0 types
 > tsc -p tsconfig.types.json
 
-]0;C:\WINDOWS\system32\cmd.exe [37m[40mnpm[m [36m[40mnotice[m 
-[37m[40mnpm[m [36m[40mnotice[m New [31mmajor [mversion of npm available! [31m10.2.4 [m-> [32m11.6.2[K[m
-[37m[40mnpm[m [36m[40mnotice[m Changelog: [36mhttps://github.com/npm/cli/releases/tag/v11.6.2[K[m
-[37m[40mnpm[m [36m[40mnotice[m Run [32mnpm install -g npm@11.6.2 [mto update![K
-[37m[40mnpm[m [36m[40mnotice[m[K
-[?9001l[?1004l
+]0;C:\WINDOWS\system32\cmd.exe ⠙[K[K[?9001l[?1004l

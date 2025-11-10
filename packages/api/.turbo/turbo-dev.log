@@ -1,4 +1,4 @@
-[?9001h[?1004h[?25l[2J[m[H]0;npm[?25h]0;npm prefix]0;npm]0;npm run dev[?25l
+[?9001h[?1004h[?25l[2J[m[H]0;npm[?25h]0;npm run dev[?25l
 > @repo/api@0.0.0 dev
 > tsup src/* --format cjs,esm --watch --onSuccess "npm run types"[5;1H[?25h]0;C:\WINDOWS\system32\cmd.exe [34mCLI [mBuilding entry: src/index.ts
 [34mCLI [mUsing tsconfig: tsconfig.json[34m
@@ -8,13 +8,13 @@ CLI [mTarget: es2022[34m
 CJS [mBuild start[34m
 ESM [mBuild start
 [32mESM [m[1mdist\index.mjs [32m[22m641.00 B
-[m[32mESM [m⚡️ Build success in 55ms[32m
+[m[32mESM [m⚡️ Build success in 40ms[32m
 CJS [m[1mdist\index.js [32m[22m1.65 KB
-CJS [m⚡️ Build success in 55ms
-]0;npm[34mCLI [mWatching for changes in "."
-[34mCLI [mIgnoring changes in "**/{.git,node_modules}/**" | "dist"
-]0;npm prefix]0;npm]0;npm run types
+CJS [m⚡️ Build success in 41ms[34m
+CLI [mWatching for changes in "."
+[34mCLI [mIgnoring changes in "**/{.git,node_modules}/**" | "dist"[K
+]0;npm]0;npm run types
 > @repo/api@0.0.0 types
 > tsc -p tsconfig.types.json
 
-]0;C:\WINDOWS\system32\cmd.exe ^[?9001l[?1004lC
+]0;C:\WINDOWS\system32\cmd.exe ⠙[K

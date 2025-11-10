@@ -1,12 +1,22 @@
-[?9001h[?1004h[?25l[2J[m[H]0;npm[?25h]0;npm prefix]0;npm]0;npm run dev[?25l
+[?9001h[?1004h[?25l[2J[m[H]0;npm[?25h]0;npm run dev[?25l
 > @repo/database@1.0.0 predev
-> npm run generate[5;1H[?25h]0;npm]0;npm prefix]0;npm]0;npm run generate[?25l
+> npm run generate[5;1H[?25h]0;npm]0;npm run generate[?25l
 > @repo/database@1.0.0 generate
 > prisma generate[9;1H[?25h]0;C:\WINDOWS\system32\cmd.exe [2mPrisma schema loaded from prisma\schema.prisma
-[22m> Downloading Prisma engines for Node-API for [1mwindows[22m [                    ] 0%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [                    ] 1%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [=                   ] 4%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [=                   ] 7%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [==                  ] 11%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [===                 ] 14%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [===                 ] 17%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [====                ] 20%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [=====               ] 24%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [======              ] 28%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [======              ] 32%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [=======             ] 35%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [=======             ] 37%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [========            ] 41%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [=========           ] 44%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [=========           ] 47%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [==========          ] 51%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [===========         ] 55%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [============        ] 57%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [============        ] 61%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [=============       ] 65%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [==============      ] 68%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [==============      ] 72%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [===============     ] 75%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [================    ] 79%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [================    ] 81%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [=================   ] 86%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [==================  ] 89%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [=================== ] 93%[K> Downloading Prisma engines for Node-API for [1mwindows[22m [=================== ] 96%[K[K[K[K[?25l
-✔ Generated [1mPrisma Client[22m (v6.18.0)[2m to .\generated\client[22m in 227ms[13;1HStart by importing your Prisma Client (See: https://pris.ly/d/importing-client)[15;1HTip: Interested in query caching in just a few lines of code? Try Accelerate today! https://pris.ly/tip-3-accelerate
-[?25h
+[22m[90m┌─────────────────────────────────────────────────────────┐
+│  [34mUpdate available [90m6.18.0 -> 6.19.0                      │
+│  [mRun the following to update[28X[90m[28C│
+│    [m[1mnpm i --save-dev prisma@latest[22m[23X[90m[23C│
+│    [m[1mnpm i @prisma/client@latest[22m[26X[90m[26C│
+└─────────────────────────────────────────────────────────┘
+[m
+✔ Generated [1mPrisma Client[22m (v6.18.0)[2m to .\generated\client[22m in 82ms[K
 
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Need your database queries to be 1000x faster? Accelerate offers you that and more: https://pris.ly/tip-2-accelerate
+
+⠙[K⠙[K
 > @repo/database@1.0.0 dev
 > tsup src/* --format cjs,esm --watch --onSuccess "npm run types"
 
@@ -14,20 +24,20 @@
 [34mCLI [mUsing tsconfig: tsconfig.json
 [34mCLI [mtsup v8.5.0[K
 [34mCLI [mRunning in watch mode[K
-[34mCLI [mTarget: es2022
+[34mCLI [mTarget: es2022[K
 [34mCJS [mBuild start[K
 [34mESM [mBuild start[K
-[32mCJS [m[1mdist\seed.js   [32m[22m276.76 KB[m
-[32mCJS [m[1mdist\client.js [32m[22m276.44 KB[m
-[32mCJS [m⚡️ Build success in 80ms[K
-[32mESM [m[1mdist\seed.mjs           [32m[22m649.00 B[K[m
-[32mESM [m[1mdist\client.mjs         [32m[22m70.00 B[K[m
+[32mESM [m[1mdist\seed.mjs           [32m[22m649.00 B[m
+[32mESM [m[1mdist\client.mjs         [32m[22m70.00 B[m
 [32mESM [m[1mdist\chunk-RIGS2O7B.mjs [32m[22m276.62 KB[K[m
-[32mESM [m⚡️ Build success in 80ms[K
+[32mESM [m⚡️ Build success in 62ms[K
+[32mCJS [m[1mdist\seed.js   [32m[22m276.76 KB[K[m
+[32mCJS [m[1mdist\client.js [32m[22m276.44 KB[K[m
+[32mCJS [m⚡️ Build success in 63ms[K
 [34mCLI [mWatching for changes in "."
 [34mCLI [mIgnoring changes in "**/{.git,node_modules}/**" | "dist"[K
-]0;npm]0;npm prefix]0;npm]0;npm run types
+]0;npm]0;npm run types
 > @repo/database@1.0.0 types
 > tsc -p tsconfig.types.json
 
-]0;C:\WINDOWS\system32\cmd.exe ^[?9001l[?1004lC
+]0;C:\WINDOWS\system32\cmd.exe ⠙[K

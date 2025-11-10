@@ -1,4 +1,4 @@
-[?9001h[?1004h[?25l[2J[m[H]0;npm[?25h]0;npm prefix]0;npm]0;npm run build[?25l
+[?9001h[?1004h[?25l[2J[m[H]0;npm[?25h]0;npm run build[?25l
 > @repo/api@0.0.0 build
 > tsup src/* --format cjs,esm && npm run types[5;1H[?25h]0;C:\WINDOWS\system32\cmd.exe [34mCLI [mBuilding entry: src/index.ts
 [34mCLI [mUsing tsconfig: tsconfig.json[34m
@@ -7,16 +7,11 @@ CLI [mTarget: es2022[34m
 CJS [mBuild start[34m
 ESM [mBuild start
 [32mCJS [m[1mdist\index.js [32m[22m1.65 KB
-[m[32mCJS [m⚡️ Build success in 56ms[32m
+[m[32mCJS [m⚡️ Build success in 34ms[32m
 ESM [m[1mdist\index.mjs [32m[22m641.00 B
-ESM [m⚡️ Build success in 56ms
-]0;npm]0;npm prefix]0;npm]0;npm run types
+ESM [m⚡️ Build success in 34ms
+]0;npm]0;npm run types
 > @repo/api@0.0.0 types
 > tsc -p tsconfig.types.json
 
-]0;C:\WINDOWS\system32\cmd.exe [37m[40mnpm[m [36m[40mnotice[m 
-[37m[40mnpm[m [36m[40mnotice[m New [31mmajor [mversion of npm available! [31m10.2.4 [m-> [32m11.6.2[K[m
-[37m[40mnpm[m [36m[40mnotice[m Changelog: [36mhttps://github.com/npm/cli/releases/tag/v11.6.2[K[m
-[37m[40mnpm[m [36m[40mnotice[m Run [32mnpm install -g npm@11.6.2 [mto update![K
-[37m[40mnpm[m [36m[40mnotice[m[K
-[?9001l[?1004l
+]0;C:\WINDOWS\system32\cmd.exe ⠙[K[K[?9001l[?1004l
