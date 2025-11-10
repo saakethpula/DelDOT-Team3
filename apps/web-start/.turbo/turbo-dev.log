@@ -1,22 +1,67 @@
-[?9001h[?1004h[?25l[2J[m[H]0;npm[?25h]0;npm run dev[?25l
+
 > web-start@0.1.0 dev
-> vite dev --port 3001[5;1H[?25h]0;C:\WINDOWS\system32\cmd.exe [?25l[16;1H[?25h
+> vite dev --port 3001
+
+[1G[0K
 
 
 
-[?25l[H[K
-  [32m[1mVITE[22m v7.1.12  [m[2mready in [22m[1m5045[22m ms[K
-[K
-  [32m➜  [m[1mLocal[22m:   [36mhttp://localhost:[1m3001[22m/[K[m[2m
-  [32m➜  [m[1m[2mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m[K
-  [32m➜  [m[1mDebug[22m:   [33m[2mhttp://localhost:[1m3001[22m[2m/__debug[m[K[32m[2m
-  ➜  [m[2mpress [22m[1mh + enter[22m[2m to show help[22m[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K
-[K[8;1H[?25h
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J
+  [32m[1mVITE[22m v7.1.12[39m  [2mready in [0m[1m3951[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m3001[22m/[39m
+[2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
+  [32m➜[39m  [1mDebug[22m:   [2m[33mhttp://localhost:[1m3001[22m[2m/__debug[39m[22m
+[2m[32m  ➜[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
+ReferenceError: localStorage is not defined
+    at /Users/maxim/Desktop/Scripts Fall 2023/Fall 2025/498/DelDOT-Team3/apps/web-start/src/routes/search.tsx:44:19
+    at useReducer (/Users/maxim/Desktop/Scripts Fall 2023/Fall 2025/498/DelDOT-Team3/apps/web-start/node_modules/[4m.vite[24m/deps_ssr/react-dom_server.js:3016:86)
+    at Object.useState (/Users/maxim/Desktop/Scripts Fall 2023/Fall 2025/498/DelDOT-Team3/apps/web-start/node_modules/[4m.vite[24m/deps_ssr/react-dom_server.js:7356:18)
+    at useState (/Users/maxim/Desktop/Scripts Fall 2023/Fall 2025/498/DelDOT-Team3/apps/web-start/node_modules/[4m.vite[24m/deps_ssr/chunk-I3ZCNIXP.js:959:36)
+    at ComplaintForm (/Users/maxim/Desktop/Scripts Fall 2023/Fall 2025/498/DelDOT-Team3/apps/web-start/src/routes/search.tsx:43:35)
+    at Object.react_stack_bottom_frame (/Users/maxim/Desktop/Scripts Fall 2023/Fall 2025/498/DelDOT-Team3/apps/web-start/node_modules/[4m.vite[24m/deps_ssr/react-dom_server.js:7435:18)
+    at renderWithHooks (/Users/maxim/Desktop/Scripts Fall 2023/Fall 2025/498/DelDOT-Team3/apps/web-start/node_modules/[4m.vite[24m/deps_ssr/react-dom_server.js:3975:24)
+    at renderElement (/Users/maxim/Desktop/Scripts Fall 2023/Fall 2025/498/DelDOT-Team3/apps/web-start/node_modules/[4m.vite[24m/deps_ssr/react-dom_server.js:4235:25)
+    at retryNode (/Users/maxim/Desktop/Scripts Fall 2023/Fall 2025/498/DelDOT-Team3/apps/web-start/node_modules/[4m.vite[24m/deps_ssr/react-dom_server.js:4946:43)
+    at renderNodeDestructive (/Users/maxim/Desktop/Scripts Fall 2023/Fall 2025/498/DelDOT-Team3/apps/web-start/node_modules/[4m.vite[24m/deps_ssr/react-dom_server.js:4906:270)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0JReferenceError: localStorage is not defined
+    at /Users/maxim/Desktop/Scripts Fall 2023/Fall 2025/498/DelDOT-Team3/apps/web-start/src/routes/search.tsx:44:19
+    at useReducer (/Users/maxim/Desktop/Scripts Fall 2023/Fall 2025/498/DelDOT-Team3/apps/web-start/node_modules/[4m.vite[24m/deps_ssr/react-dom_server.js:3016:86)
+    at Object.useState (/Users/maxim/Desktop/Scripts Fall 2023/Fall 2025/498/DelDOT-Team3/apps/web-start/node_modules/[4m.vite[24m/deps_ssr/react-dom_server.js:7356:18)
+    at useState (/Users/maxim/Desktop/Scripts Fall 2023/Fall 2025/498/DelDOT-Team3/apps/web-start/node_modules/[4m.vite[24m/deps_ssr/chunk-I3ZCNIXP.js:959:36)
+    at ComplaintForm (/Users/maxim/Desktop/Scripts Fall 2023/Fall 2025/498/DelDOT-Team3/apps/web-start/src/routes/search.tsx:43:35)
+    at Object.react_stack_bottom_frame (/Users/maxim/Desktop/Scripts Fall 2023/Fall 2025/498/DelDOT-Team3/apps/web-start/node_modules/[4m.vite[24m/deps_ssr/react-dom_server.js:7435:18)
+    at renderWithHooks (/Users/maxim/Desktop/Scripts Fall 2023/Fall 2025/498/DelDOT-Team3/apps/web-start/node_modules/[4m.vite[24m/deps_ssr/react-dom_server.js:3975:24)
+    at renderElement (/Users/maxim/Desktop/Scripts Fall 2023/Fall 2025/498/DelDOT-Team3/apps/web-start/node_modules/[4m.vite[24m/deps_ssr/react-dom_server.js:4235:25)
+    at retryNode (/Users/maxim/Desktop/Scripts Fall 2023/Fall 2025/498/DelDOT-Team3/apps/web-start/node_modules/[4m.vite[24m/deps_ssr/react-dom_server.js:4946:43)
+    at renderNodeDestructive (/Users/maxim/Desktop/Scripts Fall 2023/Fall 2025/498/DelDOT-Team3/apps/web-start/node_modules/[4m.vite[24m/deps_ssr/react-dom_server.js:4906:270) [33m(x2)[39m

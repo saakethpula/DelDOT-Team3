@@ -2,39 +2,38 @@
 > @repo/database@1.0.0 prebuild
 > npm run generate[5;1H[?25h]0;npm]0;npm run generate[?25l
 > @repo/database@1.0.0 generate
-> prisma generate[9;1H[?25h]0;C:\WINDOWS\system32\cmd.exe [2mPrisma schema loaded from prisma\schema.prisma
-[22m[90m┌─────────────────────────────────────────────────────────┐
-│  [34mUpdate available [90m6.18.0 -> 6.19.0                      │
-│  [mRun the following to update[28X[90m[28C│
-│    [m[1mnpm i --save-dev prisma@latest[22m[23X[90m[23C│
-│    [m[1mnpm i @prisma/client@latest[22m[26X[90m[26C│
-└─────────────────────────────────────────────────────────┘
-[m
-✔ Generated [1mPrisma Client[22m (v6.18.0)[2m to .\generated\client[22m in 162ms[K
+> prisma generate
+
+[1G[0K[2mPrisma schema loaded from prisma/schema.prisma[22m
+
+
+
+✔ Generated [1mPrisma Client[22m (v6.18.0)[2m to ./generated/client[22m in 82ms
 
 Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
 
-Tip: Want to turn off tips and other hints? https://pris.ly/tip-4-nohints
+Tip: Need your database queries to be 1000x faster? Accelerate offers you that and more: https://pris.ly/tip-2-accelerate
 
-[K⠙[K
+[1G[0K⠙[1G[0K[1G[0K⠙[1G[0K
 > @repo/database@1.0.0 build
 > tsup src/* --format cjs,esm && npm run types
 
-[34mCLI [mBuilding entry: src/client.ts, src/seed.ts
-[34mCLI [mUsing tsconfig: tsconfig.json
-[34mCLI [mtsup v8.5.0[K
-[34mCLI [mTarget: es2022[K
-[34mCJS [mBuild start[K
-[34mESM [mBuild start[K
-[32mESM [m[1mdist\client.mjs         [32m[22m70.00 B[m
-[32mESM [m[1mdist\seed.mjs           [32m[22m649.00 B[m
-[32mESM [m[1mdist\chunk-RIGS2O7B.mjs [32m[22m276.62 KB[K[m
-[32mESM [m⚡️ Build success in 95ms[K
-[32mCJS [m[1mdist\seed.js   [32m[22m276.76 KB[K[m
-[32mCJS [m[1mdist\client.js [32m[22m276.44 KB[K[m
-[32mCJS [m⚡️ Build success in 100ms[K
-]0;npm]0;npm run types
+[1G[0K⠙[1G[0K[34mCLI[39m Building entry: src/client.ts, src/seed.ts
+[34mCLI[39m Using tsconfig: tsconfig.json
+[34mCLI[39m tsup v8.5.0
+[34mCLI[39m Target: es2022
+[34mCJS[39m Build start
+[34mESM[39m Build start
+[32mESM[39m [1mdist/client.mjs         [22m[32m70.00 B[39m
+[32mESM[39m [1mdist/chunk-LDT6DNTX.mjs [22m[32m292.70 KB[39m
+[32mESM[39m [1mdist/seed.mjs           [22m[32m3.72 KB[39m
+[32mESM[39m ⚡️ Build success in 35ms
+[32mCJS[39m [1mdist/seed.js   [22m[32m296.05 KB[39m
+[32mCJS[39m [1mdist/client.js [22m[32m292.53 KB[39m
+[32mCJS[39m ⚡️ Build success in 35ms
+
 > @repo/database@1.0.0 types
 > tsc -p tsconfig.types.json
 
-]0;C:\WINDOWS\system32\cmd.exe ⠙[K[K[?9001l[?1004l
+]0;C:\WINDOWS\system32\cmd.exe ⠙
+[K[K[?9001l[?1004l

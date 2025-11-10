@@ -1,0 +1,26 @@
+[
+  {
+    "fileName": "bill_of_sale.pdf",
+    "fileType": "application/pdf",
+    "fileSize": 234567,
+    "url": "https://example.com/seed-files/bill_of_sale.pdf",
+    "notes": "Bill of sale provided by customer",
+    "complaintCaseNumber": "CASE-2025-0001"
+  },
+  {
+    "fileName": "photos.zip",
+    "fileType": "application/zip",
+    "fileSize": 1024000,
+    "url": "https://example.com/seed-files/photos.zip",
+    "notes": "Photos of vehicle damage",
+    "complaintCaseNumber": "CASE-2025-0001"
+  },
+  {
+    "fileName": "invoice.pdf",
+    "fileType": "application/pdf",
+    "fileSize": 120456,
+    "url": "https://example.com/seed-files/invoice.pdf",
+    "notes": "Invoice from repair shop",
+    "complaintCaseNumber": "CASE-2025-0002"
+  }
+]

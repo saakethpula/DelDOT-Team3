@@ -4,9 +4,13 @@ import { LinksModule } from './links/links.module';
 
 import { AppService } from './app.service';
 import { AppController } from './app.controller';
+import { VehicleModule } from './vehicle/vehicle.module';
+import { ComplaintModule } from './complaint/complaint.module';
+import { UserModule } from './user/user.module';
+import { DocumentModule } from './document/document.module';
 
 @Module({
-  imports: [LinksModule],
+  imports: [LinksModule, VehicleModule, ComplaintModule, UserModule, DocumentModule],
   controllers: [AppController],
   providers: [AppService],
 })
