@@ -1,7 +1,37 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { useState } from 'react';
+import { useEffect,useState } from 'react';
 
-export const Route = createFileRoute('/search')({
+interface ComplaintFormData {
+  customerName: string;
+  customerPhone: string;
+  customerEmail: string;
+  customerAddress: string;
+  customerCity: string;
+  customerState: string;
+  customerZip: string;
+  respondentName: string;
+  respondentPhone: string;
+  respondentAddress: string;
+  respondentCity: string;
+  respondentState: string;
+  respondentZip: string;
+  dealershipRep: string;
+  vin: string;
+  year: string;
+  make: string;
+  model: string;
+  color: string;
+  plateNumber: string;
+  plateOrUtitle: string;
+  complaintType: string;
+  explainComplaint: string;
+  signatureConfirmed: boolean;
+}
+
+
+
+
+export const Route = createFileRoute('/complaintForm')({
   component: ComplaintForm,
 });
 
@@ -10,7 +40,10 @@ function ComplaintForm() {
   const gold = '#EAD788';
   const lightGray = '#F7F7F7';
 
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ComplaintFormData>(() => {
+    const saved = localStorage.getItem("complaint_form_data");
+    return saved
+    ? JSON.parse(saved): {
     customerName: '',
     customerPhone: '',
     customerEmail: '',
@@ -34,11 +67,14 @@ function ComplaintForm() {
     plateOrUtitle: '',
     complaintType: '',
     explainComplaint: '',
-    signatureConfirmed: false,
+    signatureConfirmed: false};
   });
 
   const [isConfirmed, setIsConfirmed] = useState(false);
   const [referenceId, setReferenceId] = useState<string | null>(null);
+
+  useEffect(() => {localStorage.setItem("complaint_form_data", JSON.stringify(formData));}, [formData]);
+
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -83,6 +119,7 @@ function ComplaintForm() {
     console.log('Submitting complaint:', formData);
     await new Promise((res) => setTimeout(res, 1000)); // mock backend
     alert('Complaint submitted successfully!');
+    localStorage.removeItem("complaint_form_data");
   };
 
   const sectionTitle = {

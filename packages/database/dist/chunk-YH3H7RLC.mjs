@@ -1,11 +1,16 @@
-"use strict";
 var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __commonJS = (cb, mod) => function __require() {
+var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, {
+  get: (a, b) => (typeof require !== "undefined" ? require : a)[b]
+}) : x)(function(x) {
+  if (typeof require !== "undefined") return require.apply(this, arguments);
+  throw Error('Dynamic require of "' + x + '" is not supported');
+});
+var __commonJS = (cb, mod) => function __require2() {
   return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
 };
 var __export = (target, all) => {
@@ -29,11 +34,10 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
   mod
 ));
-var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
 // generated/client/runtime/library.js
 var require_library = __commonJS({
-  "generated/client/runtime/library.js"(exports2, module2) {
+  "generated/client/runtime/library.js"(exports, module) {
     "use strict";
     var yu = Object.create;
     var jt = Object.defineProperty;
@@ -61,7 +65,7 @@ var require_library = __commonJS({
     });
     var as = ue((Ng, ss) => {
       "use strict";
-      var Fc = require("os"), os = require("tty"), de = hi(), { env: G } = process, Qe;
+      var Fc = __require("os"), os = __require("tty"), de = hi(), { env: G } = process, Qe;
       de("no-color") || de("no-colors") || de("color=false") || de("color=never") ? Qe = 0 : (de("color") || de("colors") || de("color=true") || de("color=always")) && (Qe = 1);
       "FORCE_COLOR" in G && (G.FORCE_COLOR === "true" ? Qe = 1 : G.FORCE_COLOR === "false" ? Qe = 0 : Qe = G.FORCE_COLOR.length === 0 ? 1 : Math.min(parseInt(G.FORCE_COLOR, 10), 3));
       function yi(e) {
@@ -178,7 +182,7 @@ var require_library = __commonJS({
     });
     var As = ue((Bh, _e) => {
       "use strict";
-      var Fi = require("fs"), Mi = require("path"), np = require("os"), ip = require("crypto"), op = vs(), Ts = op.version, sp = /(?:^|^)\s*(?:export\s+)?([\w.-]+)(?:\s*=\s*?|:\s+?)(\s*'(?:\\'|[^'])*'|\s*"(?:\\"|[^"])*"|\s*`(?:\\`|[^`])*`|[^#\r\n]+)?\s*(?:#.*)?(?:$|$)/mg;
+      var Fi = __require("fs"), Mi = __require("path"), np = __require("os"), ip = __require("crypto"), op = vs(), Ts = op.version, sp = /(?:^|^)\s*(?:export\s+)?([\w.-]+)(?:\s*=\s*?|:\s+?)(\s*'(?:\\'|[^'])*'|\s*"(?:\\"|[^"])*"|\s*`(?:\\`|[^`])*`|[^#\r\n]+)?\s*(?:#.*)?(?:$|$)/mg;
       function ap(e) {
         let r = {}, t = e.toString();
         t = t.replace(/\r\n?/mg, `
@@ -373,7 +377,7 @@ var require_library = __commonJS({
     });
     var jf = {};
     tr(jf, { DMMF: () => ct, Debug: () => N, Decimal: () => Fe, Extensions: () => ni, MetricsClient: () => Lr, PrismaClientInitializationError: () => P, PrismaClientKnownRequestError: () => z, PrismaClientRustPanicError: () => ae, PrismaClientUnknownRequestError: () => V, PrismaClientValidationError: () => Z, Public: () => ii, Sql: () => ie, createParam: () => va, defineDmmfProperty: () => Ca, deserializeJsonResponse: () => Vr, deserializeRawResult: () => Xn, dmmfToRuntimeDataModel: () => Ns, empty: () => Oa, getPrismaClient: () => fu, getRuntime: () => Kn, join: () => Da, makeStrictEnum: () => gu, makeTypedQueryFactory: () => Ia, objectEnumValues: () => On, raw: () => no, serializeJsonQuery: () => $n, skip: () => Mn, sqltag: () => io, warnEnvConflicts: () => hu, warnOnce: () => at });
-    module2.exports = vu(jf);
+    module.exports = vu(jf);
     var ni = {};
     tr(ni, { defineExtension: () => ko, getExtensionContext: () => _o });
     function ko(e) {
@@ -479,7 +483,7 @@ var require_library = __commonJS({
       Yr.length = 0;
     }
     var gr = N;
-    var Go = O(require("fs"));
+    var Go = O(__require("fs"));
     function ai() {
       let e = process.env.PRISMA_QUERY_ENGINE_LIBRARY;
       if (!(e && Go.default.existsSync(e)) && process.arch === "ia32") throw new Error('The default query engine type (Node-API, "library") is currently not supported for 32bit Node. Please set `engineType = "binary"` in the "generator" block of your "schema.prisma" file (or use the environment variables "PRISMA_CLIENT_ENGINE_TYPE=binary" and/or "PRISMA_CLI_QUERY_ENGINE_TYPE=binary".)');
@@ -490,9 +494,9 @@ var require_library = __commonJS({
       let t = r === "url";
       return e.includes("windows") ? t ? "query_engine.dll.node" : `query_engine-${e}.dll.node` : e.includes("darwin") ? t ? `${Ut}.dylib.node` : `${Ut}-${e}.dylib.node` : t ? `${Ut}.so.node` : `${Ut}-${e}.so.node`;
     }
-    var Ko = O(require("child_process"));
-    var mi = O(require("fs/promises"));
-    var Ht = O(require("os"));
+    var Ko = O(__require("child_process"));
+    var mi = O(__require("fs/promises"));
+    var Ht = O(__require("os"));
     var Oe = Symbol.for("@ts-pattern/matcher");
     var Gu = Symbol.for("@ts-pattern/isVariadic");
     var Wt = "@ts-pattern/anonymous-select-key";
@@ -661,7 +665,7 @@ var require_library = __commonJS({
         return this;
       }
     };
-    var Ho = require("util");
+    var Ho = __require("util");
     var Ju = { warn: Ie("prisma:warn") };
     var Ku = { warn: () => !process.env.PRISMA_DISABLE_WARNINGS };
     function Jt(e, ...r) {
@@ -821,7 +825,7 @@ ${c}`);
     }
     var Xt = {};
     tr(Xt, { beep: () => kc, clearScreen: () => Cc, clearTerminal: () => Ic, cursorBackward: () => mc, cursorDown: () => pc, cursorForward: () => dc, cursorGetPosition: () => hc, cursorHide: () => Ec, cursorLeft: () => ts, cursorMove: () => cc, cursorNextLine: () => yc, cursorPrevLine: () => bc, cursorRestorePosition: () => gc, cursorSavePosition: () => fc, cursorShow: () => wc, cursorTo: () => uc, cursorUp: () => rs, enterAlternativeScreen: () => Dc, eraseDown: () => Tc, eraseEndLine: () => vc, eraseLine: () => ns, eraseLines: () => xc, eraseScreen: () => gi, eraseStartLine: () => Pc, eraseUp: () => Sc, exitAlternativeScreen: () => Oc, iTerm: () => Lc, image: () => Nc, link: () => _c, scrollDown: () => Ac, scrollUp: () => Rc });
-    var Zt = O(require("process"), 1);
+    var Zt = O(__require("process"), 1);
     var zt = globalThis.window?.document !== void 0;
     var gg = globalThis.process?.versions?.node !== void 0;
     var hg = globalThis.process?.versions?.bun !== void 0;
@@ -976,7 +980,7 @@ ${c}`);
       };
     }
     var Wc = O(on());
-    var M = O(require("path"));
+    var M = O(__require("path"));
     var Jc = O(on());
     var wh = N("prisma:engines");
     function ms() {
@@ -1006,7 +1010,7 @@ ${c}`);
     M.default.join(__dirname, "../libquery_engine-rhel-openssl-1.1.x.so.node");
     M.default.join(__dirname, "../libquery_engine-rhel-openssl-3.0.x.so.node");
     M.default.join(__dirname, "../query_engine-windows.dll.node");
-    var Si = O(require("fs"));
+    var Si = O(__require("fs"));
     var fs = gr("chmodPlusX");
     function Ri(e) {
       if (process.platform === "win32") return;
@@ -1110,13 +1114,13 @@ ${(0, ws.default)(Hc(n), 2)}
       if (typeof e != "string") throw new TypeError(`Expected a \`string\`, got \`${typeof e}\``);
       return e.replace(rp, "");
     }
-    var it = O(require("path"));
+    var it = O(__require("path"));
     function Li(e) {
       return it.default.sep === it.default.posix.sep ? e : e.split(it.default.sep).join(it.default.posix.sep);
     }
     var qi = O(As());
-    var un = O(require("fs"));
-    var xr = O(require("path"));
+    var un = O(__require("fs"));
+    var xr = O(__require("path"));
     function Cs(e) {
       let r = e.ignoreProcessEnv ? {} : process.env, t = (n) => n.match(/(.?\${(?:[a-zA-Z0-9_]+)?})/g)?.reduce(function(o, s) {
         let a = /(.?)\${([a-zA-Z0-9_]+)?}/g.exec(s);
@@ -2162,7 +2166,7 @@ Env vars from ${Y(l)} overwrite the ones from ${Y(a)}
     }
     var Rr = ((b) => (b.findUnique = "findUnique", b.findUniqueOrThrow = "findUniqueOrThrow", b.findFirst = "findFirst", b.findFirstOrThrow = "findFirstOrThrow", b.findMany = "findMany", b.create = "create", b.createMany = "createMany", b.createManyAndReturn = "createManyAndReturn", b.update = "update", b.updateMany = "updateMany", b.updateManyAndReturn = "updateManyAndReturn", b.upsert = "upsert", b.delete = "delete", b.deleteMany = "deleteMany", b.groupBy = "groupBy", b.count = "count", b.aggregate = "aggregate", b.findRaw = "findRaw", b.aggregateRaw = "aggregateRaw", b))(Rr || {});
     var Xs = O(Di());
-    var Zs = O(require("fs"));
+    var Zs = O(__require("fs"));
     var Hs = { keyword: De, entity: De, value: (e) => W(nr(e)), punctuation: nr, directive: De, function: De, variable: (e) => W(nr(e)), string: (e) => W(qe(e)), boolean: Ie, number: De, comment: Hr };
     var dd = (e) => e;
     var vn = {};
@@ -3483,10 +3487,10 @@ Note that ${s.bold("include")} statements only accept relation fields.`, a;
       return e != null && e[qn] === qn;
     }
     var cu = O(Ti());
-    var pu = require("async_hooks");
-    var du = require("events");
-    var mu = O(require("fs"));
-    var ri = O(require("path"));
+    var pu = __require("async_hooks");
+    var du = __require("events");
+    var mu = O(__require("fs"));
+    var ri = O(__require("path"));
     var ie = class e {
       constructor(r, t) {
         if (r.length - 1 !== t.length) throw r.length === 0 ? new TypeError("Expected at least 1 string") : new TypeError(`Expected ${r.length} strings to have ${r.length - 1} values`);
@@ -3965,8 +3969,8 @@ Learn how: https://pris.ly/d/${ol[r]}-build`;
     function al(e, r) {
       return e ? e.datasources ? e.datasources : e.datasourceUrl ? { [r[0]]: { url: e.datasourceUrl } } : {} : {};
     }
-    var dl = O(require("fs"));
-    var St = O(require("path"));
+    var dl = O(__require("fs"));
+    var St = O(__require("path"));
     function Qn(e) {
       let { runtimeBinaryTarget: r } = e;
       return `Add "${r}" to \`binaryTargets\` in the "schema.prisma" file and run \`prisma generate\` after saving it:
@@ -4653,8 +4657,8 @@ ${r}`, R(t, true));
     function Ol(e) {
       if (e?.kind === "itx") return e.options.id;
     }
-    var wo = O(require("os"));
-    var kl = O(require("path"));
+    var wo = O(__require("os"));
+    var kl = O(__require("path"));
     var Eo = Symbol("PrismaLibraryEngineCache");
     function ff() {
       let e = globalThis;
@@ -5698,9 +5702,9 @@ ${n}`;
 
 // generated/client/index.js
 var require_client = __commonJS({
-  "generated/client/index.js"(exports2) {
+  "generated/client/index.js"(exports) {
     "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
+    Object.defineProperty(exports, "__esModule", { value: true });
     var {
       PrismaClientKnownRequestError: PrismaClientKnownRequestError2,
       PrismaClientUnknownRequestError: PrismaClientUnknownRequestError2,
@@ -5725,8 +5729,8 @@ var require_client = __commonJS({
       createParam: createParam2
     } = require_library();
     var Prisma = {};
-    exports2.Prisma = Prisma;
-    exports2.$Enums = {};
+    exports.Prisma = Prisma;
+    exports.$Enums = {};
     Prisma.prismaVersion = {
       client: "6.18.0",
       engine: "34b5a692b7bd79939a9a2c3ef97d816e749cda2f"
@@ -5752,20 +5756,20 @@ var require_client = __commonJS({
       JsonNull: objectEnumValues2.classes.JsonNull,
       AnyNull: objectEnumValues2.classes.AnyNull
     };
-    var path = require("path");
-    exports2.Prisma.TransactionIsolationLevel = makeStrictEnum2({
+    var path = __require("path");
+    exports.Prisma.TransactionIsolationLevel = makeStrictEnum2({
       ReadUncommitted: "ReadUncommitted",
       ReadCommitted: "ReadCommitted",
       RepeatableRead: "RepeatableRead",
       Serializable: "Serializable"
     });
-    exports2.Prisma.UserScalarFieldEnum = {
+    exports.Prisma.UserScalarFieldEnum = {
       id: "id",
       name: "name",
       email: "email",
       emailVerified: "emailVerified"
     };
-    exports2.Prisma.ComplaintScalarFieldEnum = {
+    exports.Prisma.ComplaintScalarFieldEnum = {
       id: "id",
       customerName: "customerName",
       customerPhone: "customerPhone",
@@ -5796,7 +5800,7 @@ var require_client = __commonJS({
       createdAt: "createdAt",
       updatedAt: "updatedAt"
     };
-    exports2.Prisma.VehicleScalarFieldEnum = {
+    exports.Prisma.VehicleScalarFieldEnum = {
       id: "id",
       vin: "vin",
       year: "year",
@@ -5807,7 +5811,7 @@ var require_client = __commonJS({
       plateOrUtitle: "plateOrUtitle",
       complaintId: "complaintId"
     };
-    exports2.Prisma.DocumentScalarFieldEnum = {
+    exports.Prisma.DocumentScalarFieldEnum = {
       id: "id",
       fileName: "fileName",
       fileType: "fileType",
@@ -5817,26 +5821,26 @@ var require_client = __commonJS({
       complaintId: "complaintId",
       uploadedAt: "uploadedAt"
     };
-    exports2.Prisma.SortOrder = {
+    exports.Prisma.SortOrder = {
       asc: "asc",
       desc: "desc"
     };
-    exports2.Prisma.QueryMode = {
+    exports.Prisma.QueryMode = {
       default: "default",
       insensitive: "insensitive"
     };
-    exports2.Prisma.NullsOrder = {
+    exports.Prisma.NullsOrder = {
       first: "first",
       last: "last"
     };
-    exports2.ComplaintStatus = exports2.$Enums.ComplaintStatus = {
+    exports.ComplaintStatus = exports.$Enums.ComplaintStatus = {
       NEW: "NEW",
       UNDER_REVIEW: "UNDER_REVIEW",
       INVESTIGATING: "INVESTIGATING",
       CLOSED: "CLOSED",
       REFERRED: "REFERRED"
     };
-    exports2.Prisma.ModelName = {
+    exports.Prisma.ModelName = {
       User: "User",
       Complaint: "Complaint",
       Vehicle: "Vehicle",
@@ -5850,7 +5854,7 @@ var require_client = __commonJS({
           "value": "prisma-client-js"
         },
         "output": {
-          "value": "/Users/saakethpula/Documents/498 project/yo/DelDOT-Team3/packages/database/generated/client",
+          "value": "/Users/maxim/Desktop/Scripts Fall 2023/Fall 2025/498/DelDOT-Team3/packages/database/generated/client",
           "fromEnvVar": null
         },
         "config": {
@@ -5864,11 +5868,12 @@ var require_client = __commonJS({
           }
         ],
         "previewFeatures": [],
-        "sourceFilePath": "/Users/saakethpula/Documents/498 project/yo/DelDOT-Team3/packages/database/prisma/schema.prisma",
+        "sourceFilePath": "/Users/maxim/Desktop/Scripts Fall 2023/Fall 2025/498/DelDOT-Team3/packages/database/prisma/schema.prisma",
         "isCustomOutput": true
       },
       "relativeEnvPaths": {
-        "rootEnvPath": null
+        "rootEnvPath": ".env",
+        "schemaEnvPath": "../../prisma/.env"
       },
       "relativePath": "../../prisma",
       "clientVersion": "6.18.0",
@@ -5890,7 +5895,7 @@ var require_client = __commonJS({
       "inlineSchemaHash": "4ee3775ec22c6a2352da580c0af5b24ac7e0a8b811e0d0386adac584ce393e5a",
       "copyEngine": true
     };
-    var fs = require("fs");
+    var fs = __require("fs");
     config.dirname = __dirname;
     if (!fs.existsSync(path.join(__dirname, "schema.prisma"))) {
       const alternativePaths = [
@@ -5904,7 +5909,7 @@ var require_client = __commonJS({
       config.isBundled = true;
     }
     config.runtimeDataModel = JSON.parse('{"models":{"User":{"dbName":null,"schema":null,"fields":[{"name":"id","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":true,"isReadOnly":false,"hasDefaultValue":true,"type":"String","nativeType":null,"default":{"name":"cuid","args":[1]},"isGenerated":false,"isUpdatedAt":false},{"name":"name","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"email","kind":"scalar","isList":false,"isRequired":false,"isUnique":true,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"emailVerified","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"DateTime","nativeType":null,"isGenerated":false,"isUpdatedAt":false}],"primaryKey":null,"uniqueFields":[],"uniqueIndexes":[],"isGenerated":false},"Complaint":{"dbName":null,"schema":null,"fields":[{"name":"id","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":true,"isReadOnly":false,"hasDefaultValue":true,"type":"String","nativeType":null,"default":{"name":"cuid","args":[1]},"isGenerated":false,"isUpdatedAt":false},{"name":"customerName","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"customerPhone","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"customerEmail","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"customerAddress","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"customerCity","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"customerState","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"customerZip","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"respondentName","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"respondentPhone","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"respondentAddress","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"respondentCity","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"respondentState","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"respondentZip","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"dealershipRep","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"complaintType","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"explainComplaint","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":["Text",[]],"isGenerated":false,"isUpdatedAt":false},{"name":"signatureName","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"signatureDate","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"DateTime","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"dmvRepresentative","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"dmvRepresentativeDate","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"DateTime","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"dmvSupervisor","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"dmvSupervisorDate","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"DateTime","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"caseNumber","kind":"scalar","isList":false,"isRequired":false,"isUnique":true,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"dateReceived","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"DateTime","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"investigator","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"status","kind":"enum","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":true,"type":"ComplaintStatus","nativeType":null,"default":"NEW","isGenerated":false,"isUpdatedAt":false},{"name":"vehicle","kind":"object","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"Vehicle","nativeType":null,"relationName":"ComplaintToVehicle","relationFromFields":[],"relationToFields":[],"isGenerated":false,"isUpdatedAt":false},{"name":"documents","kind":"object","isList":true,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"Document","nativeType":null,"relationName":"ComplaintToDocument","relationFromFields":[],"relationToFields":[],"isGenerated":false,"isUpdatedAt":false},{"name":"createdAt","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":true,"type":"DateTime","nativeType":null,"default":{"name":"now","args":[]},"isGenerated":false,"isUpdatedAt":false},{"name":"updatedAt","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"DateTime","nativeType":null,"isGenerated":false,"isUpdatedAt":true}],"primaryKey":null,"uniqueFields":[],"uniqueIndexes":[],"isGenerated":false},"Vehicle":{"dbName":null,"schema":null,"fields":[{"name":"id","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":true,"isReadOnly":false,"hasDefaultValue":true,"type":"String","nativeType":null,"default":{"name":"cuid","args":[1]},"isGenerated":false,"isUpdatedAt":false},{"name":"vin","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":["VarChar",["17"]],"isGenerated":false,"isUpdatedAt":false},{"name":"year","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"Int","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"make","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"model","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"color","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"plateNumber","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"plateOrUtitle","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"complaint","kind":"object","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"Complaint","nativeType":null,"relationName":"ComplaintToVehicle","relationFromFields":["complaintId"],"relationToFields":["id"],"isGenerated":false,"isUpdatedAt":false},{"name":"complaintId","kind":"scalar","isList":false,"isRequired":true,"isUnique":true,"isId":false,"isReadOnly":true,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false}],"primaryKey":null,"uniqueFields":[],"uniqueIndexes":[],"isGenerated":false},"Document":{"dbName":null,"schema":null,"fields":[{"name":"id","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":true,"isReadOnly":false,"hasDefaultValue":true,"type":"String","nativeType":null,"default":{"name":"cuid","args":[1]},"isGenerated":false,"isUpdatedAt":false},{"name":"fileName","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"fileType","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"fileSize","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"Int","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"url","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"notes","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"complaint","kind":"object","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"Complaint","nativeType":null,"relationName":"ComplaintToDocument","relationFromFields":["complaintId"],"relationToFields":["id"],"isGenerated":false,"isUpdatedAt":false},{"name":"complaintId","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":true,"hasDefaultValue":false,"type":"String","nativeType":null,"isGenerated":false,"isUpdatedAt":false},{"name":"uploadedAt","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":true,"type":"DateTime","nativeType":null,"default":{"name":"now","args":[]},"isGenerated":false,"isUpdatedAt":false}],"primaryKey":null,"uniqueFields":[],"uniqueIndexes":[],"isGenerated":false}},"enums":{"ComplaintStatus":{"values":[{"name":"NEW","dbName":null},{"name":"UNDER_REVIEW","dbName":null},{"name":"INVESTIGATING","dbName":null},{"name":"CLOSED","dbName":null},{"name":"REFERRED","dbName":null}],"dbName":null}},"types":{}}');
-    defineDmmfProperty2(exports2.Prisma, config.runtimeDataModel);
+    defineDmmfProperty2(exports.Prisma, config.runtimeDataModel);
     config.engineWasm = void 0;
     config.compilerWasm = void 0;
     var { warnEnvConflicts: warnEnvConflicts2 } = require_library();
@@ -5913,8 +5918,8 @@ var require_client = __commonJS({
       schemaEnvPath: config.relativeEnvPaths.schemaEnvPath && path.resolve(config.dirname, config.relativeEnvPaths.schemaEnvPath)
     });
     var PrismaClient2 = getPrismaClient2(config);
-    exports2.PrismaClient = PrismaClient2;
-    Object.assign(exports2, Prisma);
+    exports.PrismaClient = PrismaClient2;
+    Object.assign(exports, Prisma);
     path.join(__dirname, "libquery_engine-darwin-arm64.dylib.node");
     path.join(process.cwd(), "generated/client/libquery_engine-darwin-arm64.dylib.node");
     path.join(__dirname, "schema.prisma");
@@ -5927,16 +5932,16 @@ var client_exports = {};
 __export(client_exports, {
   prisma: () => prisma
 });
-module.exports = __toCommonJS(client_exports);
 var import_client = __toESM(require_client());
-__reExport(client_exports, __toESM(require_client()), module.exports);
+__reExport(client_exports, __toESM(require_client()));
 var globalForPrisma = global;
 var prisma = globalForPrisma.prisma || new import_client.PrismaClient();
 if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
-// Annotate the CommonJS export names for ESM import in node:
-0 && (module.exports = {
-  prisma
-});
+
+export {
+  prisma,
+  client_exports
+};
 /*! Bundled license information:
 
 decimal.js/decimal.mjs:
