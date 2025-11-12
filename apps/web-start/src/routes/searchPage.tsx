@@ -70,7 +70,7 @@ function RouteComponent() {
         }
       })
 
-      const response = await fetch(`http://localhost:3000/complaint/search?${params.toString()}`)
+      const response = await fetch(`https://deldot-team3.onrender.com/complaint/search?${params.toString()}`)
       
       if (!response.ok) {
         throw new Error('Failed to fetch complaints')
