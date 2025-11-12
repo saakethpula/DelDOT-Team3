@@ -12,7 +12,7 @@
 
 
 [1;1H[0J
-  [32m[1mVITE[22m v7.1.12[39m  [2mready in [0m[1m3128[22m[2m[0m ms[22m
+  [32m[1mVITE[22m v7.1.12[39m  [2mready in [0m[1m1954[22m[2m[0m ms[22m
 
   [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m3001[22m/[39m
 [2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
@@ -20,7 +20,6 @@
 [2m[32m  ➜[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
 [33mFiles in the public directory are served at the root path.
 Instead of [36m/public/download.png[33m, use [36m/download.png[33m.[39m
-Warning: A notFoundError was encountered on the route with ID "__root__", but a notFoundComponent option was not configured, nor was a router level defaultNotFoundComponent configured. Consider configuring at least one of these to avoid TanStack Router's overly generic defaultNotFoundComponent (<div>Not Found<div>)
 
 
 
@@ -30,7 +29,7 @@ Warning: A notFoundError was encountered on the route with ID "__root__", but a 
 
 
 
-[1;1H[0JWarning: A notFoundError was encountered on the route with ID "__root__", but a notFoundComponent option was not configured, nor was a router level defaultNotFoundComponent configured. Consider configuring at least one of these to avoid TanStack Router's overly generic defaultNotFoundComponent (<div>Not Found<div>) [33m(x2)[39m
+[1;1H[0J[2m3:33:49 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/searchPage.tsx, /src/routes/searchPage.tsx?tsr-split=component[22m
 
 
 
@@ -40,15 +39,5 @@ Warning: A notFoundError was encountered on the route with ID "__root__", but a 
 
 
 
-[1;1H[0J[2m3:07:34 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/searchPage.tsx, /src/routes/searchPage.tsx?tsr-split=component[22m
-
-
-
-
-
-
-
-
-
-[1;1H[0J[2m3:07:34 PM[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mhmr update [39m[2m/@id/virtual:cloudflare/worker-entry[22m
+[1;1H[0J[2m3:33:49 PM[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mhmr update [39m[2m/@id/virtual:cloudflare/worker-entry[22m
 [vite] hot updated: virtual:cloudflare/worker-entry

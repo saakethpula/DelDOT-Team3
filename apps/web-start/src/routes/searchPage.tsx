@@ -26,6 +26,7 @@ interface Complaint {
   documents?: Array<{
     id: string
     fileName: string
+    fileUrl?: string
   }>
 }
 
@@ -45,6 +46,9 @@ function RouteComponent() {
   const [complaints, setComplaints] = useState<Array<Complaint>>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [detailLoading, setDetailLoading] = useState(false)
+  const [selectedComplaint, setSelectedComplaint] = useState<Complaint | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const [filters, setFilters] = useState<SearchFilters>({
     caseNumber: '',
     customerName: '',
@@ -298,17 +302,22 @@ function RouteComponent() {
         )}
 
         <div style={{ display: 'grid', gap: '15px' }}>
-          {complaints.map((complaint) => (
-            <div
-              key={complaint.id}
-              style={{
-                border: '1px solid #ddd',
-                borderRadius: '8px',
-                padding: '20px',
-                backgroundColor: 'white',
-                boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
-              }}
-            >
+            {complaints.map((complaint) => (
+              <div
+                key={complaint.id}
+                onClick={() => openComplaintDetails(complaint.id)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') openComplaintDetails(complaint.id) }}
+                style={{
+                  border: '1px solid #ddd',
+                  borderRadius: '8px',
+                  padding: '20px',
+                  backgroundColor: 'white',
+                  boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+                  cursor: 'pointer'
+                }}
+              >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '15px' }}>
                 <div>
                   <h3 style={{ margin: '0 0 5px 0', color: '#333' }}>
@@ -394,6 +403,108 @@ function RouteComponent() {
           ))}
         </div>
       </div>
+
+      {/* Details modal */}
+      {isModalOpen && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            backgroundColor: 'rgba(0,0,0,0.5)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 1000
+          }}
+          onClick={() => { setIsModalOpen(false); setSelectedComplaint(null) }}
+        >
+          <div
+            style={{
+              width: '90%',
+              maxWidth: '900px',
+              background: 'white',
+              borderRadius: '8px',
+              padding: '20px',
+              maxHeight: '90%',
+              overflowY: 'auto'
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <h2 style={{ margin: 0 }}>{selectedComplaint?.caseNumber || 'Complaint Details'}</h2>
+              <div>
+                <button
+                  onClick={() => { setIsModalOpen(false); setSelectedComplaint(null) }}
+                  style={{ padding: '8px 12px', borderRadius: 6, border: 'none', background: '#6c757d', color: 'white', cursor: 'pointer' }}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+
+            {detailLoading && <p>Loading details...</p>}
+
+            {!detailLoading && selectedComplaint && (
+              <div style={{ marginTop: 15 }}>
+                <p><strong>Customer:</strong> {selectedComplaint.customerName}</p>
+                {selectedComplaint.customerEmail && <p><strong>Email:</strong> {selectedComplaint.customerEmail}</p>}
+                {selectedComplaint.customerPhone && <p><strong>Phone:</strong> {selectedComplaint.customerPhone}</p>}
+                {selectedComplaint.respondentName && <p><strong>Respondent:</strong> {selectedComplaint.respondentName}</p>}
+                {selectedComplaint.complaintType && <p><strong>Type:</strong> {selectedComplaint.complaintType}</p>}
+                {selectedComplaint.investigator && <p><strong>Investigator:</strong> {selectedComplaint.investigator}</p>}
+                {selectedComplaint.vehicle && (
+                  <div style={{ marginTop: 10, padding: 10, background: '#f8f9fa', borderRadius: 6 }}>
+                    <strong>Vehicle</strong>
+                    <div>{selectedComplaint.vehicle.year} {selectedComplaint.vehicle.make} {selectedComplaint.vehicle.model}</div>
+                    {selectedComplaint.vehicle.vin && <div>VIN: {selectedComplaint.vehicle.vin}</div>}
+                  </div>
+                )}
+
+                <div style={{ marginTop: 15 }}>
+                  <strong>Documents</strong>
+                  {selectedComplaint.documents && selectedComplaint.documents.length > 0 ? (
+                    <ul>
+                      {selectedComplaint.documents.map((doc) => (
+                        <li key={doc.id} style={{ marginBottom: 8 }}>
+                          <span style={{ marginRight: 12 }}>{doc.fileName}</span>
+                          {doc.fileUrl ? (
+                            <a href={doc.fileUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#007bff' }}>View</a>
+                          ) : (
+                            <span style={{ color: '#6c757d' }}>No file URL</span>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <div style={{ color: '#666', marginTop: 8 }}>No documents attached.</div>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   )
+
+  async function openComplaintDetails(id: string) {
+    setDetailLoading(true)
+    setIsModalOpen(true)
+    setSelectedComplaint(null)
+    try {
+      const res = await fetch(`https://deldot-team3.onrender.com/complaint/${id}`)
+      if (!res.ok) throw new Error('Failed to load complaint details')
+      const data = await res.json()
+      setSelectedComplaint(data)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to load details')
+    } finally {
+      setDetailLoading(false)
+    }
+  }
 }
