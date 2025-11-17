@@ -57,8 +57,6 @@ export const ComplaintRef = z.object({
   // Output DTO (API responses)
   // =========================
   export const ComplaintOut = z.object({
-    id: z.string(),
-
     customerName: z.string(),
     customerPhone: z.string().nullable(),
     customerEmail: z.string().nullable(),
@@ -89,7 +87,7 @@ export const ComplaintRef = z.object({
     caseNumber: z.string().nullable(),
     dateReceived: z.date().nullable(),
     investigator: z.string().nullable(),
-    status: z.string(),
+    status: z.any(),
 
     createdAt: z.date(),
     updatedAt: z.date(),
@@ -102,7 +100,6 @@ export const ComplaintRef = z.object({
   // Creation DTO (API request body)
   // =========================
   export const ComplaintCreateIn = z.object({
-    id: z.string(),
 
     customerName: z.string(),
     customerPhone: z.string().nullable(),
@@ -134,7 +131,7 @@ export const ComplaintRef = z.object({
     caseNumber: z.string().nullable(),
     dateReceived: z.date().nullable(),
     investigator: z.string().nullable(),
-    status: z.string(),
+    status: z.any(),
 
     createdAt: z.date(),
     updatedAt: z.date(),
@@ -146,7 +143,6 @@ export const ComplaintRef = z.object({
   // Update DTO (API request body)
   // =========================
   export const ComplaintUpdateIn = z.object({
-    id: z.string(),
 
     customerName: z.string(),
     customerPhone: z.string().nullable(),
@@ -178,7 +174,7 @@ export const ComplaintRef = z.object({
     caseNumber: z.string().nullable(),
     dateReceived: z.date().nullable(),
     investigator: z.string().nullable(),
-    status: z.string(),
+    status: z.any(),
 
     createdAt: z.date(),
     updatedAt: z.date(),
@@ -190,7 +186,6 @@ export const ComplaintRef = z.object({
   // Query DTO (API query parameters)
   // =========================
   export const ComplaintsListFilter = Pagination.extend({
-    id: z.string(),
 
     customerName: z.string(),
     customerPhone: z.string().nullable(),
@@ -222,7 +217,7 @@ export const ComplaintRef = z.object({
     caseNumber: z.string().nullable(),
     dateReceived: z.date().nullable(),
     investigator: z.string().nullable(),
-    status: z.string(),
+    status: z.any(),
 
     createdAt: z.date(),
     updatedAt: z.date(),

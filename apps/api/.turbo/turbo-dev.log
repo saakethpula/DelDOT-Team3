@@ -2,35 +2,25 @@
 > api@0.0.0 dev
 > nest start --watch
 
-[1G[0Kc[[90m8:04:30 PM[0m] Starting compilation in watch mode...
+[1G[0Kc[[90m9:30:09 AM[0m] Starting compilation in watch mode...
 
-[[90m8:04:33 PM[0m] Found 0 errors. Watching for file changes.
+[[90m9:30:11 AM[0m] Found 0 errors. Watching for file changes.
 
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:33 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:34 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +453ms[39m
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:34 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mLinksModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:34 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mVehicleModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:34 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mComplaintModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:34 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUserModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:34 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDocumentModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:34 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/}:[39m[38;5;3m +3ms[39m
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:34 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/, GET} route[39m[38;5;3m +2ms[39m
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:34 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLinksController {/links}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:34 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links, POST} route[39m[38;5;3m +1ms[39m
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:34 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:34 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:34 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, PATCH} route[39m[38;5;3m +1ms[39m
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:34 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, DELETE} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:34 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mVehicleController {/vehicle}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:34 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/vehicle, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:34 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/vehicle/:id, GET} route[39m[38;5;3m +1ms[39m
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:34 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mComplaintController {/complaint}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:34 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:34 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint/:id, GET} route[39m[38;5;3m +1ms[39m
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:34 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mUserController {/user}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:34 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/user, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:34 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/user/:id, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:34 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentController {/document}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:34 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/document, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:34 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/document/:id, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 29124  - [39m11/08/2025, 8:04:35 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +955ms[39m
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/Users/sistalways/DelDOT-Team3/apps/api/dist/main'
+[90m    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)[39m
+[90m    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)[39m
+[90m    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1192:37)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)[39m
+[90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)[39m
+[90m    at node:internal/main/run_main_module:36:49[39m {
+  code: [32m'MODULE_NOT_FOUND'[39m,
+  requireStack: []
+}
+
+Node.js v22.19.0

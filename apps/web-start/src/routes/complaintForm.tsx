@@ -1,6 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { useEffect,useState } from 'react';
-
+import { ComplaintCreateIn,ComplaintOut} from '../../../../packages/api/src/complaints/dto/complaints.dto';
+import { useMutation,useQueryClient} from '@tanstack/react-query';
+import { mutateBackend } from '../integrations/fetcher';
 interface ComplaintFormData {
   customerName: string;
   customerPhone: string;
@@ -110,17 +112,62 @@ function ComplaintForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     if (!formData.signatureConfirmed) {
-      alert('Please check the E-sign confirmation before submitting.');
+      alert('Please provide your signature.');
       return;
     }
-
-    console.log('Submitting complaint:', formData);
-    await new Promise((res) => setTimeout(res, 1000)); // mock backend
-    alert('Complaint submitted successfully!');
-    localStorage.removeItem("complaint_form_data");
+    submitComplaintMutation.mutate({
+        customerName: formData.customerName,
+        customerPhone: formData.customerPhone || null,
+        customerEmail: formData.customerEmail || null,
+        customerAddress: formData.customerAddress || null,
+        customerCity: formData.customerCity || null,
+        customerState: formData.customerState || null,
+        customerZip: formData.customerZip || null,
+      
+        respondentName: formData.respondentName || null,
+        respondentPhone: formData.respondentPhone || null,
+        respondentAddress: formData.respondentAddress || null,
+        respondentCity: formData.respondentCity || null,
+        respondentState: formData.respondentState || null,
+        respondentZip: formData.respondentZip || null,
+        dealershipRep: formData.dealershipRep || null,
+      
+        complaintType: formData.complaintType || null,
+        explainComplaint: formData.explainComplaint || null,
+      
+        signatureName:  null,
+        signatureDate: null,
+      
+        dmvRepresentative: null,
+        dmvRepresentativeDate:  null,
+        dmvSupervisor: null,
+        dmvSupervisorDate:  null,
+      
+        caseNumber:  null,
+        dateReceived: null,
+        investigator:  null,
+        status: 'NEW',
+      
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      });
+    
   };
+  const queryClient = useQueryClient();
+  const submitComplaintMutation = useMutation({
+    mutationFn: (newComplaint: ComplaintCreateIn) => {
+      return mutateBackend<ComplaintOut>('/complaint', 'POST', newComplaint);
+    },
+    onSuccess: (data: ComplaintOut) => {
+      // Update query cache with new complaint
+      queryClient.setQueryData(['complaint', data.caseNumber], data);
+      alert('Complaint submitted successfully!');
+    },
+    onError: (err: any) => {
+      alert(`Error submitting complaint: ${err.message}`);
+    },
+  });
 
   const sectionTitle = {
     backgroundColor: gold,
@@ -340,6 +387,43 @@ function ComplaintForm() {
               cursor: 'pointer',
               fontWeight: 'bold',
             }}
+            onClick= {()=>{submitComplaintMutation.mutate({
+              customerName: formData.customerName,
+              customerPhone: formData.customerPhone || null,
+              customerEmail: formData.customerEmail || null,
+              customerAddress: formData.customerAddress || null,
+              customerCity: formData.customerCity || null,
+              customerState: formData.customerState || null,
+              customerZip: formData.customerZip || null,
+            
+              respondentName: formData.respondentName || null,
+              respondentPhone: formData.respondentPhone || null,
+              respondentAddress: formData.respondentAddress || null,
+              respondentCity: formData.respondentCity || null,
+              respondentState: formData.respondentState || null,
+              respondentZip: formData.respondentZip || null,
+              dealershipRep: formData.dealershipRep || null,
+            
+              complaintType: formData.complaintType || null,
+              explainComplaint: formData.explainComplaint || null,
+            
+              signatureName:  null,
+              signatureDate: null,
+            
+              dmvRepresentative: null,
+              dmvRepresentativeDate:  null,
+              dmvSupervisor: null,
+              dmvSupervisorDate:  null,
+            
+              caseNumber:  null,
+              dateReceived: null,
+              investigator:  null,
+              status: 'NEW',
+            
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            });
+          }}
           >
             Submit Complaint
           </button>
