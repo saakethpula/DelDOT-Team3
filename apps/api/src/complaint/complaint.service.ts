@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma.service';
-import { ComplaintCreateIn,ComplaintOut } from '../../../../packages/api/src/complaints/dto/complaints.dto';
+import { ComplaintCreateIn,ComplaintOut } from '@repo/api/complaints/dto/complaints.dto';
 
 
 @Injectable()

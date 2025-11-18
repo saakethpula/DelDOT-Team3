@@ -1,6 +1,6 @@
 import { Controller, Get, Param,Post,Body } from '@nestjs/common';
 import { ComplaintService } from './complaint.service';
-import { ComplaintUpdateIn,ComplaintRef,ComplaintCreateIn } from '../../../../packages/api/src/complaints/dto/complaints.dto';
+import { ComplaintCreateIn } from '@repo/api/complaints/dto/complaints.dto';
 @Controller('complaint')
 export class ComplaintController {
     constructor(private complaintService: ComplaintService) { }

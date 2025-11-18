@@ -387,7 +387,7 @@ function ComplaintForm() {
               cursor: 'pointer',
               fontWeight: 'bold',
             }}
-            onClick= {()=>{submitComplaintMutation.mutate({
+            /* onClick= {()=>{submitComplaintMutation.mutate({
               customerName: formData.customerName,
               customerPhone: formData.customerPhone || null,
               customerEmail: formData.customerEmail || null,
@@ -422,8 +422,8 @@ function ComplaintForm() {
             
               createdAt: new Date(),
               updatedAt: new Date(),
-            });
-          }}
+            }); 
+          }} */
           >
             Submit Complaint
           </button>

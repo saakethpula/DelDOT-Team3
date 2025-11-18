@@ -2,16 +2,13 @@
 > web-start@0.1.0 dev
 > vite dev --port 3001
 
-[1G[0K[2m9:30:10 AM[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m Re-optimizing dependencies because lockfile has changed
-[2mDefault inspector port 9229 not available, using 9230 instead
-[22m
-Using vars defined in .env
-[2m9:30:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m Re-optimizing dependencies because lockfile has changed
-Port 3001 is in use, trying another one...
+[1G[0KUsing vars defined in .env
 
-  [32m[1mVITE[22m v7.1.12[39m  [2mready in [0m[1m2045[22m[2m[0m ms[22m
+  [32m[1mVITE[22m v7.1.12[39m  [2mready in [0m[1m2097[22m[2m[0m ms[22m
 
-  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m3002[22m/[39m
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m3001[22m/[39m
 [2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
-  [32m➜[39m  [1mDebug[22m:   [2m[33mhttp://localhost:[1m3002[22m[2m/__debug[39m[22m
+  [32m➜[39m  [1mDebug[22m:   [2m[33mhttp://localhost:[1m3001[22m[2m/__debug[39m[22m
 [2m[32m  ➜[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
+[33mFiles in the public directory are served at the root path.
+Instead of [36m/public/download.png[33m, use [36m/download.png[33m.[39m
