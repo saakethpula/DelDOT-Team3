@@ -9,6 +9,7 @@
 [34mCLI[39m Target: es2022
 [34mCJS[39m Build start
 [34mESM[39m Build start
+<<<<<<< HEAD
 [32mCJS[39m [1mdist/queries.js                       [22m[32m1.24 KB[39m
 [32mCJS[39m [1mdist/links/dto/update-link.dto.js     [22m[32m1.33 KB[39m
 [32mCJS[39m [1mdist/vehicles/dto/vehicles.dto.js     [22m[32m3.21 KB[39m
@@ -34,6 +35,21 @@
 [32mESM[39m [1mdist/chunk-GZ4POAPY.mjs                [22m[32m212.00 B[39m
 [32mESM[39m [1mdist/users/dto/users.dto.mjs           [22m[32m858.00 B[39m
 [32mESM[39m ⚡️ Build success in 33ms
+=======
+[32mESM[39m [1mdist/chunk-SKDSOMIZ.mjs             [22m[32m96.00 B[39m
+[32mESM[39m [1mdist/links/entities/link.entity.mjs [22m[32m70.00 B[39m
+[32mESM[39m [1mdist/chunk-3SFKBB2Y.mjs             [22m[32m240.00 B[39m
+[32mESM[39m [1mdist/index.mjs                      [22m[32m291.00 B[39m
+[32mESM[39m [1mdist/links/dto/create-link.dto.mjs  [22m[32m88.00 B[39m
+[32mESM[39m [1mdist/links/dto/update-link.dto.mjs  [22m[32m123.00 B[39m
+[32mESM[39m [1mdist/chunk-XHCQAKNT.mjs             [22m[32m306.00 B[39m
+[32mESM[39m ⚡️ Build success in 52ms
+[32mCJS[39m [1mdist/links/dto/create-link.dto.js  [22m[32m1.11 KB[39m
+[32mCJS[39m [1mdist/links/entities/link.entity.js [22m[32m1.29 KB[39m
+[32mCJS[39m [1mdist/index.js                      [22m[32m1.65 KB[39m
+[32mCJS[39m [1mdist/links/dto/update-link.dto.js  [22m[32m1.33 KB[39m
+[32mCJS[39m ⚡️ Build success in 52ms
+>>>>>>> 104edcc3e03e1e07787e0189932ce5db7510d3bd
 [34mCLI[39m Watching for changes in "."
 [34mCLI[39m Ignoring changes in "**/{.git,node_modules}/**" | "dist"
 

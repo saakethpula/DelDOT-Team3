@@ -2,6 +2,7 @@
 > api@0.0.0 dev
 > nest start --watch
 
+<<<<<<< HEAD
 [1G[0Kc[[90m4:09:53 PM[0m] Starting compilation in watch mode...
 
 [[90m4:09:54 PM[0m] Found 0 errors. Watching for file changes.
@@ -35,3 +36,40 @@
 [32m[Nest] 76598  - [39m11/18/2025, 4:09:55 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/document, GET} route[39m[38;5;3m +1ms[39m
 [32m[Nest] 76598  - [39m11/18/2025, 4:09:55 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/document/:id, GET} route[39m[38;5;3m +0ms[39m
 [32m[Nest] 76598  - [39m11/18/2025, 4:09:56 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +707ms[39m
+=======
+[1G[0Kc[[90m3:33:23 PM[0m] Starting compilation in watch mode...
+
+[[90m3:33:24 PM[0m] Found 0 errors. Watching for file changes.
+
+(node:76934) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +340ms[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mLinksModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mVehicleModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mComplaintModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUserModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDocumentModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/}:[39m[38;5;3m +2ms[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLinksController {/links}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, DELETE} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mVehicleController {/vehicle}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/vehicle, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/vehicle/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mComplaintController {/complaint}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint/search, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mUserController {/user}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/user, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/user/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentController {/document}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/document, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:24 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/document/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 76965  - [39m11/12/2025, 3:33:25 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +423ms[39m
+>>>>>>> 104edcc3e03e1e07787e0189932ce5db7510d3bd

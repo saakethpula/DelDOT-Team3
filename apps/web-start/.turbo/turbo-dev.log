@@ -4,7 +4,19 @@
 
 [1G[0KUsing vars defined in .env
 
+<<<<<<< HEAD
   [32m[1mVITE[22m v7.1.12[39m  [2mready in [0m[1m2097[22m[2m[0m ms[22m
+=======
+
+
+
+
+
+
+
+[1;1H[0J
+  [32m[1mVITE[22m v7.1.12[39m  [2mready in [0m[1m1954[22m[2m[0m ms[22m
+>>>>>>> 104edcc3e03e1e07787e0189932ce5db7510d3bd
 
   [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m3001[22m/[39m
 [2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
@@ -12,3 +24,27 @@
 [2m[32m  ➜[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
 [33mFiles in the public directory are served at the root path.
 Instead of [36m/public/download.png[33m, use [36m/download.png[33m.[39m
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m3:33:49 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/searchPage.tsx, /src/routes/searchPage.tsx?tsr-split=component[22m
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m3:33:49 PM[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mhmr update [39m[2m/@id/virtual:cloudflare/worker-entry[22m
+[vite] hot updated: virtual:cloudflare/worker-entry
+>>>>>>> 104edcc3e03e1e07787e0189932ce5db7510d3bd
