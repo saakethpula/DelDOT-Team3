@@ -109,9 +109,6 @@ export declare class ComplaintService {
         createdAt: Date;
         updatedAt: Date;
     }, null, import("@repo/database/generated/client/runtime/library").DefaultArgs, import("@repo/database").Prisma.PrismaClientOptions>;
-<<<<<<< HEAD
-    create(createComplaint: ComplaintCreateIn): Promise<ComplaintOut>;
-=======
     search(filters: any): Promise<({
         vehicle: {
             id: string;
@@ -165,6 +162,6 @@ export declare class ComplaintService {
         createdAt: Date;
         updatedAt: Date;
     })[]>;
->>>>>>> 104edcc3e03e1e07787e0189932ce5db7510d3bd
+    create(createComplaint: ComplaintCreateIn): Promise<ComplaintOut>;
 }
 //# sourceMappingURL=complaint.service.d.ts.map

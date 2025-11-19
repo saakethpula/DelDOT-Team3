@@ -16,6 +16,7 @@ exports.ComplaintController = void 0;
 const common_1 = require("@nestjs/common");
 const complaint_service_1 = require("./complaint.service");
 const complaints_dto_1 = require("@repo/api/complaints/dto/complaints.dto");
+const common_2 = require("@nestjs/common");
 let ComplaintController = class ComplaintController {
     complaintService;
     constructor(complaintService) {
@@ -56,8 +57,8 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], ComplaintController.prototype, "findOne", null);
 __decorate([
-    (0, common_1.Post)(),
-    __param(0, (0, common_1.Body)()),
+    (0, common_2.Post)(),
+    __param(0, (0, common_2.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
