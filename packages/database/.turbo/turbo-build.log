@@ -8,7 +8,8 @@
 > prisma generate
 
 [1G[0K[2mPrisma schema loaded from prisma/schema.prisma[22m
-
+
+
 
 ✔ Generated [1mPrisma Client[22m (v6.18.0)[2m to ./generated/client[22m in 60ms
 
