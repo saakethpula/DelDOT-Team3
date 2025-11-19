@@ -1,20 +1,12 @@
 import {
-  ComplaintCreateIn,
-  ComplaintOut,
-  ComplaintRef,
-  ComplaintUpdateIn,
-  ComplaintsListFilter
-} from "./chunk-KHDANRXC.mjs";
-import {
-  Link
-} from "./chunk-XHCQAKNT.mjs";
-import {
   UpdateLinkDto
 } from "./chunk-3SFKBB2Y.mjs";
 import {
   CreateLinkDto
 } from "./chunk-SKDSOMIZ.mjs";
-import "./chunk-GZ4POAPY.mjs";
+import {
+  Link
+} from "./chunk-XHCQAKNT.mjs";
 
 // src/index.ts
 var links = {
@@ -27,10 +19,5 @@ var links = {
   }
 };
 export {
-  ComplaintCreateIn,
-  ComplaintOut,
-  ComplaintRef,
-  ComplaintUpdateIn,
-  ComplaintsListFilter,
   links
 };

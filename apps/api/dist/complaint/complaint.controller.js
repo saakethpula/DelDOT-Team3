@@ -15,8 +15,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ComplaintController = void 0;
 const common_1 = require("@nestjs/common");
 const complaint_service_1 = require("./complaint.service");
-const complaints_dto_1 = require("@repo/api/complaints/dto/complaints.dto");
-const common_2 = require("@nestjs/common");
 let ComplaintController = class ComplaintController {
     complaintService;
     constructor(complaintService) {
@@ -25,14 +23,8 @@ let ComplaintController = class ComplaintController {
     findAll() {
         return this.complaintService.findAll();
     }
-    search(filters) {
-        return this.complaintService.search(filters);
-    }
     findOne(id) {
         return this.complaintService.findOne(id);
-    }
-    create(createComplaint) {
-        return this.complaintService.create(createComplaint);
     }
 };
 exports.ComplaintController = ComplaintController;
@@ -43,26 +35,12 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], ComplaintController.prototype, "findAll", null);
 __decorate([
-    (0, common_1.Get)('search'),
-    __param(0, (0, common_1.Query)()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
-], ComplaintController.prototype, "search", null);
-__decorate([
     (0, common_1.Get)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], ComplaintController.prototype, "findOne", null);
-__decorate([
-    (0, common_2.Post)(),
-    __param(0, (0, common_2.Body)()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
-], ComplaintController.prototype, "create", null);
 exports.ComplaintController = ComplaintController = __decorate([
     (0, common_1.Controller)('complaint'),
     __metadata("design:paramtypes", [complaint_service_1.ComplaintService])

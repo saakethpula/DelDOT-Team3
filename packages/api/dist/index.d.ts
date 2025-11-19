@@ -10,5 +10,4 @@ export declare const links: {
         Link: typeof Link;
     };
 };
-export { ComplaintCreateIn, ComplaintOut, ComplaintRef, ComplaintUpdateIn, ComplaintsListFilter } from './complaints/dto/complaints.dto';
 //# sourceMappingURL=index.d.ts.map

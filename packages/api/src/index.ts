@@ -12,4 +12,3 @@ export const links = {
     Link,
   },
 };
-export {ComplaintCreateIn,ComplaintOut,ComplaintRef,ComplaintUpdateIn,ComplaintsListFilter} from './complaints/dto/complaints.dto';
