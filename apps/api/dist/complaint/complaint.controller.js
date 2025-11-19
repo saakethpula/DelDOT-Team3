@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ComplaintController = void 0;
 const common_1 = require("@nestjs/common");
 const complaint_service_1 = require("./complaint.service");
+const complaints_dto_1 = require("@repo/api/complaints/dto/complaints.dto");
 let ComplaintController = class ComplaintController {
     complaintService;
     constructor(complaintService) {
@@ -28,6 +29,9 @@ let ComplaintController = class ComplaintController {
     }
     findOne(id) {
         return this.complaintService.findOne(id);
+    }
+    create(createComplaint) {
+        return this.complaintService.create(createComplaint);
     }
 };
 exports.ComplaintController = ComplaintController;
@@ -51,6 +55,13 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], ComplaintController.prototype, "findOne", null);
+__decorate([
+    (0, common_1.Post)(),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], ComplaintController.prototype, "create", null);
 exports.ComplaintController = ComplaintController = __decorate([
     (0, common_1.Controller)('complaint'),
     __metadata("design:paramtypes", [complaint_service_1.ComplaintService])

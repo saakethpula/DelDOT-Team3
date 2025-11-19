@@ -1,4 +1,11 @@
 import {
+  ComplaintCreateIn,
+  ComplaintOut,
+  ComplaintRef,
+  ComplaintUpdateIn,
+  ComplaintsListFilter
+} from "./chunk-KHDANRXC.mjs";
+import {
   UpdateLinkDto
 } from "./chunk-3SFKBB2Y.mjs";
 import {
@@ -7,6 +14,7 @@ import {
 import {
   Link
 } from "./chunk-XHCQAKNT.mjs";
+import "./chunk-GZ4POAPY.mjs";
 
 // src/index.ts
 var links = {
@@ -19,5 +27,10 @@ var links = {
   }
 };
 export {
+  ComplaintCreateIn,
+  ComplaintOut,
+  ComplaintRef,
+  ComplaintUpdateIn,
+  ComplaintsListFilter,
   links
 };

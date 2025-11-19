@@ -77,6 +77,41 @@ let ComplaintService = class ComplaintService {
             },
         });
     }
+    async create(createComplaint) {
+        const complaint = await this.prisma.complaint.create({
+            data: createComplaint
+        });
+        return {
+            customerName: complaint.customerName,
+            customerPhone: complaint.customerPhone,
+            customerEmail: complaint.customerEmail,
+            customerAddress: complaint.customerAddress,
+            customerCity: complaint.customerCity,
+            customerState: complaint.customerState,
+            customerZip: complaint.customerZip,
+            respondentName: complaint.respondentName,
+            respondentPhone: complaint.respondentPhone,
+            respondentAddress: complaint.respondentAddress,
+            respondentCity: complaint.respondentCity,
+            respondentState: complaint.respondentState,
+            respondentZip: complaint.respondentZip,
+            dealershipRep: complaint.dealershipRep,
+            complaintType: complaint.complaintType,
+            explainComplaint: complaint.explainComplaint,
+            signatureName: complaint.signatureName,
+            signatureDate: complaint.signatureDate,
+            dmvRepresentative: complaint.dmvRepresentative,
+            dmvRepresentativeDate: complaint.dmvRepresentativeDate,
+            dmvSupervisor: complaint.dmvSupervisor,
+            dmvSupervisorDate: complaint.dmvSupervisorDate,
+            caseNumber: complaint.caseNumber,
+            dateReceived: complaint.dateReceived,
+            investigator: complaint.investigator,
+            status: complaint.status,
+            createdAt: complaint.createdAt,
+            updatedAt: complaint.updatedAt,
+        };
+    }
 };
 exports.ComplaintService = ComplaintService;
 exports.ComplaintService = ComplaintService = __decorate([

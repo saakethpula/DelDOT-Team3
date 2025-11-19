@@ -1,4 +1,5 @@
 import { ComplaintService } from './complaint.service';
+import { ComplaintCreateIn } from '@repo/api/complaints/dto/complaints.dto';
 export declare class ComplaintController {
     private readonly complaintService;
     constructor(complaintService: ComplaintService);
@@ -161,5 +162,35 @@ export declare class ComplaintController {
         createdAt: Date;
         updatedAt: Date;
     }, null, import("@repo/database/generated/client/runtime/library").DefaultArgs, import("@repo/database").Prisma.PrismaClientOptions>;
+    create(createComplaint: ComplaintCreateIn): Promise<{
+        customerName: string;
+        status: any;
+        createdAt: Date;
+        updatedAt: Date;
+        customerPhone?: string;
+        customerEmail?: string;
+        customerAddress?: string;
+        customerCity?: string;
+        customerState?: string;
+        customerZip?: string;
+        respondentName?: string;
+        respondentPhone?: string;
+        respondentAddress?: string;
+        respondentCity?: string;
+        respondentState?: string;
+        respondentZip?: string;
+        dealershipRep?: string;
+        complaintType?: string;
+        explainComplaint?: string;
+        signatureName?: string;
+        signatureDate?: Date;
+        dmvRepresentative?: string;
+        dmvRepresentativeDate?: Date;
+        dmvSupervisor?: string;
+        dmvSupervisorDate?: Date;
+        caseNumber?: string;
+        dateReceived?: Date;
+        investigator?: string;
+    }>;
 }
 //# sourceMappingURL=complaint.controller.d.ts.map

@@ -7,6 +7,10 @@
 > prisma generate
 
 [1G[0K[2mPrisma schema loaded from prisma/schema.prisma[22m
+<<<<<<< HEAD
+
+✔ Generated [1mPrisma Client[22m (v6.18.0)[2m to ./generated/client[22m in 203ms
+=======
 [90m[90m┌─[39m[90m[90m────────────────────────────────────────────────────────┐[39m[90m
 [90m│[39m[90m  [0m[34mUpdate available[39m[90m 6.18.0 -> 6.19.0[0m                      [90m│[39m[90m
 [90m│[39m[90m  [0mRun the following to update[0m                            [90m│[39m[90m
@@ -15,6 +19,7 @@
 └─────────────────────────────────────────────────────────┘[39m
 
 ✔ Generated [1mPrisma Client[22m (v6.18.0)[2m to ./generated/client[22m in 98ms
+>>>>>>> 104edcc3e03e1e07787e0189932ce5db7510d3bd
 
 Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
 
@@ -31,13 +36,21 @@ Tip: Need your database queries to be 1000x faster? Accelerate offers you that a
 [34mCLI[39m Target: es2022
 [34mCJS[39m Build start
 [34mESM[39m Build start
-[32mESM[39m [1mdist/seed.mjs           [22m[32m3.72 KB[39m
+[32mESM[39m [1mdist/chunk-G5Q456YR.mjs [22m[32m292.65 KB[39m
 [32mESM[39m [1mdist/client.mjs         [22m[32m70.00 B[39m
+<<<<<<< HEAD
+[32mESM[39m [1mdist/seed.mjs           [22m[32m3.72 KB[39m
+[32mESM[39m ⚡️ Build success in 46ms
+[32mCJS[39m [1mdist/seed.js   [22m[32m296.00 KB[39m
+[32mCJS[39m [1mdist/client.js [22m[32m292.48 KB[39m
+[32mCJS[39m ⚡️ Build success in 46ms
+=======
 [32mESM[39m [1mdist/chunk-LDT6DNTX.mjs [22m[32m292.70 KB[39m
 [32mESM[39m ⚡️ Build success in 111ms
 [32mCJS[39m [1mdist/client.js [22m[32m292.53 KB[39m
 [32mCJS[39m [1mdist/seed.js   [22m[32m296.05 KB[39m
 [32mCJS[39m ⚡️ Build success in 113ms
+>>>>>>> 104edcc3e03e1e07787e0189932ce5db7510d3bd
 [34mCLI[39m Watching for changes in "."
 [34mCLI[39m Ignoring changes in "**/{.git,node_modules}/**" | "dist"
 
