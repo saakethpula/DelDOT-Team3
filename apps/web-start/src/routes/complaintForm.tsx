@@ -31,7 +31,7 @@ interface ComplaintFormData {
 
 
 
-export const Route = createFileRoute('/search')({
+export const Route = createFileRoute('/complaintForm')({
   component: ComplaintForm,
 });
 
@@ -116,10 +116,62 @@ function ComplaintForm() {
       return;
     }
 
-    console.log('Submitting complaint:', formData);
-    await new Promise((res) => setTimeout(res, 1000)); // mock backend
-    alert('Complaint submitted successfully!');
-    localStorage.removeItem("complaint_form_data");
+    try {
+      console.log('Submitting complaint:', formData);
+      
+      const backend = (import.meta.env as { VITE_BACKEND_URL?: string }).VITE_BACKEND_URL || 'http://localhost:3000';
+      const url = `${backend.replace(/\/$/, '')}/complaint`;
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to submit: ${response.status}`);
+      }
+
+      const result = await response.json();
+      console.log('Complaint created:', result);
+      
+      alert(`Complaint submitted successfully! Case Number: ${result.caseNumber || 'N/A'}`);
+      localStorage.removeItem("complaint_form_data");
+      
+      // Reset form
+      setFormData({
+        customerName: '',
+        customerPhone: '',
+        customerEmail: '',
+        customerAddress: '',
+        customerCity: '',
+        customerState: '',
+        customerZip: '',
+        respondentName: '',
+        respondentPhone: '',
+        respondentAddress: '',
+        respondentCity: '',
+        respondentState: '',
+        respondentZip: '',
+        dealershipRep: '',
+        vin: '',
+        year: '',
+        make: '',
+        model: '',
+        color: '',
+        plateNumber: '',
+        plateOrUtitle: '',
+        complaintType: '',
+        explainComplaint: '',
+        signatureConfirmed: false,
+      });
+      setIsConfirmed(false);
+      setReferenceId(null);
+    } catch (error) {
+      console.error('Error submitting complaint:', error);
+      alert('Failed to submit complaint. Please try again.');
+    }
   };
 
   const sectionTitle = {

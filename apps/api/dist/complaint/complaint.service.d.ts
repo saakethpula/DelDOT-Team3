@@ -2,7 +2,29 @@ import { PrismaService } from 'src/prisma.service';
 export declare class ComplaintService {
     private prisma;
     constructor(prisma: PrismaService);
-    findAll(): import("@repo/database").Prisma.PrismaPromise<{
+    create(dto: any): Promise<{
+        vehicle: {
+            id: string;
+            vin: string | null;
+            year: number | null;
+            make: string | null;
+            model: string | null;
+            color: string | null;
+            plateNumber: string | null;
+            plateOrUtitle: string | null;
+            complaintId: string;
+        };
+        documents: {
+            id: string;
+            complaintId: string;
+            fileName: string;
+            fileType: string | null;
+            fileSize: number | null;
+            url: string | null;
+            notes: string | null;
+            uploadedAt: Date;
+        }[];
+    } & {
         id: string;
         customerName: string;
         customerPhone: string | null;
@@ -32,8 +54,83 @@ export declare class ComplaintService {
         status: import("@repo/database").$Enums.ComplaintStatus;
         createdAt: Date;
         updatedAt: Date;
-    }[]>;
+    }>;
+    findAll(): import("@repo/database").Prisma.PrismaPromise<({
+        vehicle: {
+            id: string;
+            vin: string | null;
+            year: number | null;
+            make: string | null;
+            model: string | null;
+            color: string | null;
+            plateNumber: string | null;
+            plateOrUtitle: string | null;
+            complaintId: string;
+        };
+        documents: {
+            id: string;
+            complaintId: string;
+            fileName: string;
+            fileType: string | null;
+            fileSize: number | null;
+            url: string | null;
+            notes: string | null;
+            uploadedAt: Date;
+        }[];
+    } & {
+        id: string;
+        customerName: string;
+        customerPhone: string | null;
+        customerEmail: string | null;
+        customerAddress: string | null;
+        customerCity: string | null;
+        customerState: string | null;
+        customerZip: string | null;
+        respondentName: string | null;
+        respondentPhone: string | null;
+        respondentAddress: string | null;
+        respondentCity: string | null;
+        respondentState: string | null;
+        respondentZip: string | null;
+        dealershipRep: string | null;
+        complaintType: string | null;
+        explainComplaint: string | null;
+        signatureName: string | null;
+        signatureDate: Date | null;
+        dmvRepresentative: string | null;
+        dmvRepresentativeDate: Date | null;
+        dmvSupervisor: string | null;
+        dmvSupervisorDate: Date | null;
+        caseNumber: string | null;
+        dateReceived: Date | null;
+        investigator: string | null;
+        status: import("@repo/database").$Enums.ComplaintStatus;
+        createdAt: Date;
+        updatedAt: Date;
+    })[]>;
     findOne(id: string): import("@repo/database").Prisma.Prisma__ComplaintClient<{
+        vehicle: {
+            id: string;
+            vin: string | null;
+            year: number | null;
+            make: string | null;
+            model: string | null;
+            color: string | null;
+            plateNumber: string | null;
+            plateOrUtitle: string | null;
+            complaintId: string;
+        };
+        documents: {
+            id: string;
+            complaintId: string;
+            fileName: string;
+            fileType: string | null;
+            fileSize: number | null;
+            url: string | null;
+            notes: string | null;
+            uploadedAt: Date;
+        }[];
+    } & {
         id: string;
         customerName: string;
         customerPhone: string | null;
@@ -64,5 +161,58 @@ export declare class ComplaintService {
         createdAt: Date;
         updatedAt: Date;
     }, null, import("@repo/database/generated/client/runtime/library").DefaultArgs, import("@repo/database").Prisma.PrismaClientOptions>;
+    search(filters: any): Promise<({
+        vehicle: {
+            id: string;
+            vin: string | null;
+            year: number | null;
+            make: string | null;
+            model: string | null;
+            color: string | null;
+            plateNumber: string | null;
+            plateOrUtitle: string | null;
+            complaintId: string;
+        };
+        documents: {
+            id: string;
+            complaintId: string;
+            fileName: string;
+            fileType: string | null;
+            fileSize: number | null;
+            url: string | null;
+            notes: string | null;
+            uploadedAt: Date;
+        }[];
+    } & {
+        id: string;
+        customerName: string;
+        customerPhone: string | null;
+        customerEmail: string | null;
+        customerAddress: string | null;
+        customerCity: string | null;
+        customerState: string | null;
+        customerZip: string | null;
+        respondentName: string | null;
+        respondentPhone: string | null;
+        respondentAddress: string | null;
+        respondentCity: string | null;
+        respondentState: string | null;
+        respondentZip: string | null;
+        dealershipRep: string | null;
+        complaintType: string | null;
+        explainComplaint: string | null;
+        signatureName: string | null;
+        signatureDate: Date | null;
+        dmvRepresentative: string | null;
+        dmvRepresentativeDate: Date | null;
+        dmvSupervisor: string | null;
+        dmvSupervisorDate: Date | null;
+        caseNumber: string | null;
+        dateReceived: Date | null;
+        investigator: string | null;
+        status: import("@repo/database").$Enums.ComplaintStatus;
+        createdAt: Date;
+        updatedAt: Date;
+    })[]>;
 }
 //# sourceMappingURL=complaint.service.d.ts.map
