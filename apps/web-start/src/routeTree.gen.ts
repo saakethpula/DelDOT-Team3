@@ -9,18 +9,12 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SearchPageRouteImport } from './routes/searchPage'
-import { Route as ComplaintFormRouteImport } from './routes/complaintForm'
+import { Route as SearchRouteImport } from './routes/search'
 import { Route as IndexRouteImport } from './routes/index'
 
-const SearchPageRoute = SearchPageRouteImport.update({
-  id: '/searchPage',
-  path: '/searchPage',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ComplaintFormRoute = ComplaintFormRouteImport.update({
-  id: '/complaintForm',
-  path: '/complaintForm',
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -31,48 +25,37 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/complaintForm': typeof ComplaintFormRoute
-  '/searchPage': typeof SearchPageRoute
+  '/search': typeof SearchRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/complaintForm': typeof ComplaintFormRoute
-  '/searchPage': typeof SearchPageRoute
+  '/search': typeof SearchRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/complaintForm': typeof ComplaintFormRoute
-  '/searchPage': typeof SearchPageRoute
+  '/search': typeof SearchRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/complaintForm' | '/searchPage'
+  fullPaths: '/' | '/search'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/complaintForm' | '/searchPage'
-  id: '__root__' | '/' | '/complaintForm' | '/searchPage'
+  to: '/' | '/search'
+  id: '__root__' | '/' | '/search'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ComplaintFormRoute: typeof ComplaintFormRoute
-  SearchPageRoute: typeof SearchPageRoute
+  SearchRoute: typeof SearchRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/searchPage': {
-      id: '/searchPage'
-      path: '/searchPage'
-      fullPath: '/searchPage'
-      preLoaderRoute: typeof SearchPageRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/complaintForm': {
-      id: '/complaintForm'
-      path: '/complaintForm'
-      fullPath: '/complaintForm'
-      preLoaderRoute: typeof ComplaintFormRouteImport
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -87,8 +70,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ComplaintFormRoute: ComplaintFormRoute,
-  SearchPageRoute: SearchPageRoute,
+  SearchRoute: SearchRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

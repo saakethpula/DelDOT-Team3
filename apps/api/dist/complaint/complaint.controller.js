@@ -23,9 +23,6 @@ let ComplaintController = class ComplaintController {
     findAll() {
         return this.complaintService.findAll();
     }
-    search(filters) {
-        return this.complaintService.search(filters);
-    }
     findOne(id) {
         return this.complaintService.findOne(id);
     }
@@ -37,13 +34,6 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], ComplaintController.prototype, "findAll", null);
-__decorate([
-    (0, common_1.Get)('search'),
-    __param(0, (0, common_1.Query)()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
-], ComplaintController.prototype, "search", null);
 __decorate([
     (0, common_1.Get)(':id'),
     __param(0, (0, common_1.Param)('id')),

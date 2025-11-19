@@ -32,7 +32,7 @@ function LandingPage() {
       >
         <h1 style={{ margin: 0 }}>Delaware DMV Complaint Portal</h1>
         <img
-          src="/public/download.png"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Seal_of_Delaware.svg/1024px-Seal_of_Delaware.svg.png"
           alt="Delaware Seal"
           style={{ height: '50px' }}
         />
@@ -74,7 +74,7 @@ function LandingPage() {
           <p style={{ color: '#444' }}>
             Click below to access the official complaint submission form.
           </p>
-          <Link to="/complaintForm">
+          <Link to="/search">
             <button
               style={{
                 backgroundColor: pioneerBlue,
