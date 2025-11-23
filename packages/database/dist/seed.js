@@ -5849,7 +5849,7 @@ var require_client = __commonJS({
           "value": "prisma-client-js"
         },
         "output": {
-          "value": "/Users/saakethpula/Documents/498 project/yo/DelDOT-Team3/packages/database/generated/client",
+          "value": "/Users/brishna/Desktop/DelDOT-Team3/packages/database/generated/client",
           "fromEnvVar": null
         },
         "config": {
@@ -5863,7 +5863,7 @@ var require_client = __commonJS({
           }
         ],
         "previewFeatures": [],
-        "sourceFilePath": "/Users/saakethpula/Documents/498 project/yo/DelDOT-Team3/packages/database/prisma/schema.prisma",
+        "sourceFilePath": "/Users/brishna/Desktop/DelDOT-Team3/packages/database/prisma/schema.prisma",
         "isCustomOutput": true
       },
       "relativeEnvPaths": {

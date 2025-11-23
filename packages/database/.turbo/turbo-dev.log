@@ -7,22 +7,12 @@
 > prisma generate
 
 [1G[0K[2mPrisma schema loaded from prisma/schema.prisma[22m
-[90m[90m┌─[39m[90m[90m────────────────────────────────────────────────────────┐[39m[90m
-[90m│[39m[90m  [0m[34mUpdate available[39m[90m 6.18.0 -> 7.0.0[0m                       [90m│[39m[90m
-[90m│[39m[90m  [0m[0m                                                       [90m│[39m[90m
-[90m│[39m[90m  [0mThis is a major update - please follow the guide at[0m    [90m│[39m[90m
-[90m│[39m[90m  [0mhttps://pris.ly/d/major-version-upgrade[0m                [90m│[39m[90m
-[90m│[39m[90m  [0m[0m                                                       [90m│[39m[90m
-[90m│[39m[90m  [0mRun the following to update[0m                            [90m│[39m[90m
-[90m│[39m[90m  [0m  [1mnpm i --save-dev prisma@latest[22m[0m                       [90m│[39m[90m
-[90m│[39m[90m  [0m  [1mnpm i @prisma/client@latest[22m[0m                          [90m│[39m[90m
-└─────────────────────────────────────────────────────────┘[39m
 
-✔ Generated [1mPrisma Client[22m (v6.18.0)[2m to ./generated/client[22m in 108ms
+✔ Generated [1mPrisma Client[22m (v6.18.0)[2m to ./generated/client[22m in 156ms
 
 Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
 
-Tip: Want to turn off tips and other hints? https://pris.ly/tip-4-nohints
+Tip: Need your database queries to be 1000x faster? Accelerate offers you that and more: https://pris.ly/tip-2-accelerate
 
 [1G[0K⠙[1G[0K[1G[0K⠙[1G[0K
 > @repo/database@1.0.0 dev
@@ -35,13 +25,13 @@ Tip: Want to turn off tips and other hints? https://pris.ly/tip-4-nohints
 [34mCLI[39m Target: es2022
 [34mCJS[39m Build start
 [34mESM[39m Build start
-[32mESM[39m [1mdist/seed.mjs           [22m[32m3.72 KB[39m
 [32mESM[39m [1mdist/client.mjs         [22m[32m70.00 B[39m
-[32mESM[39m [1mdist/chunk-LDT6DNTX.mjs [22m[32m292.70 KB[39m
-[32mESM[39m ⚡️ Build success in 118ms
-[32mCJS[39m [1mdist/client.js [22m[32m292.53 KB[39m
-[32mCJS[39m [1mdist/seed.js   [22m[32m296.05 KB[39m
-[32mCJS[39m ⚡️ Build success in 120ms
+[32mESM[39m [1mdist/seed.mjs           [22m[32m3.72 KB[39m
+[32mESM[39m [1mdist/chunk-LKTASNSP.mjs [22m[32m292.66 KB[39m
+[32mESM[39m ⚡️ Build success in 75ms
+[32mCJS[39m [1mdist/seed.js   [22m[32m296.01 KB[39m
+[32mCJS[39m [1mdist/client.js [22m[32m292.49 KB[39m
+[32mCJS[39m ⚡️ Build success in 76ms
 [34mCLI[39m Watching for changes in "."
 [34mCLI[39m Ignoring changes in "**/{.git,node_modules}/**" | "dist"
 
