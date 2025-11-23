@@ -26,7 +26,7 @@ let OcrController = class OcrController {
     async mapOcrText(text) {
         console.log('Received OCR text:', text);
         const model = this.genAI.getGenerativeModel({
-            model: "gemini-1.5-flash-latest",
+            model: "gemini-2.5-flash-lite",
         });
         const prompt = `
 The following OCR text comes from a Delaware DMV complaint form. 

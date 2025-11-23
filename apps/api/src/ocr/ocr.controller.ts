@@ -24,7 +24,7 @@ export class OcrController {
     const model = this.genAI.getGenerativeModel({
 
       //model: "gemini-1.5-flash", // ✔ correct for v1 API
-      model: "gemini-1.5-flash-latest",
+      model: "gemini-2.5-flash-lite",
     });
 
     const prompt = `

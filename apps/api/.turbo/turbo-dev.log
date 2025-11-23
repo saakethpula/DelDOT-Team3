@@ -2,55 +2,100 @@
 > api@0.0.0 dev
 > nest start --watch
 
-[1G[0Kc[[90m1:12:33 PM[0m] Starting compilation in watch mode...
+[1G[0Kc[[90m2:25:34 PM[0m] Starting compilation in watch mode...
 
-[[90m1:12:34 PM[0m] Found 0 errors. Watching for file changes.
+[[90m2:25:36 PM[0m] Found 0 errors. Watching for file changes.
 
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +478ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mLinksModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mVehicleModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mComplaintModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUserModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDocumentModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mOcrController {/ocr}:[39m[38;5;3m +3ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ocr/map, POST} route[39m[38;5;3m +4ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLinksController {/links}:[39m[38;5;3m +1ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links, POST} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links, GET} route[39m[38;5;3m +1ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, PATCH} route[39m[38;5;3m +1ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, DELETE} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mVehicleController {/vehicle}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/vehicle, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/vehicle/:id, GET} route[39m[38;5;3m +1ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mComplaintController {/complaint}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint, POST} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint, GET} route[39m[38;5;3m +1ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint/search, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint/:id, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mUserController {/user}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/user, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/user/:id, GET} route[39m[38;5;3m +1ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentController {/document}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/document, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:35 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/document/:id, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 53149  - [39m11/23/2025, 1:12:36 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +503ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:36 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +756ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mLinksModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mVehicleModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mComplaintModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUserModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDocumentModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mOcrController {/ocr}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ocr/map, POST} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLinksController {/links}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mVehicleController {/vehicle}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/vehicle, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/vehicle/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mComplaintController {/complaint}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint/search, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mUserController {/user}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/user, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/user/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentController {/document}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/document, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/document/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 56033  - [39m11/23/2025, 2:25:37 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +454ms[39m
 Received OCR text: REV 6/2022   1  Compliance and Investigations Unit Complaint Form  C OMPLAINT   V OLUNTARY STATEMENT  I wish to file a complaint against the business or individual named below. I understand that the Division of Motor Vehicles DOES NOT represent private citizens seeking the return of monies or other personal remedies as a result of contractual disputes or civil actions.  Customer Filing Complaint:________________________________________________  Day Time Phone ______________________ Email Address___________________________________________________________________ Address _______________________________________________________________________ City ______________________________State ____________Zip __________  Business or Individual Complaint Filed Against:   _____________________________________ Phone _________________________________________________________________________ Address________________________________________________________________________ City __________________State ____________   Zip __________ Dealership Representative’s Name (If applicable)________________________________________  Vehicle Involved:   (If applicable) VIN |____|____|____|____|____|____|____|____|____|____|____|____|____|____|____|____| Year _____________Make _______________________Model ____________________ Color ___________________ Plate Number/U-title______________________________  Other complaints NOT involving a motor vehicle sale or repair Explain Complaint:   (Please attach copies of any documents you have to support your complaint)  (Continue on Page 2)  Brishna Nazari  403-2030-3899  brishna@udel.edu  500 Hamleat  Newark   DE   19716  Khadija  455-3333-2524  300 Hamet  Newark   DE   19711  Khalid  2   4   5   6   7   1   2   3   4   5   6   7   8   8   9   9   9  2019   Make   Accord  White   3454  ✔  This is for the test.
 REV 6/2022   2  I, _______________________________________________ freely and voluntarily give this affidavit to the State of Delaware, Division of Motor Vehicles. I further certify and affirm that all information is true and correct to the best of my knowledge and that I will testify to these facts if requested to do so in any action brought against the business or individual named above. Incomplete or inaccurate information may delay or prevent an investigation.  ___________________________________________________________ Signature of Complainant   Date ___________________________________________________________ DMV Representative Name/Title/Lane/Station #   Date ___________________________________________________________ DMV Representative’s Supervisor   Date  Supervisor Review and Signature Required  Return the completed form to your local DMV office, Attn: Compliance & Investigations Unit:  DELAWARE CITY  2101 Mid County Dr  New Castle, DE 19720  (302) 326 - 5000  WILMINGTON  2230 Hessler Blvd  New Castle, DE 19720  (302) 434 - 3200  DOVER  PO Box 698  Dover, DE 19903  (3 02) 744 - 2500  GEORGETOWN  23737 Dupont Blvd  Georgetown, DE 19947  (302) 853 - 1000  www.dmv.de.gov  Internal Use Only:  Case No. ______________ Date Received:__________Investigator:______________  12/22/2025  12/23/2025  12/24/2025  4567   Ali 12/25/202
 REV 6/2022   3  CUSTOMER INFORMATION PAGES  WHAT YOU SHOULD KNOW BEFORE FILING A COMPLAINT  How to File a Complaint  To file a complaint with the Division, you must complete a DMV Complaint Form and return it to the Division’s Compliance & Investigations Unit. Forms may be obtained at all DMV locations or on the Division’s website.  Investigations Typically Conducted by the Division  • Dealer failed to submit title documentation   • Dealer fraud  • DMV Employee misconduct   • Unlicensed dealers  • Counterfeit or fraudulent DMV documents   • Odometer fraud  • Violations of laws pertaining to the sale of motor vehicles   • Identity theft  Common Outcomes of Investigations  Licensees often volunteer to resolve complaints once contacted by a DMV investigator. However, if violations of law are suspected, DMV Investigators will take the appropriate criminal or administrative actions in accordance with Delaware law or forward these violations to the appropriate law enforcement agency. Should that occur, you may be asked to testify in a court of law or administrative hearing. Investigations may be lengthy depending on the particular situation.  Alternatives  Civil Action – You may be able to seek remedy through the courts by contacting an attorney or legal  aid group. Small claims are limited to $15,000 or less.  The Division cannot give legal advice nor recommend an attorney.  https://www.courts.delaware.gov/jpcourt/  Complaints may also be filed with:  • Your Local Police Agencies (Stolen Vehicles, other criminal charges)  • Better Business Bureau  • Attorney General’s Consumer Protection Unit (1-800-220-5424)  • Chamber of Commerce
 REV 6/2022   4  The DMV Compliance & Investigations Unit Does Not:  • Investigate complaints against towing or impound services, body shops/garages, or handle insurance disputes.  • Investigate all complaints received. Complaints are assigned based on the Division’s legal jurisdiction, case priorities, severity of allegations, history of similar allegations, and available personnel.  • Help you get a refund or cancel a sale. The Division does not have the authority to represent private citizens seeking a return of money or personal property as part of a dispute or complaint (see Alternatives above.)  • Intervene in most disputes involving a vehicle sales contract or repair dispute. The Division will not attempt to change the terms of a valid sales contract, lease, or warranty.  • Investigate most private party sales. Sales which do not involve a “Division Licensee” or “Employee” may not be investigated unless document fraud is involved or the Division believes one of the parties should be licensed.  • Investigate “Lemon Laws.” These apply to brand new vehicles only and are handled by the Delaware Attorney General’s office.  Tips for Buying a Car  “AS IS”  The term “AS IS” means exactly that. Inspect a vehicle you intend to purchase carefully or have it inspected by a qualified mechanic. Warranties or repairs promised on used vehicles must be specified in writing and disclosed on the sales contract or other written form of disclosure. A verbal promise is not binding.  No “Cooling Off” Period  The State of Delaware does not have any type of waiting period that allows you to return a vehicle you have purchased. Once you have signed a sales contract, you have purchased the vehicle and are responsible for all contractual requirements.  Understand the Sales Contract  It is your responsibility to understand the terms of the sale and financing before you enter into an agreement. Do not sign a contract that contains blank spaces.
 REV 6/2022   5  Private Party Sales  Consumers who buy vehicles displayed for sale from roadsides, vacant lots, or commercial parking lots often have no recourse if there is a problem with registration or titling. Delaware law allows private parties to sell only four (4) personally owned vehicles per twelve (12) months without a dealer’s license.  Additional tips for buying a used vehicle can be found on the DMV website:  http://www.dmv.de.gov/services/vehicle_services/titles/ve_title_used.shtml  Responsibilities of a Dealer  Bill of Sale   – You must receive this document on date of the sale from the dealer.  Title Documentation   – Dealers must submit the required documentation needed to create a  Delaware title to the Delaware DMV on any vehicle sold in this state within 30 days of sale.  Temporary Tags -   If a Delaware Dealer issues a temporary tag to a Delaware resident, the dealer is  required by law to submit the title work to the DMV for processing. The customer cannot submit it themselves.  Responsibilities of the Division of Motor Vehicles  DMV licenses the following types of businesses:  • Motor Vehicle dealers- New, Used, Wholesale, Trailer, Mobile Home, Motorcycle and Scooter, Auto Auctions, Recreational Vehicles, Recycler, and Transporter.
 
-Gemini mapping failed: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent: [404 Not Found] models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
-    at handleResponseNotOk (/Users/brishna/Desktop/DelDOT-Team3/node_modules/[4m@google[24m/generative-ai/dist/index.js:434:11)
-[90m    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)[39m
-    at async makeRequest (/Users/brishna/Desktop/DelDOT-Team3/node_modules/[4m@google[24m/generative-ai/dist/index.js:403:9)
-    at async generateContent (/Users/brishna/Desktop/DelDOT-Team3/node_modules/[4m@google[24m/generative-ai/dist/index.js:867:22)
-    at async OcrController.mapOcrText [90m(/Users/brishna/Desktop/DelDOT-Team3/apps/api/[39msrc/ocr/ocr.controller.ts:101:20[90m)[39m
-    at async /Users/brishna/Desktop/DelDOT-Team3/node_modules/[4m@nestjs[24m/core/router/router-execution-context.js:46:28
-    at async /Users/brishna/Desktop/DelDOT-Team3/node_modules/[4m@nestjs[24m/core/router/router-proxy.js:9:17 {
-  status: [33m404[39m,
-  statusText: [32m'Not Found'[39m,
-  errorDetails: [90mundefined[39m
+Gemini FULL RAW RESULT: {
+  "response": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "```json\n{\n  \"customerName\": \"Brishna Nazari\",\n  \"customerPhone\": \"403-2030-3899\",\n  \"customerEmail\": \"brishna@udel.edu\",\n  \"customerAddress\": \"500 Hamleat\",\n  \"customerCity\": \"Newark\",\n  \"customerState\": \"DE\",\n  \"customerZip\": \"19716\",\n  \"respondentName\": \"Khadija\",\n  \"respondentPhone\": \"455-3333-2524\",\n  \"respondentAddress\": \"300 Hamet\",\n  \"respondentCity\": \"Newark\",\n  \"respondentState\": \"DE\",\n  \"respondentZip\": \"19711\",\n  \"dealershipRep\": \"Khalid\",\n  \"vin\": \"24567123456788999\",\n  \"year\": \"2019\",\n  \"make\": \"Make\",\n  \"model\": \"Accord\",\n  \"color\": \"White\",\n  \"plateNumber\": \"3454\",\n  \"plateOrUtitle\": null,\n  \"complaintType\": \"checked\",\n  \"explainComplaint\": \"This is for the test.\",\n  \"signatureConfirmed\": false\n}\n```"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 2327,
+      "candidatesTokenCount": 306,
+      "totalTokenCount": 2633,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 2327
+        }
+      ]
+    },
+    "modelVersion": "gemini-2.5-flash-lite",
+    "responseId": "vV8jadWXCOvvjrEPt8jAuAY"
+  }
+}
+Cleaned JSON output from Gemini: {
+  "customerName": "Brishna Nazari",
+  "customerPhone": "403-2030-3899",
+  "customerEmail": "brishna@udel.edu",
+  "customerAddress": "500 Hamleat",
+  "customerCity": "Newark",
+  "customerState": "DE",
+  "customerZip": "19716",
+  "respondentName": "Khadija",
+  "respondentPhone": "455-3333-2524",
+  "respondentAddress": "300 Hamet",
+  "respondentCity": "Newark",
+  "respondentState": "DE",
+  "respondentZip": "19711",
+  "dealershipRep": "Khalid",
+  "vin": "24567123456788999",
+  "year": "2019",
+  "make": "Make",
+  "model": "Accord",
+  "color": "White",
+  "plateNumber": "3454",
+  "plateOrUtitle": null,
+  "complaintType": "checked",
+  "explainComplaint": "This is for the test.",
+  "signatureConfirmed": false
 }
