@@ -32,6 +32,9 @@ let ComplaintController = class ComplaintController {
     findOne(id) {
         return this.complaintService.findOne(id);
     }
+    update(id, updateData) {
+        return this.complaintService.update(id, updateData);
+    }
 };
 exports.ComplaintController = ComplaintController;
 __decorate([
@@ -61,6 +64,14 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], ComplaintController.prototype, "findOne", null);
+__decorate([
+    (0, common_1.Patch)(':id'),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", void 0)
+], ComplaintController.prototype, "update", null);
 exports.ComplaintController = ComplaintController = __decorate([
     (0, common_1.Controller)('complaint'),
     __metadata("design:paramtypes", [complaint_service_1.ComplaintService])

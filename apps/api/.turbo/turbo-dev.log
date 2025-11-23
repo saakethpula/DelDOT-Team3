@@ -2,76 +2,233 @@
 > api@0.0.0 dev
 > nest start --watch
 
-[1G[0Kc[[90m4:05:08 PM[0m] Starting compilation in watch mode...
+[1G[0Kc[[90m2:32:16 PM[0m] Starting compilation in watch mode...
 
-[[90m4:05:09 PM[0m] Found 0 errors. Watching for file changes.
+[[90m2:32:17 PM[0m] Found 0 errors. Watching for file changes.
 
-(node:12020) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(node:48369) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
 (Use `node --trace-deprecation ...` to show where the warning was created)
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +639ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mLinksModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mVehicleModule dependencies initialized[39m[38;5;3m +1ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mComplaintModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUserModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDocumentModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/}:[39m[38;5;3m +3ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/, GET} route[39m[38;5;3m +2ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLinksController {/links}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links, POST} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, GET} route[39m[38;5;3m +1ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, PATCH} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, DELETE} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mVehicleController {/vehicle}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/vehicle, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/vehicle/:id, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mComplaintController {/complaint}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint, POST} route[39m[38;5;3m +1ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint/search, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint/:id, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mUserController {/user}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/user, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/user/:id, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentController {/document}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/document, GET} route[39m[38;5;3m +1ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/document/:id, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 12055  - [39m11/19/2025, 4:05:11 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +783ms[39m
-Received DTO: {
-  "customerName": "Saaketh",
-  "customerPhone": "3023737838",
-  "customerEmail": "",
-  "customerAddress": "",
-  "customerCity": "",
-  "customerState": "",
-  "customerZip": "",
-  "respondentName": "",
-  "respondentPhone": "",
-  "respondentAddress": "",
-  "respondentCity": "",
-  "respondentState": "",
-  "respondentZip": "",
-  "dealershipRep": "",
-  "vin": "",
-  "year": "",
-  "make": "",
-  "model": "",
-  "color": "",
-  "plateNumber": "",
-  "plateOrUtitle": "",
-  "complaintType": "",
-  "explainComplaint": "",
-  "signatureConfirmed": true
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:17 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +462ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mLinksModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mVehicleModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mComplaintModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUserModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDocumentModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/}:[39m[38;5;3m +2ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLinksController {/links}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mVehicleController {/vehicle}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/vehicle, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/vehicle/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mComplaintController {/complaint}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint/search, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mUserController {/user}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/user, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/user/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentController {/document}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/document, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:18 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/document/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 48435  - [39m11/23/2025, 2:32:19 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +1230ms[39m
+Error updating complaint: PrismaClientValidationError: 
+Invalid `prisma.complaint.update()` invocation:
+
+{
+  where: {
+    id: "cmhkzh0kl0005zzw60rhqm4xe"
+  },
+  data: {
+    id: "cmhkzh0kl0005zzw60rhqm4xe",
+    customerName: "Robert King",
+    customerPhone: "302-555-0199",
+    customerEmail: "robert.king@example.com",
+    customerAddress: "45 Market St",
+    customerCity: "Wilmington",
+    customerState: "DE",
+    customerZip: "19801",
+    respondentName: "QuickFix Garage",
+    respondentPhone: "302-555-0200",
+    respondentAddress: "88 Repair Rd",
+    respondentCity: "Wilmington",
+    respondentState: "DE",
+    respondentZip: "19801",
+    dealershipRep: undefined,
+    complaintType: "Repair dispute",
+    explainComplaint: "Repair shop charged for parts not installed. Customer requests review and refund.",
+    signatureName: "Robert King",
+    signatureDate: "2025-08-05T15:00:00.000Z",
+    dmvRepresentative: undefined,
+    dmvRepresentativeDate: undefined,
+    dmvSupervisor: undefined,
+    dmvSupervisorDate: undefined,
+    caseNumber: "CASE-2025-0002",
+    dateReceived: "2025-08-05T15:10:00.000Z",
+    investigator: "Inv-02",
+    status: "CLOSED",
+    createdAt: "2025-11-04T19:50:13.798Z",
+    updatedAt: "2025-11-04T19:56:36.767Z",
+    vehicle: undefined,
+    documents: [
+      {
+        id: "cmhkzh0km0006zzw67ie6ae3g",
+        fileName: "invoice.pdf",
+        fileType: "application/pdf",
+        fileSize: 120456,
+        url: "https://example.com/seed-files/invoice.pdf",
+        notes: "Invoice from repair shop",
+        complaintId: "cmhkzh0kl0005zzw60rhqm4xe",
+        uploadedAt: "2025-11-04T19:50:13.798Z"
+      },
+      {
+        id: "cmhkzpa460007zz71l2yqwwad",
+        fileName: "invoice.pdf",
+        fileType: "application/pdf",
+        fileSize: 120456,
+        url: "https://example.com/seed-files/invoice.pdf",
+        notes: "Invoice from repair shop",
+        complaintId: "cmhkzh0kl0005zzw60rhqm4xe",
+        uploadedAt: "2025-11-04T19:56:39.414Z"
+      }
+    ]
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  },
+  include: {
+    vehicle: true,
+    documents: true
+  }
 }
-Cleaned data: {
-  "customerName": "Saaketh",
-  "customerPhone": "3023737838"
+
+Argument `documents`: Invalid value provided. Expected DocumentUpdateManyWithoutComplaintNestedInput or DocumentUncheckedUpdateManyWithoutComplaintNestedInput, provided (Object, Object).
+    at Nn (/Users/saakethpula/Documents/498 project/yo/DelDOT-Team3/packages/database/dist/client.js:3122:13)
+    at ei.handleRequestError (/Users/saakethpula/Documents/498 project/yo/DelDOT-Team3/packages/database/dist/client.js:5272:11)
+    at ei.handleAndLogRequestError (/Users/saakethpula/Documents/498 project/yo/DelDOT-Team3/packages/database/dist/client.js:5263:16)
+    at ei.request (/Users/saakethpula/Documents/498 project/yo/DelDOT-Team3/packages/database/dist/client.js:5254:16)
+    at async a (/Users/saakethpula/Documents/498 project/yo/DelDOT-Team3/packages/database/dist/client.js:5654:21)
+    at async ComplaintService.update [90m(/Users/saakethpula/Documents/498 project/yo/DelDOT-Team3/apps/api/[39msrc/complaint/complaint.service.ts:103:31[90m)[39m
+    at async /Users/saakethpula/Documents/498 project/yo/DelDOT-Team3/node_modules/[4m@nestjs/core[24m/router/router-execution-context.js:46:28
+    at async /Users/saakethpula/Documents/498 project/yo/DelDOT-Team3/node_modules/[4m@nestjs/core[24m/router/router-proxy.js:9:17 {
+  clientVersion: [32m'6.18.0'[39m
 }
-Final complaint data: {
-  "customerName": "Saaketh",
-  "customerPhone": "3023737838",
-  "caseNumber": "CASE-1763586325353",
-  "dateReceived": "2025-11-19T21:05:25.353Z"
+[31m[Nest] 48435  - [39m11/23/2025, 2:40:05 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39mPrismaClientValidationError: 
+Invalid `prisma.complaint.update()` invocation:
+
+{
+  where: {
+    id: "cmhkzh0kl0005zzw60rhqm4xe"
+  },
+  data: {
+    id: "cmhkzh0kl0005zzw60rhqm4xe",
+    customerName: "Robert King",
+    customerPhone: "302-555-0199",
+    customerEmail: "robert.king@example.com",
+    customerAddress: "45 Market St",
+    customerCity: "Wilmington",
+    customerState: "DE",
+    customerZip: "19801",
+    respondentName: "QuickFix Garage",
+    respondentPhone: "302-555-0200",
+    respondentAddress: "88 Repair Rd",
+    respondentCity: "Wilmington",
+    respondentState: "DE",
+    respondentZip: "19801",
+    dealershipRep: undefined,
+    complaintType: "Repair dispute",
+    explainComplaint: "Repair shop charged for parts not installed. Customer requests review and refund.",
+    signatureName: "Robert King",
+    signatureDate: "2025-08-05T15:00:00.000Z",
+    dmvRepresentative: undefined,
+    dmvRepresentativeDate: undefined,
+    dmvSupervisor: undefined,
+    dmvSupervisorDate: undefined,
+    caseNumber: "CASE-2025-0002",
+    dateReceived: "2025-08-05T15:10:00.000Z",
+    investigator: "Inv-02",
+    status: "CLOSED",
+    createdAt: "2025-11-04T19:50:13.798Z",
+    updatedAt: "2025-11-04T19:56:36.767Z",
+    vehicle: undefined,
+    documents: [
+      {
+        id: "cmhkzh0km0006zzw67ie6ae3g",
+        fileName: "invoice.pdf",
+        fileType: "application/pdf",
+        fileSize: 120456,
+        url: "https://example.com/seed-files/invoice.pdf",
+        notes: "Invoice from repair shop",
+        complaintId: "cmhkzh0kl0005zzw60rhqm4xe",
+        uploadedAt: "2025-11-04T19:50:13.798Z"
+      },
+      {
+        id: "cmhkzpa460007zz71l2yqwwad",
+        fileName: "invoice.pdf",
+        fileType: "application/pdf",
+        fileSize: 120456,
+        url: "https://example.com/seed-files/invoice.pdf",
+        notes: "Invoice from repair shop",
+        complaintId: "cmhkzh0kl0005zzw60rhqm4xe",
+        uploadedAt: "2025-11-04T19:56:39.414Z"
+      }
+    ]
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  },
+  include: {
+    vehicle: true,
+    documents: true
+  }
 }
-Complaint created successfully: cmi6hrhpo0000zzav4c4jovzf
+
+Argument `documents`: Invalid value provided. Expected DocumentUpdateManyWithoutComplaintNestedInput or DocumentUncheckedUpdateManyWithoutComplaintNestedInput, provided (Object, Object).
+    at Nn (/Users/saakethpula/Documents/498 project/yo/DelDOT-Team3/packages/database/dist/client.js:3122:13)
+    at ei.handleRequestError (/Users/saakethpula/Documents/498 project/yo/DelDOT-Team3/packages/database/dist/client.js:5272:11)
+    at ei.handleAndLogRequestError (/Users/saakethpula/Documents/498 project/yo/DelDOT-Team3/packages/database/dist/client.js:5263:16)
+    at ei.request (/Users/saakethpula/Documents/498 project/yo/DelDOT-Team3/packages/database/dist/client.js:5254:16)
+    at async a (/Users/saakethpula/Documents/498 project/yo/DelDOT-Team3/packages/database/dist/client.js:5654:21)
+    at async ComplaintService.update [90m(/Users/saakethpula/Documents/498 project/yo/DelDOT-Team3/apps/api/[39msrc/complaint/complaint.service.ts:103:31[90m)[39m
+    at async /Users/saakethpula/Documents/498 project/yo/DelDOT-Team3/node_modules/[4m@nestjs/core[24m/router/router-execution-context.js:46:28
+    at async /Users/saakethpula/Documents/498 project/yo/DelDOT-Team3/node_modules/[4m@nestjs/core[24m/router/router-proxy.js:9:17 {
+  clientVersion: [32m'6.18.0'[39m
+}
+c[[90m2:40:56 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m2:40:56 PM[0m] Found 0 errors. Watching for file changes.
+
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +9ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mLinksModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mVehicleModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mComplaintModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUserModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDocumentModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLinksController {/links}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mVehicleController {/vehicle}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/vehicle, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/vehicle/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mComplaintController {/complaint}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint/search, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mUserController {/user}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/user, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/user/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentController {/document}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/document, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:56 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/document/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 52579  - [39m11/23/2025, 2:40:58 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +1253ms[39m

@@ -49,6 +49,8 @@ function RouteComponent() {
   const [detailLoading, setDetailLoading] = useState(false)
   const [selectedComplaint, setSelectedComplaint] = useState<Complaint | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isEditing, setIsEditing] = useState(false)
+  const [editData, setEditData] = useState<Partial<Complaint>>({})
   const [filters, setFilters] = useState<SearchFilters>({
     caseNumber: '',
     customerName: '',
@@ -439,9 +441,32 @@ function RouteComponent() {
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <h2 style={{ margin: 0 }}>{selectedComplaint?.caseNumber || 'Complaint Details'}</h2>
-              <div>
+              <div style={{ display: 'flex', gap: '10px' }}>
+                {!isEditing ? (
+                  <button
+                    onClick={() => { setIsEditing(true); setEditData(selectedComplaint || {}) }}
+                    style={{ padding: '8px 12px', borderRadius: 6, border: 'none', background: '#007bff', color: 'white', cursor: 'pointer' }}
+                  >
+                    Edit
+                  </button>
+                ) : (
+                  <>
+                    <button
+                      onClick={handleSaveEdit}
+                      style={{ padding: '8px 12px', borderRadius: 6, border: 'none', background: '#28a745', color: 'white', cursor: 'pointer' }}
+                    >
+                      Save
+                    </button>
+                    <button
+                      onClick={() => { setIsEditing(false); setEditData({}) }}
+                      style={{ padding: '8px 12px', borderRadius: 6, border: 'none', background: '#dc3545', color: 'white', cursor: 'pointer' }}
+                    >
+                      Cancel
+                    </button>
+                  </>
+                )}
                 <button
-                  onClick={() => { setIsModalOpen(false); setSelectedComplaint(null) }}
+                  onClick={() => { setIsModalOpen(false); setSelectedComplaint(null); setIsEditing(false); setEditData({}) }}
                   style={{ padding: '8px 12px', borderRadius: 6, border: 'none', background: '#6c757d', color: 'white', cursor: 'pointer' }}
                 >
                   Close
@@ -453,12 +478,102 @@ function RouteComponent() {
 
             {!detailLoading && selectedComplaint && (
               <div style={{ marginTop: 15 }}>
-                <p><strong>Customer:</strong> {selectedComplaint.customerName}</p>
-                {selectedComplaint.customerEmail && <p><strong>Email:</strong> {selectedComplaint.customerEmail}</p>}
-                {selectedComplaint.customerPhone && <p><strong>Phone:</strong> {selectedComplaint.customerPhone}</p>}
-                {selectedComplaint.respondentName && <p><strong>Respondent:</strong> {selectedComplaint.respondentName}</p>}
-                {selectedComplaint.complaintType && <p><strong>Type:</strong> {selectedComplaint.complaintType}</p>}
-                {selectedComplaint.investigator && <p><strong>Investigator:</strong> {selectedComplaint.investigator}</p>}
+                <div style={{ marginBottom: 10 }}>
+                  <strong>Customer Name:</strong>
+                  {isEditing ? (
+                    <input
+                      type="text"
+                      value={editData.customerName || ''}
+                      onChange={(e) => setEditData({ ...editData, customerName: e.target.value })}
+                      style={{ width: '100%', padding: '6px', marginTop: 5, borderRadius: 4, border: '1px solid #ccc' }}
+                    />
+                  ) : (
+                    <span> {selectedComplaint.customerName}</span>
+                  )}
+                </div>
+                <div style={{ marginBottom: 10 }}>
+                  <strong>Email:</strong>
+                  {isEditing ? (
+                    <input
+                      type="email"
+                      value={editData.customerEmail || ''}
+                      onChange={(e) => setEditData({ ...editData, customerEmail: e.target.value })}
+                      style={{ width: '100%', padding: '6px', marginTop: 5, borderRadius: 4, border: '1px solid #ccc' }}
+                    />
+                  ) : (
+                    <span> {selectedComplaint.customerEmail || 'N/A'}</span>
+                  )}
+                </div>
+                <div style={{ marginBottom: 10 }}>
+                  <strong>Phone:</strong>
+                  {isEditing ? (
+                    <input
+                      type="text"
+                      value={editData.customerPhone || ''}
+                      onChange={(e) => setEditData({ ...editData, customerPhone: e.target.value })}
+                      style={{ width: '100%', padding: '6px', marginTop: 5, borderRadius: 4, border: '1px solid #ccc' }}
+                    />
+                  ) : (
+                    <span> {selectedComplaint.customerPhone || 'N/A'}</span>
+                  )}
+                </div>
+                <div style={{ marginBottom: 10 }}>
+                  <strong>Respondent:</strong>
+                  {isEditing ? (
+                    <input
+                      type="text"
+                      value={editData.respondentName || ''}
+                      onChange={(e) => setEditData({ ...editData, respondentName: e.target.value })}
+                      style={{ width: '100%', padding: '6px', marginTop: 5, borderRadius: 4, border: '1px solid #ccc' }}
+                    />
+                  ) : (
+                    <span> {selectedComplaint.respondentName || 'N/A'}</span>
+                  )}
+                </div>
+                <div style={{ marginBottom: 10 }}>
+                  <strong>Type:</strong>
+                  {isEditing ? (
+                    <input
+                      type="text"
+                      value={editData.complaintType || ''}
+                      onChange={(e) => setEditData({ ...editData, complaintType: e.target.value })}
+                      style={{ width: '100%', padding: '6px', marginTop: 5, borderRadius: 4, border: '1px solid #ccc' }}
+                    />
+                  ) : (
+                    <span> {selectedComplaint.complaintType || 'N/A'}</span>
+                  )}
+                </div>
+                <div style={{ marginBottom: 10 }}>
+                  <strong>Investigator:</strong>
+                  {isEditing ? (
+                    <input
+                      type="text"
+                      value={editData.investigator || ''}
+                      onChange={(e) => setEditData({ ...editData, investigator: e.target.value })}
+                      style={{ width: '100%', padding: '6px', marginTop: 5, borderRadius: 4, border: '1px solid #ccc' }}
+                    />
+                  ) : (
+                    <span> {selectedComplaint.investigator || 'N/A'}</span>
+                  )}
+                </div>
+                <div style={{ marginBottom: 10 }}>
+                  <strong>Status:</strong>
+                  {isEditing ? (
+                    <select
+                      value={editData.status || ''}
+                      onChange={(e) => setEditData({ ...editData, status: e.target.value })}
+                      style={{ width: '100%', padding: '6px', marginTop: 5, borderRadius: 4, border: '1px solid #ccc' }}
+                    >
+                      <option value="NEW">New</option>
+                      <option value="UNDER_REVIEW">Under Review</option>
+                      <option value="INVESTIGATING">Investigating</option>
+                      <option value="CLOSED">Closed</option>
+                      <option value="REFERRED">Referred</option>
+                    </select>
+                  ) : (
+                    <span> {selectedComplaint.status}</span>
+                  )}
+                </div>
                 {selectedComplaint.vehicle && (
                   <div style={{ marginTop: 10, padding: 10, background: '#f8f9fa', borderRadius: 6 }}>
                     <strong>Vehicle</strong>
@@ -494,12 +609,41 @@ function RouteComponent() {
     </div>
   )
 
+  async function handleSaveEdit() {
+    if (!selectedComplaint?.id) return
+    
+    try {
+      const backendUrl = (import.meta.env.VITE_BACKEND_URL as string)
+      const base = backendUrl.replace(/\/$/, '')
+      const response = await fetch(`${base}/complaint/${selectedComplaint.id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(editData)
+      })
+      
+      if (!response.ok) throw new Error('Failed to update complaint')
+      
+      const updated = await response.json()
+      setSelectedComplaint(updated)
+      setIsEditing(false)
+      setEditData({})
+      
+      // Refresh the list
+      handleSearch()
+      alert('Complaint updated successfully!')
+    } catch (err) {
+      alert(err instanceof Error ? err.message : 'Failed to update')
+    }
+  }
+
   async function openComplaintDetails(id: string) {
     setDetailLoading(true)
     setIsModalOpen(true)
     setSelectedComplaint(null)
     try {
-      const res = await fetch(`https://deldot-team3.onrender.com/complaint/${id}`)
+      const backendUrl = (import.meta.env.VITE_BACKEND_URL as string)
+      const base = backendUrl.replace(/\/$/, '')
+      const res = await fetch(`${base}/complaint/${id}`)
       if (!res.ok) throw new Error('Failed to load complaint details')
       const data = await res.json()
       setSelectedComplaint(data)
