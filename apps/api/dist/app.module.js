@@ -9,8 +9,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const links_module_1 = require("./links/links.module");
+const ocr_controller_1 = require("./ocr/ocr.controller");
 const app_service_1 = require("./app.service");
-const app_controller_1 = require("./app.controller");
 const vehicle_module_1 = require("./vehicle/vehicle.module");
 const complaint_module_1 = require("./complaint/complaint.module");
 const user_module_1 = require("./user/user.module");
@@ -21,7 +21,7 @@ exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [links_module_1.LinksModule, vehicle_module_1.VehicleModule, complaint_module_1.ComplaintModule, user_module_1.UserModule, document_module_1.DocumentModule],
-        controllers: [app_controller_1.AppController],
+        controllers: [ocr_controller_1.OcrController],
         providers: [app_service_1.AppService],
     })
 ], AppModule);

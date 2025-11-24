@@ -28,9 +28,11 @@
     "@tanstack/react-start": "^1.132.0",
     "@tanstack/router-plugin": "^1.132.0",
     "lucide-react": "^0.544.0",
+    "pdfjs-dist": "^5.4.394",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwindcss": "^4.0.6",
+    "tesseract.js": "^6.0.1",
     "vite-tsconfig-paths": "^5.1.4"
   },
   "devDependencies": {
