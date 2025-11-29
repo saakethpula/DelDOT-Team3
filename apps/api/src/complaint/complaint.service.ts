@@ -88,6 +88,40 @@ export class ComplaintService {
         });
     }
 
+    async update(id: string, dto: any) {
+        try {
+            // Fields that should not be updated (read-only or relations)
+            const excludedFields = ['id', 'createdAt', 'updatedAt', 'vehicle', 'documents'];
+            
+            // Clean empty strings to undefined and exclude read-only fields
+            const cleanData: any = {};
+            for (const [key, value] of Object.entries(dto)) {
+                if (excludedFields.includes(key)) {
+                    continue; // Skip read-only and relation fields
+                }
+                if (value === '' || value === null) {
+                    cleanData[key] = undefined;
+                } else {
+                    cleanData[key] = value;
+                }
+            }
+
+            const complaint = await this.prisma.complaint.update({
+                where: { id },
+                data: cleanData,
+                include: {
+                    vehicle: true,
+                    documents: true,
+                },
+            });
+
+            return complaint;
+        } catch (error) {
+            console.error('Error updating complaint:', error);
+            throw error;
+        }
+    }
+
     async search(filters: any) {
         const where: any = {};
 

@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
+import { Body, Controller, Get, Param, Patch, Post, Query } from '@nestjs/common';
 import { ComplaintService } from './complaint.service';
 @Controller('complaint')
 export class ComplaintController {
@@ -22,5 +22,10 @@ export class ComplaintController {
     @Get(':id')
     findOne(@Param('id') id: string) {
         return this.complaintService.findOne(id);
+    }
+
+    @Patch(':id')
+    update(@Param('id') id: string, @Body() updateData: any) {
+        return this.complaintService.update(id, updateData);
     }
 }
