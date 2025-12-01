@@ -32,7 +32,8 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
-    "@prisma/client": "latest"
+    "@prisma/client": "latest",
+    "firebase": "^12.6.0"
   },
   "packageManager": "npm@10.9.0",
   "workspaces": [

@@ -4,30 +4,26 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "vite dev --port 3001",
+    "dev": "vite --port 3001",
     "build": "vite build",
     "serve": "vite preview",
     "preview": "vite preview",
     "start": "vite preview --port ${PORT:-8080} --host 0.0.0.0",
-    "deploy": "wrangler deploy",
-    "cf-typegen": "wrangler types",
     "test": "vitest run",
     "lint": "eslint",
     "format": "prettier",
-    "check": "prettier --write . && eslint --fix"
+    "check": "prettier --write . && eslint --fix",
+    "deploy": "npm run build && firebase deploy --only hosting"
   },
   "dependencies": {
-    "@netlify/vite-plugin-tanstack-start": "^1.0.2",
     "@repo/ui": "*",
     "@tailwindcss/vite": "^4.0.6",
-    "@tanstack/react-devtools": "^0.7.0",
     "@tanstack/react-query": "^5.66.5",
     "@tanstack/react-query-devtools": "^5.84.2",
     "@tanstack/react-router": "^1.132.0",
     "@tanstack/react-router-devtools": "^1.132.0",
-    "@tanstack/react-router-ssr-query": "^1.131.7",
-    "@tanstack/react-start": "^1.132.0",
     "@tanstack/router-plugin": "^1.132.0",
+    "firebase": "^11.1.0",
     "lucide-react": "^0.544.0",
     "pdfjs-dist": "^5.4.394",
     "react": "^19.0.0",
@@ -37,7 +33,6 @@
     "vite-tsconfig-paths": "^5.1.4"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "^1.13.10",
     "@repo/database": "*",
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
@@ -54,7 +49,6 @@
     "typescript": "^5.7.2",
     "vite": "^7.1.7",
     "vitest": "^3.0.5",
-    "web-vitals": "^5.1.0",
-    "wrangler": "^4.42.0"
+    "web-vitals": "^5.1.0"
   }
 }
