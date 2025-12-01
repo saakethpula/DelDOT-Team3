@@ -101,7 +101,7 @@ function ComplaintForm() {
   try {
     const backend =
       (import.meta.env as { VITE_BACKEND_URL?: string }).VITE_BACKEND_URL ||
-      'http://localhost:3000';
+      'https://deldot-team3.onrender.com';
 
     const response = await fetch(`${backend}/ocr/map`, {
       method: 'POST',
@@ -227,7 +227,7 @@ function ComplaintForm() {
    try {
      const backend =
        (import.meta.env as { VITE_BACKEND_URL?: string }).VITE_BACKEND_URL ||
-       'http://localhost:3000';
+       'https://deldot-team3.onrender.com';
      const url = `${backend.replace(/\/$/, '')}/complaint`;
      const response = await fetch(url, {
        method: 'POST',
