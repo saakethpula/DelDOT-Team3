@@ -51,6 +51,7 @@ function RouteComponent() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [isEditing, setIsEditing] = useState(false)
   const [editData, setEditData] = useState<Partial<Complaint>>({})
+  const [hideClosedCases, setHideClosedCases] = useState(true)
   const [filters, setFilters] = useState<SearchFilters>({
     caseNumber: '',
     customerName: '',
@@ -297,16 +298,36 @@ function RouteComponent() {
 
       {/* Results */}
       <div>
-        <h2 style={{ marginBottom: '15px' }}>
-          Results {complaints.length > 0 && `(${complaints.length})`}
-        </h2>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
+          <h2 style={{ margin: 0 }}>
+            Results {complaints.length > 0 && `(${hideClosedCases ? complaints.filter(c => c.status !== 'CLOSED').length : complaints.length}${hideClosedCases && complaints.some(c => c.status === 'CLOSED') ? ` of ${complaints.length}` : ''})`}
+          </h2>
+          
+          <label style={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            gap: '8px',
+            cursor: 'pointer',
+            userSelect: 'none'
+          }}>
+            <input
+              type="checkbox"
+              checked={hideClosedCases}
+              onChange={(e) => setHideClosedCases(e.target.checked)}
+              style={{ width: '18px', height: '18px', cursor: 'pointer' }}
+            />
+            <span style={{ fontSize: '14px', color: '#555' }}>Hide closed cases</span>
+          </label>
+        </div>
         
         {complaints.length === 0 && !loading && (
           <p style={{ color: '#666' }}>No complaints found. Try adjusting your filters.</p>
         )}
 
         <div style={{ display: 'grid', gap: '15px' }}>
-            {complaints.map((complaint) => (
+            {complaints
+              .filter((complaint) => !hideClosedCases || complaint.status !== 'CLOSED')
+              .map((complaint) => (
               <div
                 key={complaint.id}
                 onClick={() => openComplaintDetails(complaint.id)}
@@ -480,68 +501,23 @@ function RouteComponent() {
               <div style={{ marginTop: 15 }}>
                 <div style={{ marginBottom: 10 }}>
                   <strong>Customer Name:</strong>
-                  {isEditing ? (
-                    <input
-                      type="text"
-                      value={editData.customerName || ''}
-                      onChange={(e) => setEditData({ ...editData, customerName: e.target.value })}
-                      style={{ width: '100%', padding: '6px', marginTop: 5, borderRadius: 4, border: '1px solid #ccc' }}
-                    />
-                  ) : (
-                    <span> {selectedComplaint.customerName}</span>
-                  )}
+                  <span> {selectedComplaint.customerName}</span>
                 </div>
                 <div style={{ marginBottom: 10 }}>
                   <strong>Email:</strong>
-                  {isEditing ? (
-                    <input
-                      type="email"
-                      value={editData.customerEmail || ''}
-                      onChange={(e) => setEditData({ ...editData, customerEmail: e.target.value })}
-                      style={{ width: '100%', padding: '6px', marginTop: 5, borderRadius: 4, border: '1px solid #ccc' }}
-                    />
-                  ) : (
-                    <span> {selectedComplaint.customerEmail || 'N/A'}</span>
-                  )}
+                  <span> {selectedComplaint.customerEmail || 'N/A'}</span>
                 </div>
                 <div style={{ marginBottom: 10 }}>
                   <strong>Phone:</strong>
-                  {isEditing ? (
-                    <input
-                      type="text"
-                      value={editData.customerPhone || ''}
-                      onChange={(e) => setEditData({ ...editData, customerPhone: e.target.value })}
-                      style={{ width: '100%', padding: '6px', marginTop: 5, borderRadius: 4, border: '1px solid #ccc' }}
-                    />
-                  ) : (
-                    <span> {selectedComplaint.customerPhone || 'N/A'}</span>
-                  )}
+                  <span> {selectedComplaint.customerPhone || 'N/A'}</span>
                 </div>
                 <div style={{ marginBottom: 10 }}>
                   <strong>Respondent:</strong>
-                  {isEditing ? (
-                    <input
-                      type="text"
-                      value={editData.respondentName || ''}
-                      onChange={(e) => setEditData({ ...editData, respondentName: e.target.value })}
-                      style={{ width: '100%', padding: '6px', marginTop: 5, borderRadius: 4, border: '1px solid #ccc' }}
-                    />
-                  ) : (
-                    <span> {selectedComplaint.respondentName || 'N/A'}</span>
-                  )}
+                  <span> {selectedComplaint.respondentName || 'N/A'}</span>
                 </div>
                 <div style={{ marginBottom: 10 }}>
                   <strong>Type:</strong>
-                  {isEditing ? (
-                    <input
-                      type="text"
-                      value={editData.complaintType || ''}
-                      onChange={(e) => setEditData({ ...editData, complaintType: e.target.value })}
-                      style={{ width: '100%', padding: '6px', marginTop: 5, borderRadius: 4, border: '1px solid #ccc' }}
-                    />
-                  ) : (
-                    <span> {selectedComplaint.complaintType || 'N/A'}</span>
-                  )}
+                  <span> {selectedComplaint.complaintType || 'N/A'}</span>
                 </div>
                 <div style={{ marginBottom: 10 }}>
                   <strong>Investigator:</strong>
