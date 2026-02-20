@@ -8,6 +8,7 @@ COPY . .
 
 RUN npm ci
 RUN npm run build -w @repo/database
+RUN npm run build -w @repo/api
 RUN npm run build -w ./apps/api
 
 ENV NODE_ENV=production
