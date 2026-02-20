@@ -32,8 +32,8 @@ function LandingPage() {
       >
         <h1 style={{ margin: 0 }}>Delaware DMV Complaint Portal</h1>
         <img
-          src="/public/download.png"
-          alt="Delaware Seal"
+          src="/Deldot-1140x640.png"
+          alt="DelDOT Logo"
           style={{ height: '50px' }}
         />
       </header>

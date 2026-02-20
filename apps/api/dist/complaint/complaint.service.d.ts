@@ -51,11 +51,11 @@ export declare class ComplaintService {
         caseNumber: string | null;
         dateReceived: Date | null;
         investigator: string | null;
-        status: import("@repo/database").$Enums.ComplaintStatus;
+        status: import(".prisma/client").$Enums.ComplaintStatus;
         createdAt: Date;
         updatedAt: Date;
     }>;
-    findAll(): import("@repo/database").Prisma.PrismaPromise<({
+    findAll(): import(".prisma/client").Prisma.PrismaPromise<({
         vehicle: {
             id: string;
             vin: string | null;
@@ -104,11 +104,11 @@ export declare class ComplaintService {
         caseNumber: string | null;
         dateReceived: Date | null;
         investigator: string | null;
-        status: import("@repo/database").$Enums.ComplaintStatus;
+        status: import(".prisma/client").$Enums.ComplaintStatus;
         createdAt: Date;
         updatedAt: Date;
     })[]>;
-    findOne(id: string): import("@repo/database").Prisma.Prisma__ComplaintClient<{
+    findOne(id: string): import(".prisma/client").Prisma.Prisma__ComplaintClient<{
         vehicle: {
             id: string;
             vin: string | null;
@@ -157,10 +157,10 @@ export declare class ComplaintService {
         caseNumber: string | null;
         dateReceived: Date | null;
         investigator: string | null;
-        status: import("@repo/database").$Enums.ComplaintStatus;
+        status: import(".prisma/client").$Enums.ComplaintStatus;
         createdAt: Date;
         updatedAt: Date;
-    }, null, import("@repo/database/generated/client/runtime/library").DefaultArgs, import("@repo/database").Prisma.PrismaClientOptions>;
+    }, null, import("@prisma/client/runtime/library").DefaultArgs, import(".prisma/client").Prisma.PrismaClientOptions>;
     update(id: string, dto: any): Promise<{
         vehicle: {
             id: string;
@@ -210,7 +210,7 @@ export declare class ComplaintService {
         caseNumber: string | null;
         dateReceived: Date | null;
         investigator: string | null;
-        status: import("@repo/database").$Enums.ComplaintStatus;
+        status: import(".prisma/client").$Enums.ComplaintStatus;
         createdAt: Date;
         updatedAt: Date;
     }>;
@@ -263,7 +263,7 @@ export declare class ComplaintService {
         caseNumber: string | null;
         dateReceived: Date | null;
         investigator: string | null;
-        status: import("@repo/database").$Enums.ComplaintStatus;
+        status: import(".prisma/client").$Enums.ComplaintStatus;
         createdAt: Date;
         updatedAt: Date;
     })[]>;

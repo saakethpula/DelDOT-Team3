@@ -2,7 +2,7 @@ import { PrismaService } from 'src/prisma.service';
 export declare class VehicleService {
     private prisma;
     constructor(prisma: PrismaService);
-    findAll(): import("@repo/database").Prisma.PrismaPromise<{
+    findAll(): import(".prisma/client").Prisma.PrismaPromise<{
         id: string;
         vin: string | null;
         year: number | null;
@@ -13,7 +13,7 @@ export declare class VehicleService {
         plateOrUtitle: string | null;
         complaintId: string;
     }[]>;
-    findOne(id: string): import("@repo/database").Prisma.Prisma__VehicleClient<{
+    findOne(id: string): import(".prisma/client").Prisma.Prisma__VehicleClient<{
         id: string;
         vin: string | null;
         year: number | null;
@@ -23,6 +23,6 @@ export declare class VehicleService {
         plateNumber: string | null;
         plateOrUtitle: string | null;
         complaintId: string;
-    }, null, import("@repo/database/generated/client/runtime/library").DefaultArgs, import("@repo/database").Prisma.PrismaClientOptions>;
+    }, null, import("@prisma/client/runtime/library").DefaultArgs, import(".prisma/client").Prisma.PrismaClientOptions>;
 }
 //# sourceMappingURL=vehicle.service.d.ts.map
