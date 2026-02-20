@@ -10,9 +10,6 @@ exports.PrismaService = void 0;
 const common_1 = require("@nestjs/common");
 const database_1 = require("@repo/database");
 let PrismaService = class PrismaService extends database_1.PrismaClient {
-    async onModuleInit() {
-        await this.$connect();
-    }
 };
 exports.PrismaService = PrismaService;
 exports.PrismaService = PrismaService = __decorate([

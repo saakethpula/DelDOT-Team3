@@ -1,7 +1,10 @@
 import { PrismaService } from 'src/prisma.service';
+import { NotificationService } from '../notification/notification.service';
 export declare class ComplaintService {
     private prisma;
-    constructor(prisma: PrismaService);
+    private notificationService;
+    private readonly logger;
+    constructor(prisma: PrismaService, notificationService: NotificationService);
     create(dto: any): Promise<{
         vehicle: {
             id: string;
