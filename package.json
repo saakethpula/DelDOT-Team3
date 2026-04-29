@@ -15,10 +15,14 @@
     "db:seed": "turbo run db:seed"
   },
   "devDependencies": {
+    "@nestjs/testing": "^11.1.19",
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
+    "@types/jest": "^30.0.0",
+    "jest": "^30.3.0",
     "prettier": "^3.6.2",
     "prisma": "latest",
+    "ts-jest": "^29.4.9",
     "tsx": "4.19.1",
     "turbo": "^2.5.6",
     "typescript": "5.9.2"
@@ -33,7 +37,9 @@
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "@prisma/client": "latest",
-    "firebase": "^12.6.0"
+    "firebase": "^12.6.0",
+    "nodemailer": "^8.0.7",
+    "twilio": "^6.0.0"
   },
   "packageManager": "npm@10.9.0",
   "workspaces": [

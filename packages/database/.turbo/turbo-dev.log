@@ -8,7 +8,7 @@
 
 [1G[0K[2mPrisma schema loaded from prisma/schema.prisma[22m
 
-✔ Generated [1mPrisma Client[22m (v6.18.0)[2m to ./../../node_modules/@prisma/client[22m in 118ms
+✔ Generated [1mPrisma Client[22m (v6.18.0)[2m to ./../../node_modules/@prisma/client[22m in 197ms
 
 Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
 
@@ -25,13 +25,13 @@ Tip: Interested in query caching in just a few lines of code? Try Accelerate tod
 [34mCLI[39m Target: es2022
 [34mCJS[39m Build start
 [34mESM[39m Build start
+[32mCJS[39m [1mdist/client.js [22m[32m1.48 KB[39m
+[32mCJS[39m [1mdist/seed.js   [22m[32m5.54 KB[39m
+[32mCJS[39m ⚡️ Build success in 95ms
 [32mESM[39m [1mdist/client.mjs         [22m[32m70.00 B[39m
 [32mESM[39m [1mdist/seed.mjs           [22m[32m3.71 KB[39m
 [32mESM[39m [1mdist/chunk-Z74QFS6J.mjs [22m[32m283.00 B[39m
-[32mESM[39m ⚡️ Build success in 131ms
-[32mCJS[39m [1mdist/seed.js   [22m[32m5.54 KB[39m
-[32mCJS[39m [1mdist/client.js [22m[32m1.48 KB[39m
-[32mCJS[39m ⚡️ Build success in 132ms
+[32mESM[39m ⚡️ Build success in 97ms
 [34mCLI[39m Watching for changes in "."
 [34mCLI[39m Ignoring changes in "**/{.git,node_modules}/**" | "dist"
 

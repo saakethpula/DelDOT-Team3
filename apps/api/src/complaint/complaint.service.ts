@@ -1,23 +1,28 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { PrismaService } from 'src/prisma.service';
+import { NotificationService } from '../notification/notification.service';
 
 @Injectable()
 export class ComplaintService {
-    constructor(private prisma: PrismaService) { }
+    private readonly logger = new Logger(ComplaintService.name);
+
+    constructor(
+        private prisma: PrismaService,
+        private notificationService: NotificationService,
+    ) { }
 
     async create(dto: any) {
         try {
             console.log('Received DTO:', JSON.stringify(dto, null, 2));
-            
+
             const { vin, year, make, model, color, plateNumber, plateOrUtitle, signatureConfirmed, ...rest } = dto;
 
-            // Clean up empty strings and convert to undefined for nullable fields (except required customerName)
             const cleanData: any = {};
             for (const [key, value] of Object.entries(rest)) {
                 if (key === 'customerName') {
-                    cleanData[key] = value; // Keep customerName as is (required field)
+                    cleanData[key] = value;
                 } else if (value === '' || value === null) {
-                    cleanData[key] = undefined; // Convert empty strings to undefined for optional fields
+                    cleanData[key] = undefined;
                 } else {
                     cleanData[key] = value;
                 }
@@ -25,10 +30,7 @@ export class ComplaintService {
 
             console.log('Cleaned data:', JSON.stringify(cleanData, null, 2));
 
-            // Generate case number
             const caseNumber = `CASE-${Date.now()}`;
-
-            // Check if vehicle data exists
             const hasVehicleData = vin || year || make || model || color || plateNumber || plateOrUtitle;
 
             const complaintData: any = {
@@ -47,7 +49,7 @@ export class ComplaintService {
                         color: color || undefined,
                         plateNumber: plateNumber || undefined,
                         plateOrUtitle: plateOrUtitle || undefined,
-                    }
+                    },
                 };
             }
 
@@ -62,6 +64,21 @@ export class ComplaintService {
             });
 
             console.log('Complaint created successfully:', complaint.id);
+
+            try {
+                await this.notificationService.sendComplaintConfirmation(
+                    complaint.customerName,
+                    complaint.customerEmail,
+                    complaint.customerPhone,
+                    complaint.caseNumber,
+                );
+            } catch (error) {
+                this.logger.error(
+                    `Notification failed for complaint ${complaint.id}, case ${complaint.caseNumber}`,
+                    error,
+                );
+            }
+
             return complaint;
         } catch (error) {
             console.error('Error creating complaint:', error);
@@ -90,15 +107,14 @@ export class ComplaintService {
 
     async update(id: string, dto: any) {
         try {
-            // Fields that should not be updated (read-only or relations)
             const excludedFields = ['id', 'createdAt', 'updatedAt', 'vehicle', 'documents'];
-            
-            // Clean empty strings to undefined and exclude read-only fields
+
             const cleanData: any = {};
             for (const [key, value] of Object.entries(dto)) {
                 if (excludedFields.includes(key)) {
-                    continue; // Skip read-only and relation fields
+                    continue;
                 }
+
                 if (value === '' || value === null) {
                     cleanData[key] = undefined;
                 } else {
@@ -125,35 +141,41 @@ export class ComplaintService {
     async search(filters: any) {
         const where: any = {};
 
-        // Exact match filters
         if (filters.caseNumber) {
             where.caseNumber = { contains: filters.caseNumber, mode: 'insensitive' };
         }
+
         if (filters.customerName) {
             where.customerName = { contains: filters.customerName, mode: 'insensitive' };
         }
+
         if (filters.customerEmail) {
             where.customerEmail = { contains: filters.customerEmail, mode: 'insensitive' };
         }
+
         if (filters.respondentName) {
             where.respondentName = { contains: filters.respondentName, mode: 'insensitive' };
         }
+
         if (filters.status) {
             where.status = filters.status;
         }
+
         if (filters.investigator) {
             where.investigator = { contains: filters.investigator, mode: 'insensitive' };
         }
+
         if (filters.complaintType) {
             where.complaintType = { contains: filters.complaintType, mode: 'insensitive' };
         }
 
-        // Date range filter
         if (filters.dateReceivedFrom || filters.dateReceivedTo) {
             where.dateReceived = {};
+
             if (filters.dateReceivedFrom) {
                 where.dateReceived.gte = new Date(filters.dateReceivedFrom);
             }
+
             if (filters.dateReceivedTo) {
                 where.dateReceived.lte = new Date(filters.dateReceivedTo);
             }

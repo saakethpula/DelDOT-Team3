@@ -2,62 +2,99 @@
 > api@0.0.0 dev
 > nest start --watch
 
-[1G[0Kc[[90m1:24:36 PM[0m] Starting compilation in watch mode...
+[1G[0Kc[[90m4:54:14 PM[0m] Starting compilation in watch mode...
 
-[[90m1:24:38 PM[0m] Found 0 errors. Watching for file changes.
+[[90m4:54:18 PM[0m] Found 0 errors. Watching for file changes.
 
-(node:73468) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
-(Use `node --trace-deprecation ...` to show where the warning was created)
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +11ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mLinksModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mVehicleModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mComplaintModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUserModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDocumentModule dependencies initialized[39m[38;5;3m +0ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mOcrController {/ocr}:[39m[38;5;3m +3ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ocr/map, POST} route[39m[38;5;3m +1ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLinksController {/links}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links, POST} route[39m[38;5;3m +1ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, PATCH} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, DELETE} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mVehicleController {/vehicle}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/vehicle, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/vehicle/:id, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mComplaintController {/complaint}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint, POST} route[39m[38;5;3m +1ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint/search, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint/:id, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint/:id, PATCH} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mUserController {/user}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/user, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/user/:id, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentController {/document}:[39m[38;5;3m +0ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/document, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:38 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/document/:id, GET} route[39m[38;5;3m +0ms[39m
-[32m[Nest] 73502  - [39m02/20/2026, 1:24:40 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +1636ms[39m
-[31m[Nest] 73502  - [39m02/20/2026, 1:24:40 PM [31m  ERROR[39m [38;5;3m[NestApplication] [39m[31mError: listen EADDRINUSE: address already in use :::3000[39m[38;5;3m +2ms[39m
-node:net:1940
-    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
-               ^
-
-Error: listen EADDRINUSE: address already in use :::3000
-[90m    at Server.setupListenHandle [as _listen2] (node:net:1940:16)[39m
-[90m    at listenInCluster (node:net:1997:12)[39m
-[90m    at Server.listen (node:net:2102:7)[39m
-    at ExpressAdapter.listen (/Users/saakethpula/Documents/School/Graduate/Fall 2025/CISC498-Project/yo/DelDOT-Team3/node_modules/[4m@nestjs/platform-express[24m/adapters/express-adapter.js:127:32)
-    at /Users/saakethpula/Documents/School/Graduate/Fall 2025/CISC498-Project/yo/DelDOT-Team3/node_modules/[4m@nestjs/core[24m/nest-application.js:188:30
-    at new Promise (<anonymous>)
-    at NestApplication.listen (/Users/saakethpula/Documents/School/Graduate/Fall 2025/CISC498-Project/yo/DelDOT-Team3/node_modules/[4m@nestjs/core[24m/nest-application.js:178:16)
-    at async bootstrap [90m(/Users/saakethpula/Documents/School/Graduate/Fall 2025/CISC498-Project/yo/DelDOT-Team3/apps/api/[39msrc/main.ts:15:3[90m)[39m {
-  code: [32m'EADDRINUSE'[39m,
-  errno: [33m-48[39m,
-  syscall: [32m'listen'[39m,
-  address: [32m'::'[39m,
-  port: [33m3000[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:18 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mNotificationModule dependencies initialized[39m[38;5;3m +631ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mLinksModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mVehicleModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUserModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDocumentModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mComplaintModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mOcrController {/ocr}:[39m[38;5;3m +2ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/ocr/map, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLinksController {/links}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, PATCH} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mVehicleController {/vehicle}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/vehicle, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/vehicle/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mComplaintController {/complaint}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint/search, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/complaint/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mUserController {/user}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/user, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/user/:id, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDocumentController {/document}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/document, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/document/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 36430  - [39m04/29/2026, 4:54:19 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +1ms[39m
+Received DTO: {
+  "customerName": "fatema",
+  "customerPhone": "4699394982",
+  "customerEmail": "khadija@udel.edu",
+  "customerAddress": "231 David Hollowell Drive",
+  "customerCity": "Newark",
+  "customerState": "DE",
+  "customerZip": "19716",
+  "respondentName": "khadija",
+  "respondentPhone": "4699394982",
+  "respondentAddress": "510 Hamlet Way",
+  "respondentCity": "Newark",
+  "respondentState": "DE",
+  "respondentZip": "19711",
+  "dealershipRep": "",
+  "vin": "",
+  "year": "",
+  "make": "",
+  "model": "",
+  "color": "",
+  "plateNumber": "",
+  "plateOrUtitle": "",
+  "complaintType": "",
+  "explainComplaint": "",
+  "signatureConfirmed": true
 }
-
-Node.js v24.7.0
+Cleaned data: {
+  "customerName": "fatema",
+  "customerPhone": "4699394982",
+  "customerEmail": "khadija@udel.edu",
+  "customerAddress": "231 David Hollowell Drive",
+  "customerCity": "Newark",
+  "customerState": "DE",
+  "customerZip": "19716",
+  "respondentName": "khadija",
+  "respondentPhone": "4699394982",
+  "respondentAddress": "510 Hamlet Way",
+  "respondentCity": "Newark",
+  "respondentState": "DE",
+  "respondentZip": "19711"
+}
+Final complaint data: {
+  "customerName": "fatema",
+  "customerPhone": "4699394982",
+  "customerEmail": "khadija@udel.edu",
+  "customerAddress": "231 David Hollowell Drive",
+  "customerCity": "Newark",
+  "customerState": "DE",
+  "customerZip": "19716",
+  "respondentName": "khadija",
+  "respondentPhone": "4699394982",
+  "respondentAddress": "510 Hamlet Way",
+  "respondentCity": "Newark",
+  "respondentState": "DE",
+  "respondentZip": "19711",
+  "caseNumber": "CASE-1777496109854",
+  "dateReceived": "2026-04-29T20:55:09.854Z"
+}
+Complaint created successfully: cmokjag950000ie3y3gm8915o
+[32m[Nest] 36430  - [39m04/29/2026, 4:55:11 PM [32m    LOG[39m [38;5;3m[EmailProvider] [39m[32mEmail sent to khadija@udel.edu[39m

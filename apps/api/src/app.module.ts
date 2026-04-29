@@ -9,10 +9,13 @@ import { VehicleModule } from './vehicle/vehicle.module';
 import { ComplaintModule } from './complaint/complaint.module';
 import { UserModule } from './user/user.module';
 import { DocumentModule } from './document/document.module';
+import { NotificationModule } from './notification/notification.module';
+
 
 @Module({
-  imports: [LinksModule, VehicleModule, ComplaintModule, UserModule, DocumentModule],
+  imports: [LinksModule, VehicleModule, ComplaintModule, UserModule, DocumentModule, NotificationModule],
   controllers: [OcrController],
   providers: [AppService],
 })
 export class AppModule {}
+

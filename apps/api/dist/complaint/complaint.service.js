@@ -8,14 +8,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var ComplaintService_1;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ComplaintService = void 0;
 const common_1 = require("@nestjs/common");
 const prisma_service_1 = require("../prisma.service");
-let ComplaintService = class ComplaintService {
+const notification_service_1 = require("../notification/notification.service");
+let ComplaintService = ComplaintService_1 = class ComplaintService {
     prisma;
-    constructor(prisma) {
+    notificationService;
+    logger = new common_1.Logger(ComplaintService_1.name);
+    constructor(prisma, notificationService) {
         this.prisma = prisma;
+        this.notificationService = notificationService;
     }
     async create(dto) {
         try {
@@ -51,7 +56,7 @@ let ComplaintService = class ComplaintService {
                         color: color || undefined,
                         plateNumber: plateNumber || undefined,
                         plateOrUtitle: plateOrUtitle || undefined,
-                    }
+                    },
                 };
             }
             console.log('Final complaint data:', JSON.stringify(complaintData, null, 2));
@@ -63,6 +68,12 @@ let ComplaintService = class ComplaintService {
                 },
             });
             console.log('Complaint created successfully:', complaint.id);
+            try {
+                await this.notificationService.sendComplaintConfirmation(complaint.customerName, complaint.customerEmail, complaint.customerPhone, complaint.caseNumber);
+            }
+            catch (error) {
+                this.logger.error(`Notification failed for complaint ${complaint.id}, case ${complaint.caseNumber}`, error);
+            }
             return complaint;
         }
         catch (error) {
@@ -162,8 +173,9 @@ let ComplaintService = class ComplaintService {
     }
 };
 exports.ComplaintService = ComplaintService;
-exports.ComplaintService = ComplaintService = __decorate([
+exports.ComplaintService = ComplaintService = ComplaintService_1 = __decorate([
     (0, common_1.Injectable)(),
-    __metadata("design:paramtypes", [prisma_service_1.PrismaService])
+    __metadata("design:paramtypes", [prisma_service_1.PrismaService,
+        notification_service_1.NotificationService])
 ], ComplaintService);
 //# sourceMappingURL=complaint.service.js.map

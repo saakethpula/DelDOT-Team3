@@ -11,11 +11,13 @@ const common_1 = require("@nestjs/common");
 const complaint_controller_1 = require("./complaint.controller");
 const complaint_service_1 = require("./complaint.service");
 const prisma_service_1 = require("../prisma.service");
+const notification_module_1 = require("../notification/notification.module");
 let ComplaintModule = class ComplaintModule {
 };
 exports.ComplaintModule = ComplaintModule;
 exports.ComplaintModule = ComplaintModule = __decorate([
     (0, common_1.Module)({
+        imports: [notification_module_1.NotificationModule],
         controllers: [complaint_controller_1.ComplaintController],
         providers: [complaint_service_1.ComplaintService, prisma_service_1.PrismaService],
     })

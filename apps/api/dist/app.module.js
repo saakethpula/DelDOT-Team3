@@ -15,12 +15,13 @@ const vehicle_module_1 = require("./vehicle/vehicle.module");
 const complaint_module_1 = require("./complaint/complaint.module");
 const user_module_1 = require("./user/user.module");
 const document_module_1 = require("./document/document.module");
+const notification_module_1 = require("./notification/notification.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [links_module_1.LinksModule, vehicle_module_1.VehicleModule, complaint_module_1.ComplaintModule, user_module_1.UserModule, document_module_1.DocumentModule],
+        imports: [links_module_1.LinksModule, vehicle_module_1.VehicleModule, complaint_module_1.ComplaintModule, user_module_1.UserModule, document_module_1.DocumentModule, notification_module_1.NotificationModule],
         controllers: [ocr_controller_1.OcrController],
         providers: [app_service_1.AppService],
     })
