@@ -12,6 +12,7 @@ describe('ComplaintService', () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         ComplaintService,
+
         {
           provide: PrismaService,
           useValue: {
@@ -61,10 +62,12 @@ describe('ComplaintService', () => {
       const result = await service.create(mockDto);
 
       expect(prismaService.complaint.create).toHaveBeenCalledWith({
+
         data: expect.objectContaining({
           customerName: 'John Doe',
           caseNumber: expect.any(String),
         }),
+        
         include: {
           vehicle: true,
           documents: true,
