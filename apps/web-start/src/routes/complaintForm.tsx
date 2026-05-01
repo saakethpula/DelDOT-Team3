@@ -72,8 +72,54 @@ function ComplaintForm() {
 
   const [isConfirmed, setIsConfirmed] = useState(false);
   const [referenceId, setReferenceId] = useState<string | null>(null);
+  const [validationErrors, setValidationErrors] = useState<Record<string, string>>({});
 
   useEffect(() => {localStorage.setItem("complaint_form_data", JSON.stringify(formData));}, [formData]);
+
+
+  const validateAddress = (address: string, city: string, state: string, zip: string): string | null => {
+    if (!address || !address.trim()) {
+      return 'Address is required'
+    }
+    if (!city || !city.trim()) {
+      return 'City is required'
+    }
+    if (!state || !state.trim()) {
+      return 'State is required'
+    }
+    if (!zip || !zip.trim()) {
+      return 'ZIP code is required'
+    }
+    // Basic ZIP validation (5 digits)
+    const zipRegex = /^\d{5}$/
+    if (!zipRegex.test(zip.trim())) {
+      return 'ZIP code must be 5 digits'
+    }
+    return null
+  }
+
+  const validateForm = (): boolean => {
+    const errors: Record<string, string> = {}
+
+    // Validate customer address if any field is filled
+    if (formData.customerAddress || formData.customerCity || formData.customerState || formData.customerZip) {
+      const customerError = validateAddress(formData.customerAddress, formData.customerCity, formData.customerState, formData.customerZip)
+      if (customerError) {
+        errors.customerAddress = customerError
+      }
+    }
+
+    // Validate respondent address if any field is filled
+    if (formData.respondentAddress || formData.respondentCity || formData.respondentState || formData.respondentZip) {
+      const respondentError = validateAddress(formData.respondentAddress, formData.respondentCity, formData.respondentState, formData.respondentZip)
+      if (respondentError) {
+        errors.respondentAddress = respondentError
+      }
+    }
+
+    setValidationErrors(errors)
+    return Object.keys(errors).length === 0
+  }
 
 
   const handleChange = (
@@ -106,6 +152,7 @@ function ComplaintForm() {
   const handleEdit = () => {
     setIsConfirmed(false);
     setReferenceId(null);
+    setValidationErrors({});
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -113,6 +160,11 @@ function ComplaintForm() {
 
     if (!formData.signatureConfirmed) {
       alert('Please check the E-sign confirmation before submitting.');
+      return;
+    }
+
+    if (!validateForm()) {
+      alert('Please fix the validation errors before submitting.');
       return;
     }
 
@@ -350,6 +402,9 @@ function ComplaintForm() {
 
   // helpers for rendering fields
   function renderText(label: string, name: keyof typeof formData) {
+    const isAddressField = name.includes('Address') || name.includes('City') || name.includes('State') || name.includes('Zip');
+    const errorKey = isAddressField ? name.replace(/City|State|Zip$/, 'Address') : name;
+    
     return (
       <label style={labelStyle}>
         {label}
@@ -361,6 +416,11 @@ function ComplaintForm() {
           style={inputStyle(false)}
           required={name === 'customerName'}
         />
+        {validationErrors[errorKey] && (
+          <div style={{ color: 'red', fontSize: '12px', marginTop: '2px' }}>
+            {validationErrors[errorKey]}
+          </div>
+        )}
       </label>
     );
   }

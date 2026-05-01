@@ -2,40 +2,44 @@
 > @repo/database@1.0.0 predev
 > npm run generate[5;1H[?25h]0;npm]0;npm run generate[?25l
 > @repo/database@1.0.0 generate
-> prisma generate
+> prisma generate[9;1H[?25h]0;C:\WINDOWS\system32\cmd.exe [2mPrisma schema loaded from prisma\schema.prisma
+[22m[90m┌─────────────────────────────────────────────────────────┐
+│  [34mUpdate available [90m6.18.0 -> 7.8.0                       │
+│                                                         │
+│  [mThis is a major update - please follow the guide at    [90m│
+│  [mhttps://pris.ly/d/major-version-upgrade[16X[90m[16C│
+│                                                         │
+│  [mRun the following to update[28X[90m[28C│
+│    [m[1mnpm i --save-dev prisma@latest[22m[23X[90m[23C│
+│    [m[1mnpm i @prisma/client@latest[22m[26X[90m[26C│
+└─────────────────────────────────────────────────────────┘
+[?25l[m
+✔ Generated [1mPrisma Client[22m (v6.18.0)[2m to .\generated\client[22m in 129ms[23;1HStart by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+[?25h
+Tip: Need your database queries to be 1000x faster? Accelerate offers you that and more: https://pris.ly/tip-2-accelerate
 
-[1G[0K[2mEnvironment variables loaded from prisma/.env[22m
-[2mPrisma schema loaded from prisma/schema.prisma[22m
-
-✔ Generated [1mPrisma Client[22m (v6.18.0)[2m to ./generated/client[22m in 384ms
-
-Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
-
-Tip: Interested in query caching in just a few lines of code? Try Accelerate today! https://pris.ly/tip-3-accelerate
-
-[1G[0K⠙[1G[0K[1G[0K⠙[1G[0K
+[K⠙[K
 > @repo/database@1.0.0 dev
 > tsup src/* --format cjs,esm --watch --onSuccess "npm run types"
 
-[1G[0K⠙[1G[0K[34mCLI[39m Building entry: src/client.ts, src/seed.ts
-[34mCLI[39m Using tsconfig: tsconfig.json
-[34mCLI[39m tsup v8.5.0
-[34mCLI[39m Running in watch mode
-[34mCLI[39m Target: es2022
-[34mCJS[39m Build start
-[34mESM[39m Build start
-[32mESM[39m [1mdist/seed.mjs           [22m[32m3.72 KB[39m
-[32mESM[39m [1mdist/client.mjs         [22m[32m70.00 B[39m
-[32mESM[39m [1mdist/chunk-YH3H7RLC.mjs [22m[32m292.76 KB[39m
-[32mESM[39m ⚡️ Build success in 103ms
-[32mCJS[39m [1mdist/client.js [22m[32m292.60 KB[39m
-[32mCJS[39m [1mdist/seed.js   [22m[32m296.12 KB[39m
-[32mCJS[39m ⚡️ Build success in 105ms
-[34mCLI[39m Watching for changes in "."
-[34mCLI[39m Ignoring changes in "**/{.git,node_modules}/**" | "dist"
-
+[34mCLI [mBuilding entry: src/client.ts, src/seed.ts
+[34mCLI [mUsing tsconfig: tsconfig.json
+[34mCLI [mtsup v8.5.0[K
+[34mCLI [mRunning in watch mode[K
+[34mCLI [mTarget: es2022[K
+[34mCJS [mBuild start[K
+[34mESM [mBuild start[K
+[32mCJS [m[1mdist\client.js [32m[22m292.44 KB[m
+[32mCJS [m[1mdist\seed.js   [32m[22m295.96 KB[m
+[32mCJS [m⚡️ Build success in 75ms[K
+[32mESM [m[1mdist\seed.mjs           [32m[22m3.72 KB[K[m
+[32mESM [m[1mdist\chunk-M7NDALMO.mjs [32m[22m292.61 KB[K[m
+[32mESM [m[1mdist\client.mjs         [32m[22m70.00 B[K[m
+[32mESM [m⚡️ Build success in 76ms[K
+[34mCLI [mWatching for changes in "."
+[34mCLI [mIgnoring changes in "**/{.git,node_modules}/**" | "dist"[K
+]0;npm]0;npm run types
 > @repo/database@1.0.0 types
 > tsc -p tsconfig.types.json
 
-]0;C:\WINDOWS\system32\cmd.exe ⠙
-[K
+]0;C:\WINDOWS\system32\cmd.exe ⠙[K

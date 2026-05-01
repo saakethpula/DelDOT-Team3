@@ -5914,8 +5914,8 @@ var require_client = __commonJS({
     var PrismaClient2 = getPrismaClient2(config);
     exports2.PrismaClient = PrismaClient2;
     Object.assign(exports2, Prisma);
-    path2.join(__dirname, "libquery_engine-darwin-arm64.dylib.node");
-    path2.join(process.cwd(), "generated/client/libquery_engine-darwin-arm64.dylib.node");
+    path2.join(__dirname, "query_engine-windows.dll.node");
+    path2.join(process.cwd(), "generated/client/query_engine-windows.dll.node");
     path2.join(__dirname, "schema.prisma");
     path2.join(process.cwd(), "generated/client/schema.prisma");
   }
