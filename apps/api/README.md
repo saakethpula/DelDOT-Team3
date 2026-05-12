@@ -1,25 +1,49 @@
-# With-NestJs | API
+# DelDOT API
 
-## Getting Started
+NestJS backend for the DelDOT DMV complaint case management tool.
 
-First, run the development server:
+## Responsibilities
+
+- Create, list, search, and update complaints.
+- Read related vehicle, document, and user records.
+- Map OCR text into complaint fields through the Gemini API.
+- Send optional complaint confirmation emails and SMS messages when notification providers are configured and enabled.
+
+## Local Development
+
+From the repository root:
 
 ```bash
-pnpm run dev
+npm run dev -w ./apps/api
 ```
 
-By default, your server will run at [http://localhost:3000](http://localhost:3000). You can use your favorite API platform like [Insomnia](https://insomnia.rest/) or [Postman](https://www.postman.com/) to test your APIs
+The API defaults to `http://localhost:3000`.
 
-You can start editing the demo **APIs** by modifying [linksService](./src/links/links.service.ts) provider.
+## Environment
 
-### ⚠️ Note about build
+See the root `README.md` and `.env.example` for the full environment variable list. The API needs `DATABASE_URL` for database access. OCR requires `GEMINI_API_KEY`. Email and SMS delivery are disabled unless `ENABLE_EMAIL_NOTIFICATIONS` or `ENABLE_SMS_NOTIFICATIONS` are set to `true`.
 
-If you plan to only build this app. Please make sure you've built the packages first.
+## Testing
 
-## Learn More
+```bash
+npm run test -w ./apps/api
+npm run test:e2e -w ./apps/api
+```
 
-To learn more about NestJs, take a look at the following resources:
+## Important Routes
 
-- [Official Documentation](https://docs.nestjs.com) - A progressive Node.js framework for building efficient, reliable and scalable server-side applications.
-- [Official NestJS Courses](https://courses.nestjs.com) - Learn everything you need to master NestJS and tackle modern backend applications at any scale.
-- [GitHub Repo](https://github.com/nestjs/nest)
+- `POST /complaint`
+- `GET /complaint`
+- `GET /complaint/search`
+- `GET /complaint/:id`
+- `PATCH /complaint/:id`
+- `POST /ocr/map`
+- `GET /vehicle`
+- `GET /document`
+- `GET /user`
+
+## Current Limitations
+
+- Staff-facing routes are not protected by authentication yet.
+- Twilio SMS code is present but still needs a live Twilio account and verified production configuration.
+- Email reminders should use a dedicated organizational sender address before production use.
