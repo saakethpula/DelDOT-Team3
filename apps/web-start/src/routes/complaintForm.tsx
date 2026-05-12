@@ -36,6 +36,14 @@ export const Route = createFileRoute('/complaintForm')({
  component: ComplaintForm,
 });
 
+function getBackendBaseUrl() {
+  const backendUrl = (import.meta.env as { VITE_BACKEND_URL?: string }).VITE_BACKEND_URL;
+  if (!backendUrl) {
+    throw new Error('VITE_BACKEND_URL is not configured');
+  }
+  return backendUrl.replace(/\/$/, '');
+}
+
 
 function ComplaintForm() {
  const pioneerBlue = '#00415B';
@@ -99,9 +107,7 @@ function ComplaintForm() {
 
  const mapTextToForm = async (text: string) => {
   try {
-    const backend =
-      (import.meta.env as { VITE_BACKEND_URL?: string }).VITE_BACKEND_URL ||
-      'https://deldot-team3.onrender.com';
+    const backend = getBackendBaseUrl();
 
     const response = await fetch(`${backend}/ocr/map`, {
       method: 'POST',
@@ -225,10 +231,8 @@ function ComplaintForm() {
 
 
    try {
-     const backend =
-       (import.meta.env as { VITE_BACKEND_URL?: string }).VITE_BACKEND_URL ||
-       'https://deldot-team3.onrender.com';
-     const url = `${backend.replace(/\/$/, '')}/complaint`;
+     const backend = getBackendBaseUrl();
+     const url = `${backend}/complaint`;
      const response = await fetch(url, {
        method: 'POST',
        headers: { 'Content-Type': 'application/json' },
@@ -332,7 +336,7 @@ function ComplaintForm() {
  );
 
 
- // ===== Render =====
+ // ===== Page =====
  return (
    <div style={{ fontFamily: 'Arial, sans-serif', backgroundColor: lightGray, minHeight: '100vh', padding: '20px' }}>
      <header

@@ -14,7 +14,7 @@ The core complaint intake, complaint search, complaint updates, OCR mapping, and
 - Database: PostgreSQL with Prisma
 - OCR mapping: Google Gemini API
 - Notifications: Nodemailer for email and Twilio for SMS
-- Deployment targets: Firebase Hosting for the frontend and Render for the API
+- Deployment targets: Firebase Hosting for the frontend and Cloud Run on Google Cloud Platform for the API
 
 ## Repository Structure
 
@@ -25,8 +25,7 @@ The core complaint intake, complaint search, complaint updates, OCR mapping, and
 - `packages/api`: Shared API utilities and DTO/entity types.
 - `packages/ui`: Shared React UI components.
 - `packages/eslint-config`, `packages/typescript-config`, `packages/jest-config`: Shared development tooling.
-- `Dockerfile`: Production container definition for the API service.
-- `render.yaml`: Render service configuration for API deployment.
+- `Dockerfile`: Production container definition for the API service, used for Cloud Run deployment.
 - `docker-compose.yml`: Local PostgreSQL support. The reverse proxy service references nginx config files that are not currently included.
 
 ## Setup
@@ -96,8 +95,9 @@ Never commit real secrets. Use `.env.example` as the local template and configur
 | ---------------------------- | ------------------------------ | ------------------------------ | ------------------------------------------------------------------------------ |
 | `DATABASE_URL`               | API, Prisma                    | Yes                            | PostgreSQL connection string used by Prisma at runtime.                        |
 | `DIRECT_URL`                 | Prisma                         | Yes for migrations             | Direct PostgreSQL connection string used by Prisma migrations.                 |
-| `PORT`                       | API, deployed frontend preview | No                             | Service port. API defaults to `3000`; Render uses `10000`; Docker uses `8080`. |
+| `PORT`                       | API, deployed frontend preview | No                             | Service port. API defaults to `3000`; Cloud Run and Docker commonly use `8080`. |
 | `HOST`                       | API                            | No                             | Bind host, commonly `0.0.0.0` in production containers.                        |
+| `CORS_ORIGINS`               | API                            | No                             | Comma-separated allowed frontend origins. Add the Firebase Hosting origin in production. |
 | `VITE_BACKEND_URL`           | Frontend                       | Yes                            | Base URL for API requests, such as `http://localhost:3000`.                    |
 | `GEMINI_API_KEY`             | API OCR route                  | Yes for OCR                    | Google Gemini API key used by `/ocr/map`.                                      |
 | `ENABLE_EMAIL_NOTIFICATIONS` | API notifications              | No                             | Set to `true` to send complaint confirmation emails.                           |
@@ -146,13 +146,13 @@ npm run build -w ./apps/web-start
 npm run deploy -w ./apps/web-start
 ```
 
-API deployment on Render:
+API deployment on Cloud Run:
 
-1. Create a Render web service from this repository.
-2. Use the root directory `.`.
-3. Configure the build and start commands from `render.yaml`.
-4. Add production environment variables in the Render dashboard, especially `DATABASE_URL`, `DIRECT_URL`, `GEMINI_API_KEY`, and any notification provider settings.
-5. Run Prisma migrations during deployment with `npx prisma migrate deploy`.
+1. Build and publish the API container image from the repository root.
+2. Deploy the image to Cloud Run on Google Cloud Platform.
+3. Set `PORT` to `8080` if Cloud Run does not inject it automatically, and set `HOST` to `0.0.0.0`.
+4. Add production environment variables in Cloud Run, especially `DATABASE_URL`, `DIRECT_URL`, `GEMINI_API_KEY`, `CORS_ORIGINS`, and any notification provider settings.
+5. Run Prisma migrations during deployment or release preparation with `npx prisma migrate deploy`.
 
 Docker API deployment:
 

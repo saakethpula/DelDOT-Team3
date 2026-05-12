@@ -42,6 +42,14 @@ interface SearchFilters {
   dateReceivedTo: string
 }
 
+function getBackendBaseUrl() {
+  const backendUrl = import.meta.env.VITE_BACKEND_URL as string | undefined
+  if (!backendUrl) {
+    throw new Error('VITE_BACKEND_URL is not configured')
+  }
+  return backendUrl.replace(/\/$/, '')
+}
+
 function RouteComponent() {
   const [complaints, setComplaints] = useState<Array<Complaint>>([])
   const [loading, setLoading] = useState(false)
@@ -77,8 +85,7 @@ function RouteComponent() {
         }
       })
 
-      const backendUrl = (import.meta.env.VITE_BACKEND_URL as string) || 'https://deldot-team3.onrender.com'
-      const base = backendUrl.replace(/\/$/, '')
+      const base = getBackendBaseUrl()
       const response = await fetch(`${base}/complaint/search?${params.toString()}`)
       
       if (!response.ok) {
@@ -589,8 +596,7 @@ function RouteComponent() {
     if (!selectedComplaint?.id) return
     
     try {
-      const backendUrl = (import.meta.env.VITE_BACKEND_URL as string)
-      const base = backendUrl.replace(/\/$/, '')
+      const base = getBackendBaseUrl()
       const response = await fetch(`${base}/complaint/${selectedComplaint.id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
@@ -617,8 +623,7 @@ function RouteComponent() {
     setIsModalOpen(true)
     setSelectedComplaint(null)
     try {
-      const backendUrl = (import.meta.env.VITE_BACKEND_URL as string)
-      const base = backendUrl.replace(/\/$/, '')
+      const base = getBackendBaseUrl()
       const res = await fetch(`${base}/complaint/${id}`)
       if (!res.ok) throw new Error('Failed to load complaint details')
       const data = await res.json()
