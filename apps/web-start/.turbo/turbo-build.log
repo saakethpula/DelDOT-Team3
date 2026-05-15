@@ -2,9 +2,9 @@
 > web-start@0.1.0 build
 > vite build[5;1H[?25h[K]0;C:\WINDOWS\system32\cmd.exe [33mYou are using Node.js 22.11.0. Vite requires Node.js version 20.19+ or 22.12+. Please upgrade your Node.js version.
 [m[36mvite v7.1.12 [32mbuilding for production...
-[m[Ktransforming (1) [2msrc\main.tsx[22m[K[29Ctransforming (6) [2m..\..\node_modules\@tanstack\react-query\build\modern\index.js[22m[K[79C[K[K[K[K[Ktransforming (61) [2m..\..\node_modules\react\jsx-runtime.js[22m[K[57Ctransforming (63) [2m..\..\node_modules\@tanstack\react-router\dist\esm\CatchBoundary.js[22m[K[K[K[Ktransforming (113) [2msrc\routes\__root.tsx[22m[K[K[40Ctransforming (136) [2m..\..\node_modules\scheduler\cjs\scheduler.production.js[22m[K[75Ctransforming (150) [2m..\..\node_modules\@tanstack\react-router-devtools\dist\esm\TanStackRouterDevtools.js[22m[K[104Ctransforming (168) [2m..\..\node_modules\@tanstack\router-devtools-core\dist\index-Cb5eH-Od.js[22m[K[91C[32m✓ [m173 modules transformed.
-[K[Kcomputing gzip size (2)...[K[K[26C[2mdist/[32m[22mindex.html[17X[m[1m[2m[17C  0.53 kB[22m[2m │ gzip:  0.33 kB[22m[K[2m
+[m[Ktransforming (1) [2msrc\main.tsx[22m[K[29Ctransforming (6) [2m..\..\node_modules\@tanstack\react-query\build\modern\index.js[22m[K[79C[K[K[K[Ktransforming (60) [2m..\..\node_modules\react\jsx-runtime.js[22m[K[57Ctransforming (64) [2m..\..\node_modules\@tanstack\react-router\dist\esm\ScrollRestoration.js[22m[K[K[K[Ktransforming (113) [2msrc\routes\__root.tsx[22m[K[40C[Ktransforming (133) [2m..\..\node_modules\react-dom\index.js[22m[K[56Ctransforming (148) [2m..\..\node_modules\@tanstack\router-core\dist\esm\lru-cache.js[22m[K[81Ctransforming (169) [2mvite\preload-helper.js[22m[K[41C[32m✓ [m173 modules transformed.
+[K[K[K[26C[K[26C[2mdist/[32m[22mindex.html[17X[m[1m[2m[17C  0.53 kB[22m[2m │ gzip:  0.33 kB[22m[K[2m
 dist/[35m[22massets/index-CjrUlpyS.css  [m[1m[2m  8.61 kB[22m[2m │ gzip:  2.36 kB
 dist/[36m[22massets/index-B_ICDVG3.js   [m[1m[2m312.56 kB[22m[2m │ gzip: 96.21 kB[22m
-[32m✓ built in 2.28s[m
+[32m✓ built in 2.31s[m
 [K[?9001l[?1004l

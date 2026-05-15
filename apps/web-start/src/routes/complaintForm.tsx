@@ -78,6 +78,7 @@ function ComplaintForm() {
   });
   const [submittedData, setSubmittedData] = useState<ComplaintFormData | null>(null);
   const [caseNumber, setCaseNumber] = useState<string | null>(null);
+  const [uploadStatus, setUploadStatus] = useState<string | null>(null);
 
   useEffect(() => {
     localStorage.setItem('complaint_form_data', JSON.stringify(formData));
@@ -89,6 +90,69 @@ function ComplaintForm() {
       ...prev,
       [name]: type === 'checkbox' ? checked : value,
     }));
+  };
+
+  const mapTextToForm = async (text: string) => {
+    const backend = getBackendBaseUrl();
+    const response = await fetch(`${backend}/ocr/map`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text }),
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to map uploaded PDF text');
+    }
+
+    const mappedData = await response.json();
+    setFormData((prev) => {
+      const updated = { ...prev };
+
+      for (const key in mappedData) {
+        const value = mappedData[key as keyof typeof mappedData];
+        if (value && String(value).trim() !== '') {
+          updated[key as keyof ComplaintFormData] = value;
+        }
+      }
+
+      return updated;
+    });
+  };
+
+  const handlePdfUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (file.type !== 'application/pdf') {
+      setUploadStatus('Please upload a PDF file.');
+      e.target.value = '';
+      return;
+    }
+
+    try {
+      setUploadStatus('Reading PDF and filling the form...');
+      const pdfjsLib = await import('pdfjs-dist/legacy/build/pdf');
+      pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
+
+      const arrayBuffer = await file.arrayBuffer();
+      const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+      let fullText = '';
+
+      for (let i = 1; i <= pdf.numPages; i++) {
+        const page = await pdf.getPage(i);
+        const content = await page.getTextContent();
+        const strings = content.items.map((item: any) => item.str);
+        fullText += `${strings.join(' ')}\n`;
+      }
+
+      await mapTextToForm(fullText);
+      setUploadStatus('PDF uploaded and form fields were auto-filled. Please review them before submitting.');
+    } catch (error) {
+      console.error('Error processing PDF upload:', error);
+      setUploadStatus('PDF upload failed. Please try again or complete the form manually.');
+    } finally {
+      e.target.value = '';
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -235,6 +299,22 @@ function ComplaintForm() {
       >
         {!submittedData ? (
           <>
+            <div
+              style={{
+                border: `1px solid ${gold}`,
+                borderRadius: '8px',
+                padding: '16px',
+                backgroundColor: lightGray,
+                marginBottom: '20px',
+              }}
+            >
+              <label style={{ display: 'block', fontWeight: 600, color: pioneerBlue, marginBottom: '8px' }}>
+                Upload complaint PDF to auto-fill the form
+              </label>
+              <input type="file" accept="application/pdf" onChange={handlePdfUpload} />
+              {uploadStatus && <p style={{ marginBottom: 0 }}>{uploadStatus}</p>}
+            </div>
+
             <h3 style={sectionTitle}>Customer Information</h3>
             {renderText('Full Name', 'customerName')}
             {renderText('Phone', 'customerPhone')}

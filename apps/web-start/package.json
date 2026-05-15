@@ -13,7 +13,7 @@
     "lint": "eslint",
     "format": "prettier",
     "check": "prettier --write . && eslint --fix",
-    "deploy": "npm run build && firebase deploy --only hosting"
+    "deploy": "npm run build && npx firebase deploy --only hosting"
   },
   "dependencies": {
     "@repo/ui": "*",
