@@ -311,7 +311,28 @@ function ComplaintForm() {
               <label style={{ display: 'block', fontWeight: 600, color: pioneerBlue, marginBottom: '8px' }}>
                 Upload complaint PDF to auto-fill the form
               </label>
-              <input type="file" accept="application/pdf" onChange={handlePdfUpload} />
+              <label
+                htmlFor="complaint-pdf-upload"
+                style={{
+                  display: 'inline-block',
+                  backgroundColor: gold,
+                  color: pioneerBlue,
+                  border: 'none',
+                  padding: '10px 16px',
+                  borderRadius: '6px',
+                  cursor: 'pointer',
+                  fontWeight: 'bold',
+                }}
+              >
+                Upload PDF
+              </label>
+              <input
+                id="complaint-pdf-upload"
+                type="file"
+                accept="application/pdf"
+                onChange={handlePdfUpload}
+                style={{ display: 'none' }}
+              />
               {uploadStatus && <p style={{ marginBottom: 0 }}>{uploadStatus}</p>}
             </div>
 
