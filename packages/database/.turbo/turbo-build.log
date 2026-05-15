@@ -1,40 +1,47 @@
 
-
 > @repo/database@1.0.0 prebuild
 > npm run generate
 
-[1G[0K
+
 > @repo/database@1.0.0 generate
 > prisma generate
 
-[1G[0K[2mPrisma schema loaded from prisma/schema.prisma[22m
-
+Prisma schema loaded from prisma\schema.prisma
+┌─────────────────────────────────────────────────────────┐
+│  Update available 6.18.0 -> 7.8.0                       │
+│                                                         │
+│  This is a major update - please follow the guide at    │
+│  https://pris.ly/d/major-version-upgrade                │
+│                                                         │
+│  Run the following to update                            │
+│    npm i --save-dev prisma@latest                       │
+│    npm i @prisma/client@latest                          │
+└─────────────────────────────────────────────────────────┘
 
-✔ Generated [1mPrisma Client[22m (v6.18.0)[2m to ./../../node_modules/@prisma/client[22m in 246ms
+✔ Generated Prisma Client (v6.18.0) to .\..\..\node_modules\@prisma\client in 102ms
 
 Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
 
 Tip: Need your database queries to be 1000x faster? Accelerate offers you that and more: https://pris.ly/tip-2-accelerate
 
-[1G[0K⠙[1G[0K[1G[0K⠙[1G[0K
+
 > @repo/database@1.0.0 build
 > tsup src/* --format cjs,esm && npm run types
 
-[1G[0K⠙[1G[0K[34mCLI[39m Building entry: src/client.ts, src/seed.ts
+[34mCLI[39m Building entry: src/client.ts, src/seed.ts
 [34mCLI[39m Using tsconfig: tsconfig.json
 [34mCLI[39m tsup v8.5.0
 [34mCLI[39m Target: es2022
 [34mCJS[39m Build start
 [34mESM[39m Build start
-[32mESM[39m [1mdist/client.mjs         [22m[32m70.00 B[39m
-[32mESM[39m [1mdist/chunk-Z74QFS6J.mjs [22m[32m283.00 B[39m
-[32mESM[39m [1mdist/seed.mjs           [22m[32m3.71 KB[39m
-[32mESM[39m ⚡️ Build success in 122ms
-[32mCJS[39m [1mdist/client.js [22m[32m1.48 KB[39m
-[32mCJS[39m [1mdist/seed.js   [22m[32m5.54 KB[39m
-[32mCJS[39m ⚡️ Build success in 123ms
+[32mCJS[39m [1mdist\client.js [22m[32m1.48 KB[39m
+[32mCJS[39m [1mdist\seed.js   [22m[32m5.54 KB[39m
+[32mCJS[39m ⚡️ Build success in 35ms
+[32mESM[39m [1mdist\client.mjs         [22m[32m70.00 B[39m
+[32mESM[39m [1mdist\seed.mjs           [22m[32m3.71 KB[39m
+[32mESM[39m [1mdist\chunk-Z74QFS6J.mjs [22m[32m283.00 B[39m
+[32mESM[39m ⚡️ Build success in 36ms
 
 > @repo/database@1.0.0 types
 > tsc -p tsconfig.types.json
 
-[1G[0K[1G[0K⠙[1G[0K[1G[0K⠙[1G[0K
